@@ -1,0 +1,51 @@
+project:
+  type: website
+  output-dir: _site/ 
+
+lang: pt
+
+website:
+  page-navigation: true
+  title: "Oficina de introdução ao R"
+    
+  sidebar:
+    title: "Oficina de introdução ao R <br>"
+    background: "#FFFFFF"  
+    logo: img/logo.jpg
+    pinned: true
+    align: center
+    style: "docked"
+    search: true
+    collapse-level: 1    
+    tools:
+      - icon: github
+        href: https://github.com/R-Ladies-Sao-Paulo/2022-11-oficina-introducao-R
+        text: "GitHub Repository"
+    
+    contents:
+      - href: index.qmd
+        text: "Página inicial" 
+
+  
+
+        
+        
+  page-footer: 
+    right: "Página criada com [Quarto](https://quarto.org/). "
+    left: "&copy; Copyright 2022, R-Ladies São Paulo"
+    background: "#562457"
+            
+
+  
+
+
+format:
+  html:
+    theme: cosmo
+    css: custom.css
+    toc: true
+    code-copy: true
+    code-link: true
+    code-overflow: wrap
+
+editor: visual

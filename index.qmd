@@ -1,0 +1,25 @@
+---
+title: "Oficina de introdução ao R"
+author: "R-Ladies São Paulo"
+format: html
+editor: visual
+---
+
+## Boas vindas!
+
+Essa oficina está prevista para acontecer presencialmente, em São Paulo, em 26/11/2022. Mais informações em breve! Inscrições serão através da plataforma [Meetup](https://www.meetup.com/rladies-sao-paulo/).
+
+
+### Código de conduta
+
+Este código de conduta aplica-se a todos os espaços R-Ladies, incluindo: meetups, Twitter, Slack, listas de discussão, tanto online como offline: [Clique aqui para acessar o código de conduta](https://github.com/rladies/.github/blob/master/CODE_OF_CONDUCT.md#portuguese).
+
+### Siga a R-Ladies São Paulo!
+
+- [Meetup](https://www.meetup.com/rladies-sao-paulo/)
+
+- [Youtube](https://www.youtube.com/c/RLadiesS%C3%A3oPaulo)
+
+- [Twitter](https://twitter.com/RLadiesSaoPaulo)
+
+- [Instagram](https://instagram.com/rladiessaopaulo)
