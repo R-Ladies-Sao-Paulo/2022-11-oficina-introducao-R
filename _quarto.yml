@@ -49,3 +49,6 @@ format:
     code-overflow: wrap
 
 editor: visual
+
+execute:
+  freeze: true
