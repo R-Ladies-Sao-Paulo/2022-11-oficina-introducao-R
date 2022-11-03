@@ -6,11 +6,12 @@ lang: pt
 
 website:
   page-navigation: true
-  title: "Oficina de introdução ao R"
+  title: "Oficina de Introdução ao R"
     
   sidebar:
     title: "Oficina de introdução ao R <br>"
-    background: "#FFFFFF"  
+    background: "#FFFFFF" 
+    foreground: "#562457"
     logo: img/logo.jpg
     pinned: true
     align: center
@@ -25,6 +26,11 @@ website:
     contents:
       - href: index.qmd
         text: "Página inicial" 
+      - section: "Slides"
+        contents:
+           - slide-rladies.qmd
+           - slide-intro-r.qmd
+           - slide-intro-tidyverse.qmd
 
   
 
