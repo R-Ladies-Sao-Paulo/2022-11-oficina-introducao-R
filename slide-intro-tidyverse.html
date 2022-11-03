@@ -28,6 +28,70 @@
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -330,15 +394,475 @@
   <p class="date">Novembro de 2022</p>
 </section>
 
-<section class="slide level2">
+<section>
+<section id="transformação-de-dados" class="title-slide slide level1 center">
+<h1>Transformação de dados</h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fu">library</span>(dados)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="transformando-dados" class="slide level2">
+<h2>Transformando dados</h2>
+<p>Visualização é importante, mas raramente os dados vão estar <strong>exatamente</strong> do jeito que você precisa. Para isso, existe o pacote <code>dplyr</code> – uma gramática para transformação de dados.</p>
+<p>As principais funções não chamam “verbos” por acaso – cada uma define uma ação específica para lidar com bases de dados:</p>
+<ul>
+<li class="fragment"><p><code>select()</code> seleciona variáveis a partir do nome;</p></li>
+<li class="fragment"><p><code>filter()</code> filtra linhas a partir dos valores;</p></li>
+<li class="fragment"><p><code>arrange()</code> altera a ordem das linhas;</p></li>
+<li class="fragment"><p><code>mutate()</code> cria variáveis novas a partir de colunas já existentes;</p></li>
+<li class="fragment"><p><code>summarise()</code> resume múltiplos valores em menos linhas.</p></li>
+<li class="fragment"><p>E o último, <code>group_by()</code>, os ajuda a operar “por grupos” – vamos explicar melhor mais a frente.</p></li>
+</ul>
+</section>
+<section id="gramática-do-dplyr" class="slide level2">
+<h2>Gramática do <code>dplyr</code></h2>
+<p>Com as principais funções, você consegue <strong>dividir em passos</strong> o que precisa fazer com o <em>dataset</em>. É como usar os verbos da gramática para construir uma frase, como o que você está lendo agora.</p>
+<p>Por exemplo, se você precisa descobrir <strong>quais voos da companhia American Airlines tiveram o maior tempo de atraso</strong>, consegue separar essa pergunta em diferentes etapas:</p>
+<ol type="1">
+<li class="fragment"><p><em>quais voos da companhia American Airlines</em>: <strong>filtrar</strong> voos da AA</p></li>
+<li class="fragment"><p><em>tiveram o maior tempo de atraso</em>: <strong>ordenar</strong> pelo tempo de atraso</p></li>
+</ol>
+<ul>
+<li class="fragment">Um bom exercício nas etapas de tranformação de dados é pensar como os diferentes verbos do dplyr podem atender as diversas operações que você precisa fazer.</li>
+</ul>
+</section>
+<section id="gramática-do-dplyr-verbos" class="slide level2">
+<h2>Gramática do <code>dplyr</code>: verbos</h2>
+<p>Cada verbo é uma função diferente, mas com funcionamento similar:</p>
+<ol type="1">
+<li class="fragment"><p>O primeiro argumento é o <em>data frame</em> a ser <strong>transformando</strong></p></li>
+<li class="fragment"><p>Os próximos argumentos descrevem <strong>o que fazer</strong> com o <em>data frame</em>. Aqui, o nome das colunas <strong>não precisa</strong> de aspas.</p></li>
+<li class="fragment"><p>O resultado é o <em>data frame</em> transformado</p></li>
+</ol>
+<p>Em pseudo-código, assumindo que estamos trabalhando com o <em>dataset</em> <code>voos</code>, daria para escrever:</p>
+<ol type="1">
+<li class="fragment"><p><code>filtrar(voos, companhia_aerea == "American Airlines")</code></p></li>
+<li class="fragment"><p><code>ordenar(voos, atraso_saida)</code></p></li>
+</ol>
+</section>
+<section id="gramática-do-dplyr-pipe" class="slide level2">
+<h2>Gramática do <code>dplyr</code>: pipe</h2>
+<p>Como cada verbo gera um novo dataframe, seria pouco eficiente armazenar o resultado das funções em diferentes objetos, certo?</p>
+<p>Exemplo:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource {{r}} number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a href="#cb2-1"></a>voos_aa &lt;- filtrar(voos, companhia_aerea == "American Airlines")</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a>voos_atraso &lt;- ordenar(voos_aa, atraso_saida)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Para isso existe o <strong>operador pipe</strong> <code>|&gt;</code>, que passa o resultado da função anterior como primeiro argumento da próxima função, sem precisar de um novo objeto para isso.</p>
+</section>
+<section id="gramática-do-dplyr-pipe-1" class="slide level2">
+<h2>Gramática do <code>dplyr</code>: pipe</h2>
+<p>Na prática, o <strong>pipe</strong> funciona assim:</p>
+<div class="cell" data-layout-align="center">
 
-<p>Em breve!</p>
+</div>
+<p>Usando nosso exemplo anterior, ficaria assim:</p>
+<p><span style="color:#5457E0">voos</span> |&gt; <span style="color:#489EFA">filtrar(companhia == “American Airlines”)</span> |&gt; <span style="color:#AA53F5">ordenar(atraso_saida)</span></p>
+<p>No lugar de:</p>
+<p><span style="color:#AA53F5">ordenar(<span style="color:#489EFA">filtrar(<span style="color: #5457E0">voos</span>, companhia == “American Airlines”)</span>, atraso_saida)</span></p>
+</section></section>
+<section id="principais-verbos" class="title-slide slide level1 center">
+<h1>Principais verbos</h1>
+
+</section>
+
+<section>
+<section id="filter" class="title-slide slide level1 center">
+<h1><code>filter()</code></h1>
+
+</section>
+<section id="filter-introdução" class="slide level2">
+<h2><code>filter()</code>: introdução</h2>
+<ul>
+<li class="fragment"><p>A função <code>filter()</code>, como o nome já diz, filtra as linhas a partir de seus valores e retorna um novo <em>dataset</em> que atendem aos requisitos.</p></li>
+<li class="fragment"><p>O primeiro argumento é o <em>dataset</em> e os outros argumentos são expressões lógicas para filtrar os dados. A função abaixo retorna <strong>todos os voos do dia 6 de junho</strong>.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">filter</span>(voos, mes <span class="sc">==</span> <span class="dv">6</span>, dia <span class="sc">==</span> <span class="dv">6</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li class="fragment">Você pode salvar os resultados em um novo <em>dataset</em> atribuindo a um novo objeto com <code>&lt;-</code>:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>voos_6_junho <span class="ot">&lt;-</span> <span class="fu">filter</span>(voos, mes <span class="sc">==</span> <span class="dv">6</span>, dia <span class="sc">==</span> <span class="dv">6</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li class="fragment">A função <code>filter()</code> não altera os valores do dataset, apenas remove as linhas que não resultam em <code>TRUE</code>.</li>
+</ul>
+</section>
+<section id="filter-operadores-relacionais" class="slide level2">
+<h2><code>filter()</code>: operadores relacionais</h2>
+<p>A mágica do <code>filter()</code> vem quando você tem fluência dos operadores que avaliam os valores das colunas.</p>
+<p>Os <strong>operadores relacionais</strong> comparam o quanto os valores estão dentro do intervalo esperado, a partir das expressões:</p>
+<ul>
+<li class="fragment"><p><code>&gt;</code> maior que</p></li>
+<li class="fragment"><p><code>&gt;=</code> maior ou igual</p></li>
+<li class="fragment"><p><code>&lt;</code> menor que</p></li>
+<li class="fragment"><p><code>&lt;=</code> menor ou igual</p></li>
+<li class="fragment"><p><code>!=</code> diferente</p></li>
+<li class="fragment"><p><code>==</code> igual (cuidado com <code>=</code>, que não deve ser usado para isso)</p></li>
+</ul>
+</section>
+<section id="filter-operadores-relacionais-1" class="slide level2">
+<h2><code>filter()</code>: operadores relacionais</h2>
+<p>Ou seja, para filtrar voos que saíram com 1 hora ou mais de atraso:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">filter</span>(voos, atraso_saida <span class="sc">&gt;=</span> <span class="dv">60</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ou voos que saíram adiantados (atraso de saída menor que zero):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="fu">filter</span>(voos, atraso_saida <span class="sc">&lt;</span> <span class="dv">0</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ou voos que saíram exatamente no horário:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">filter</span>(voos, atraso_saida <span class="sc">==</span> <span class="dv">0</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="filter-operadores-lógicos" class="slide level2">
+<h2><code>filter()</code>: operadores lógicos</h2>
+<p>Para combinar múltiplas avaliações, é só usar operadores lógicos (ou booleanos), que esse diagrama resume:</p>
+<div class="cell">
+
+</div>
+</section>
+<section id="filter-operadores-lógicos-1" class="slide level2">
+<h2><code>filter()</code>: operadores lógicos</h2>
+<p>Ou seja, para filtrar voos que saíram com mais de 1 hora de atraso, mas não atrasaram na chegada, você pode usar tanto:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">filter</span>(voos, atraso_saida <span class="sc">&gt;=</span> <span class="dv">60</span>, atraso_chegada <span class="sc">&lt;=</span> <span class="dv">0</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>quanto:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">filter</span>(voos, atraso_saida <span class="sc">&gt;=</span> <span class="dv">60</span> <span class="sc">&amp;</span> atraso_chegada <span class="sc">&lt;=</span> <span class="dv">0</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>(espero que todes desses voos tenham chego bem.)</p>
+</section>
+<section id="filter-outras-funções-úteis" class="slide level2">
+<h2><code>filter()</code>: outras funções úteis</h2>
+<p>Além de operadores, você também pode usar outras funções lógicas (ou seja, que retornam <code>TRUE</code> ou <code>FALSE</code>) dentro do <code>filter()</code>, como:</p>
+</section>
+<section id="filter-outras-funções-úteis-1" class="slide level2">
+<h2><code>filter()</code>: outras funções úteis</h2>
+<p><strong><code>is.na()</code></strong></p>
+<p>encontra valores faltando (nulos)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">filter</span>(voos, <span class="fu">is.na</span>(atraso_saida))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong><code>!is.na()</code></strong></p>
+<p>também pode ser combinada com o operador de negação <code>!</code> para excluir valores nulos</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="fu">filter</span>(voos, <span class="sc">!</span><span class="fu">is.na</span>(atraso_saida))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="filter-outras-funções-úteis-2" class="slide level2">
+<h2><code>filter()</code>: outras funções úteis</h2>
+<p><strong><code>%in%</code></strong></p>
+<p>encontra linhas com alguns dos valores listados (não precisa ser todos)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">filter</span>(voos, origem <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"LAX"</span>, <span class="st">"SDF"</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>é mais eficiente que:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">filter</span>(voos, origem <span class="sc">==</span> <span class="st">"LAX"</span> <span class="sc">|</span> origem <span class="sc">==</span> <span class="st">"SDF"</span>)<span class="er">)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="filter-outras-funções-úteis-3" class="slide level2">
+<h2><code>filter()</code>: outras funções úteis</h2>
+<p><strong><code>str_detect()</code></strong></p>
+<p>detecta padrões em texto (strings) e pode ser usado com expressões regulares (regex)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">filter</span>(voos, stringr<span class="sc">::</span><span class="fu">str_detect</span>(cauda, <span class="st">"^N7"</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>(esse código encontra o registro de aeronaves (tail number) que começa com <code>N7</code>)</p>
+</section>
+<section id="filter-cuidados" class="slide level2">
+<h2><code>filter()</code>: cuidados</h2>
+<ul>
+<li class="fragment"><p><code>=</code> não é <code>==</code> (para filtros, sempre é o último)</p></li>
+<li class="fragment"><p>qualquer comparação com <code>NA</code> retorna <code>NA</code></p></li>
+<li class="fragment"><p>parênteses para combinar operadores</p></li>
+</ul>
+</section></section>
+<section>
+<section id="arrange" class="title-slide slide level1 center">
+<h1><code>arrange()</code></h1>
+
+</section>
+<section id="arrange-introdução" class="slide level2">
+<h2><code>arrange()</code>: introdução</h2>
+<p>O <code>arrange()</code> também opera nas linhas, mas em vez de filtrar os valores, ele muda a ordem com base nos valores do <em>dataset</em>. O primeiro argumento é o nome do <em>dataset</em> e os outros são as colunas para ordenar, em ordem de “prioridade”.</p>
+<p>É útil se você precisa conferir as linhas em ordem a partir de um valor, como <strong>os voos que mais saíram adiantado</strong>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="fu">arrange</span>(voos, atraso_saida)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>por padrão, o <code>arrange()</code> ordena de forma crescente</p>
+</section>
+<section id="arrange-introdução-1" class="slide level2">
+<h2><code>arrange()</code>: introdução</h2>
+<p>se você quiser filtrar voos que <strong>mais atrasaram</strong>, pode recorrer a função <code>desc()</code> ou <code>-</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">arrange</span>(voos, <span class="fu">desc</span>(atraso_saida))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>(imagina que ruim estar no voo que atrasou 14 horas…)</p>
+</section>
+<section id="arrange-dicas" class="slide level2">
+<h2><code>arrange()</code>: dicas</h2>
+<ul>
+<li class="fragment"><p>não altera a ordem de como as variáveis categoricas aparecem no <code>ggplot2</code>. para isso, consulte o pacote <a href="https://forcats.tidyverse.org/"><code>forcats</code></a></p></li>
+<li class="fragment"><p>quando há valores faltando (<code>NA</code>), eles sempre ficam no final do <em>dataset</em></p></li>
+<li class="fragment"><p>é útil quando a ordem importa. por exemplo, com a função <code>distinct()</code> ou <code>coalesce()</code></p></li>
+</ul>
+</section>
+<section id="select" class="slide level2">
+<h2><code>select()</code></h2>
+</section>
+<section id="select-introdução" class="slide level2">
+<h2><code>select()</code>: introdução</h2>
+<p>Essa função, ao contrário das duas últimas, não olha os valores (linhas) e sim as <strong>colunas</strong>. o primeiro argumento é o <em>dataset</em> e os outros são as colunas para serem selecionadas.</p>
+<p>Útil para reduzir <em>datasets</em> de centenas de colunas em apenas algumas que são interessantes para você. e ainda ajuda a economizar memória RAM 😄</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">select</span>(voos, ano, companhia_aerea, origem, destino)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="select-operadores" class="slide level2">
+<h2><code>select()</code>: operadores</h2>
+<p><strong><code>:</code></strong></p>
+<p>seleciona todas as colunas entre <code>x</code> e <code>y</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">select</span>(voos, voo<span class="sc">:</span>tempo_voo) <span class="sc">|&gt;</span> <span class="fu">colnames</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong><code>-</code></strong></p>
+<p>exclui determinada(s) coluna(s)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">select</span>(voos, <span class="sc">-</span>ano, <span class="sc">-</span>mes, <span class="sc">-</span>dia) <span class="sc">|&gt;</span>  <span class="fu">colnames</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="select-operadores-1" class="slide level2">
+<h2><code>select()</code>: operadores</h2>
+<p>ambos podem ser combinados:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">select</span>(voos, <span class="sc">-</span>(horario_saida<span class="sc">:</span>companhia_aerea)) <span class="sc">|&gt;</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="fu">colnames</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="select-tidyselect" class="slide level2">
+<h2><code>select()</code>: tidyselect</h2>
+<p>pacote que traz uma série de funções para filtrar colunas, como:</p>
+<p><strong><code>starts_with</code></strong> ou <strong><code>ends_with</code></strong></p>
+<p>seleciona colunas que começam ou terminam com uma certa expressão, como:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">select</span>(voos, tidyselect<span class="sc">::</span><span class="fu">starts_with</span>(<span class="st">"horario"</span>)) <span class="sc">|&gt;</span> <span class="fu">colnames</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>ou</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">select</span>(voos, tidyselect<span class="sc">::</span><span class="fu">ends_with</span>(<span class="fu">c</span>(<span class="st">"chegada"</span>, <span class="st">"saida"</span>))) <span class="sc">|&gt;</span> <span class="fu">colnames</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="select-tidyselect-1" class="slide level2">
+<h2><code>select()</code>: tidyselect</h2>
+<p><strong>contains</strong> ou <strong>matches</strong></p>
+<p>avalia se no nome da coluna contém um determinado padrão. enquanto <strong>contains</strong> é literal, <strong>matches</strong> usa regex</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">select</span>(voos, tidyselect<span class="sc">::</span><span class="fu">contains</span>(<span class="st">"voo"</span>)) <span class="sc">|&gt;</span> <span class="fu">colnames</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>ou</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">select</span>(voos, tidyselect<span class="sc">::</span><span class="fu">matches</span>(<span class="st">"chegada$"</span>)) <span class="sc">|&gt;</span> <span class="fu">colnames</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="select-tidyselect-2" class="slide level2">
+<h2><code>select()</code>: tidyselect</h2>
+<p><strong>everything</strong></p>
+<p>seleciona todas as outras colunas. se usada depois de outras seleções, as colunas que não foram retornadas nas primeiras são incluídas</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">select</span>(voos, voo, tidyselect<span class="sc">::</span><span class="fu">everything</span>()) <span class="sc">|&gt;</span> <span class="fu">colnames</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="select-renomear" class="slide level2">
+<h2><code>select()</code>: renomear</h2>
+<p>o <code>select()</code> também consegue renomear colunas, mas não é o ideal, porque ele exclui todas as outras colunas</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">select</span>(voos, <span class="at">registro_aviao =</span> cauda) <span class="sc">|&gt;</span> <span class="fu">colnames</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>nesses casos, o ideal é usar a função <code>rename()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="fu">rename</span>(voos, <span class="at">registro_aviao =</span> cauda) <span class="sc">|&gt;</span> <span class="fu">colnames</span>()</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="mutate" class="slide level2">
+<h2><code>mutate()</code></h2>
+</section>
+<section id="mutate-introdução" class="slide level2">
+<h2><code>mutate()</code>: introdução</h2>
+<p>Essa função, assim como o <code>select()</code>, faz operações no sentido de <strong>colunas</strong>, não de <strong>linhas</strong>.</p>
+<p>O <code>mutate()</code> é utilizado para adicionar novas colunas ao final do <em>dataset</em>, preservando as que já existem.O primeiro argumento é o <em>dataset</em> e os outros são as colunas que serão criadas.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>dados_dist_atraso <span class="ot">&lt;-</span> <span class="fu">select</span>(voos,distancia , tempo_voo, atraso_chegada, atraso_saida)</span>
+<span id="cb28-2"><a href="#cb28-2"></a></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="fu">mutate</span>(dados_dist_atraso,</span>
+<span id="cb28-4"><a href="#cb28-4"></a>              <span class="at">velocidade =</span> distancia<span class="sc">/</span>tempo_voo,</span>
+<span id="cb28-5"><a href="#cb28-5"></a>              <span class="at">difatraso =</span> atraso_chegada<span class="sc">-</span>atraso_saida) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="mutate-introdução-1" class="slide level2">
+<h2><code>mutate()</code>: introdução</h2>
+<p>É possível fazer referência as novas colunas criadas:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">mutate</span>(dados_dist_atraso,</span>
+<span id="cb29-2"><a href="#cb29-2"></a>              <span class="at">difatraso =</span> atraso_chegada<span class="sc">-</span>atraso_saida,</span>
+<span id="cb29-3"><a href="#cb29-3"></a>              <span class="at">dif_prop =</span> <span class="fu">abs</span>(difatraso<span class="sc">/</span>tempo_voo))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="mutate-funções" class="slide level2">
+<h2><code>mutate()</code>: funções</h2>
+<p>Existem várias funções que podemos utilizar para criar novas variáveis. Para isso é importante pontuarmos alguns operadores principais:</p>
+<ul>
+<li class="fragment"><p>Operadores aritméticos: <code>+</code>,<code>-</code>, <code>*</code>, <code>/</code>, <code>^</code></p></li>
+<li class="fragment"><p>Aritmética modular: <code>%/%</code> (divisão inteira) e <code>%%</code> (resto)</p></li>
+<li class="fragment"><p>Logaritmo: <code>log()</code>, <code>log2()</code>, <code>log10()</code></p></li>
+<li class="fragment"><p>Cumulativos de somas, produtos, mínimos e máximos: <code>cumsum()</code>, <code>cumprod()</code>, <code>cummin()</code>, <code>cummax()</code></p></li>
+<li class="fragment"><p>Comparações lógicas: <code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>!=</code> e <code>==</code></p></li>
+</ul>
+</section>
+<section id="mutate-case_when" class="slide level2">
+<h2><code>mutate()</code>: <code>case_when()</code></h2>
+<p>Esta função permite vetorizar várias instruções <code>if_else()</code>. É equivalente à função com o mesmo nome no SQL.</p>
+<p>Se nenhum caso coincidir com as instruções especificadas, <em>NA</em> é retornado.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>voos <span class="sc">|&gt;</span> </span>
+<span id="cb30-2"><a href="#cb30-2"></a>  <span class="fu">select</span>(atraso_chegada)  <span class="sc">|&gt;</span> </span>
+<span id="cb30-3"><a href="#cb30-3"></a>  <span class="fu">mutate</span>(<span class="at">atraso =</span> <span class="fu">case_when</span>(atraso_chegada <span class="sc">&lt;=</span> <span class="dv">0</span> <span class="sc">~</span> <span class="st">"sem atraso"</span>,</span>
+<span id="cb30-4"><a href="#cb30-4"></a>                        atraso_chegada <span class="sc">&lt;=</span> <span class="dv">10</span>  <span class="sc">~</span> <span class="st">"pequeno"</span>,</span>
+<span id="cb30-5"><a href="#cb30-5"></a>                        atraso_chegada <span class="sc">&lt;=</span> <span class="dv">20</span>  <span class="sc">~</span> <span class="st">"médio"</span>,</span>
+<span id="cb30-6"><a href="#cb30-6"></a>                        atraso_chegada <span class="sc">&gt;</span> <span class="dv">20</span>  <span class="sc">~</span> <span class="st">"alto"</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="summarise" class="slide level2">
+<h2><code>summarise()</code></h2>
+</section>
+<section id="summarise-introdução" class="slide level2">
+<h2><code>summarise()</code>: introdução</h2>
+<p>O último verbo é utilizado para resumir informações a depender das especificações contidas nela. O primeiro argumento é o <em>dataset</em> e os outros são as variáveis resumo que serão criadas a partir das variáveis existentes no <em>dataset</em>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>voos <span class="sc">|&gt;</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a>  <span class="fu">summarise</span>(<span class="at">count =</span> <span class="fu">n</span>(),</span>
+<span id="cb31-3"><a href="#cb31-3"></a>                   <span class="at">dist =</span> <span class="fu">mean</span>(distancia, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb31-4"><a href="#cb31-4"></a>                   <span class="at">atraso =</span> <span class="fu">mean</span>(atraso_chegada, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><code>na.rm</code> indica se os valores de NA devem ser removidos antes que o cálculo continue.</p>
+</section>
+<section id="summarise-introdução-1" class="slide level2">
+<h2><code>summarise()</code>: introdução</h2>
+<p>Essa função cria um novo <em>dataset</em>.</p>
+<p><code>summarise()</code> e <code>summarize()</code> são sinônimos.</p>
+<p>Existem várias possibilidades de funções para criarmos medidas descritivas.</p>
+</section>
+<section id="summarise-funções" class="slide level2">
+<h2><code>summarise()</code>: funções</h2>
+<p>Algumas medidas são:</p>
+<ul>
+<li class="fragment"><p>Medidas resumo: média <code>mean(x)</code>, mediana <code>median(x)</code>.</p></li>
+<li class="fragment"><p>Medidas de dispersão: desvio padrão <code>sd(x)</code>, desvio médio absoluto <code>mad(x)</code>.</p></li>
+<li class="fragment"><p>Medidas de classificação: mínimo <code>min(x)</code>, quantis <code>quantile(x, 0.25)</code>, máximo <code>max(x)</code>.</p></li>
+<li class="fragment"><p>Medidas de posição: <code>first(x)</code>, <code>nth(x, 2)</code>, <code>last(x)</code>.</p></li>
+<li class="fragment"><p>Contadores: tamanho do grupo <code>n()</code>, número de não missing <code>sum(!is.na(x))</code>, valores distintos <code>n_distinct(x)</code>.</p></li>
+</ul>
+</section>
+<section id="summarise-funções-1" class="slide level2">
+<h2><code>summarise()</code>: funções</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>nao_cancelados <span class="ot">&lt;-</span> voos <span class="sc">|&gt;</span> </span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(atraso_chegada), <span class="sc">!</span><span class="fu">is.na</span>(atraso_saida))</span>
+<span id="cb32-3"><a href="#cb32-3"></a></span>
+<span id="cb32-4"><a href="#cb32-4"></a>nao_cancelados <span class="sc">|&gt;</span></span>
+<span id="cb32-5"><a href="#cb32-5"></a>  <span class="fu">summarise</span>(<span class="at">mais_adiantado =</span> <span class="fu">min</span>(atraso_chegada),</span>
+<span id="cb32-6"><a href="#cb32-6"></a>                   <span class="at">qt_25=</span> <span class="fu">quantile</span>(atraso_chegada, <span class="fl">0.25</span>),</span>
+<span id="cb32-7"><a href="#cb32-7"></a>                   <span class="at">mediana=</span><span class="fu">median</span>(atraso_chegada),</span>
+<span id="cb32-8"><a href="#cb32-8"></a>                   <span class="at">qt_75=</span> <span class="fu">quantile</span>(atraso_chegada, <span class="fl">0.75</span>),</span>
+<span id="cb32-9"><a href="#cb32-9"></a>                   <span class="at">mais_atrasado =</span> <span class="fu">max</span>(atraso_chegada))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="summarise-agrupado" class="slide level2">
+<h2><code>summarise()</code>: agrupado</h2>
+<p>A função <code>summarise()</code> é bastante utilizada com a próxima função que veremos: <code>group_by()</code>. Quando combinadas, elas retornam resumos agrupados das colunas de interesse.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>atrasos <span class="ot">&lt;-</span> voos <span class="sc">|&gt;</span></span>
+<span id="cb33-2"><a href="#cb33-2"></a>  <span class="fu">group_by</span>(destino) <span class="sc">|&gt;</span> </span>
+<span id="cb33-3"><a href="#cb33-3"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb33-4"><a href="#cb33-4"></a>    <span class="at">count =</span> <span class="fu">n</span>(),</span>
+<span id="cb33-5"><a href="#cb33-5"></a>    <span class="at">dist =</span> <span class="fu">mean</span>(distancia, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb33-6"><a href="#cb33-6"></a>    <span class="at">atraso =</span> <span class="fu">mean</span>(atraso_chegada, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb33-7"><a href="#cb33-7"></a>  )</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section></section>
+<section>
+<section id="um-aliado-poderoso-group_by" class="title-slide slide level1 center">
+<h1>Um aliado poderoso: <code>group_by()</code></h1>
+
+</section>
+<section id="group_by-introdução" class="slide level2">
+<h2><code>group_by()</code>: introdução</h2>
+<p>Pode ser usado na preparação da base de dados para utilizar verbos como <code>summarise()</code>, <code>mutate()</code> e <code>filter()</code>.</p>
+<p>A função <code>group_by()</code> utiliza um <em>dataset</em> existente e o converte em um agrupado, no qual as operações serão realizadas <strong>por grupo</strong>.</p>
+<p>As operações serão feitas pelos <strong>grupos das variáveis definidos</strong>, mas vale lembrar que essa função não é um verbo, ela não executa nada, é como se carimbasse o <em>dataset</em>.</p>
+<p><code>ungroup()</code> remove o agrupamento.</p>
+</section>
+<section id="group_by-introdução-1" class="slide level2">
+<h2><code>group_by()</code>: introdução</h2>
+<p>Como calculamos a quantidade de voos de cada destino?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>voos <span class="sc">|&gt;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>  <span class="fu">group_by</span>(destino) <span class="sc">|&gt;</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="group_by-introdução-2" class="slide level2">
+<h2><code>group_by()</code>: introdução</h2>
+<p>Como calculamos a quantidade de voos de cada destino?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>voos <span class="sc">|&gt;</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>  <span class="fu">group_by</span>(destino) <span class="sc">|&gt;</span> </span>
+<span id="cb35-3"><a href="#cb35-3"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb35-4"><a href="#cb35-4"></a>    <span class="at">count =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb35-5"><a href="#cb35-5"></a>  <span class="fu">head</span>(<span class="dv">5</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="group_by-multiplas-variáveis" class="slide level2">
+<h2><code>group_by()</code>: multiplas variáveis</h2>
+<p>Como calculamos a quantidade de voos por dia?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>diario<span class="ot">&lt;-</span> <span class="fu">group_by</span>(voos, ano, mes, dia)</span>
+<span id="cb36-2"><a href="#cb36-2"></a></span>
+<span id="cb36-3"><a href="#cb36-3"></a>(por_dia   <span class="ot">&lt;-</span> <span class="fu">summarise</span>(diario, </span>
+<span id="cb36-4"><a href="#cb36-4"></a>                               <span class="at">qtde_voos =</span> <span class="fu">n</span>()))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="group_by-multiplas-variáveis-1" class="slide level2">
+<h2><code>group_by()</code>: multiplas variáveis</h2>
+<p>Como calculamos a quantidade de voos por mês?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>(mensal <span class="ot">&lt;-</span> <span class="fu">summarise</span>(por_dia, </span>
+<span id="cb37-2"><a href="#cb37-2"></a>                            <span class="at">qtde_voos =</span> <span class="fu">sum</span>(qtde_voos)))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Quando você agrupa por várias variáveis, cada <code>summarise()</code> <strong>descola um nível do agrupamento</strong>.</p>
+<p>Cuidado! Para algumas medidas faz sentido (soma), mas para outras não (mediana).</p>
+</section>
+<section id="group_by-ungroup" class="slide level2">
+<h2><code>group_by()</code>: <code>ungroup()</code></h2>
+<p>Se quisermos desagrupar e fazer um <code>summarise()</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>diario<span class="ot">&lt;-</span> <span class="fu">group_by</span>(voos, ano, mes, dia)</span>
+<span id="cb38-2"><a href="#cb38-2"></a></span>
+<span id="cb38-3"><a href="#cb38-3"></a>diario <span class="sc">|&gt;</span> </span>
+<span id="cb38-4"><a href="#cb38-4"></a>  <span class="fu">ungroup</span>() <span class="sc">|&gt;</span>            </span>
+<span id="cb38-5"><a href="#cb38-5"></a>  <span class="fu">summarise</span>(<span class="at">qtde_voos =</span> <span class="fu">n</span>())</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
 <img src="_extensions/beatrizmilz/rladies/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
 <p>Slides feitos com <a href="https://quarto.org/docs/presentations/revealjs/index.html">Quarto</a> e <a href="https://github.com/beatrizmilz/quarto-rladies-theme#quarto-r-ladies-theme">Quarto R-Ladies Theme</a>.</p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -550,6 +1074,48 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

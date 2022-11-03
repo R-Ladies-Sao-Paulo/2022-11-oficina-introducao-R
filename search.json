@@ -88,21 +88,140 @@
     "href": "slide-intro-r.html#pinguins",
     "title": "Parte I - Introdução ao R",
     "section": "Pinguins!",
-    "text": "Pinguins!\n\nglimpse(pinguins)\n\nRows: 344\nColumns: 8\n$ especie               <fct> Pinguim-de-adélia, Pinguim-de-adélia, Pinguim-de…\n$ ilha                  <fct> Torgersen, Torgersen, Torgersen, Torgersen, Torg…\n$ comprimento_bico      <dbl> 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34…\n$ profundidade_bico     <dbl> 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18…\n$ comprimento_nadadeira <int> 181, 186, 195, NA, 193, 190, 181, 195, 193, 190,…\n$ massa_corporal        <int> 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 34…\n$ sexo                  <fct> macho, fêmea, fêmea, NA, fêmea, macho, fêmea, ma…\n$ ano                   <int> 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, …"
+    "text": "Pinguins!\n\nglimpse(pinguins)"
   },
   {
-    "objectID": "slide-intro-r.html#star-wars",
-    "href": "slide-intro-r.html#star-wars",
+    "objectID": "slide-intro-r.html#vôos",
+    "href": "slide-intro-r.html#vôos",
     "title": "Parte I - Introdução ao R",
-    "section": "Star Wars",
-    "text": "Star Wars\n\nglimpse(starwars)\n\nRows: 87\nColumns: 14\n$ name       <chr> \"Luke Skywalker\", \"C-3PO\", \"R2-D2\", \"Darth Vader\", \"Leia Or…\n$ height     <int> 172, 167, 96, 202, 150, 178, 165, 97, 183, 182, 188, 180, 2…\n$ mass       <dbl> 77.0, 75.0, 32.0, 136.0, 49.0, 120.0, 75.0, 32.0, 84.0, 77.…\n$ hair_color <chr> \"blond\", NA, NA, \"none\", \"brown\", \"brown, grey\", \"brown\", N…\n$ skin_color <chr> \"fair\", \"gold\", \"white, blue\", \"white\", \"light\", \"light\", \"…\n$ eye_color  <chr> \"blue\", \"yellow\", \"red\", \"yellow\", \"brown\", \"blue\", \"blue\",…\n$ birth_year <dbl> 19.0, 112.0, 33.0, 41.9, 19.0, 52.0, 47.0, NA, 24.0, 57.0, …\n$ sex        <chr> \"male\", \"none\", \"none\", \"male\", \"female\", \"male\", \"female\",…\n$ gender     <chr> \"masculine\", \"masculine\", \"masculine\", \"masculine\", \"femini…\n$ homeworld  <chr> \"Tatooine\", \"Tatooine\", \"Naboo\", \"Tatooine\", \"Alderaan\", \"T…\n$ species    <chr> \"Human\", \"Droid\", \"Droid\", \"Human\", \"Human\", \"Human\", \"Huma…\n$ films      <list> <\"The Empire Strikes Back\", \"Revenge of the Sith\", \"Return…\n$ vehicles   <list> <\"Snowspeeder\", \"Imperial Speeder Bike\">, <>, <>, <>, \"Imp…\n$ starships  <list> <\"X-wing\", \"Imperial shuttle\">, <>, <>, \"TIE Advanced x1\",…"
+    "section": "Vôos",
+    "text": "Vôos\n\ndados::voos, que é tradução do nycflights13, que reune os voos de NYC em 2013.\n\n\nglimpse(voos)"
   },
   {
     "objectID": "slide-intro-r.html#vamos-começar",
     "href": "slide-intro-r.html#vamos-começar",
     "title": "Parte I - Introdução ao R",
     "section": "Vamos começar?",
-    "text": "Vamos começar?\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
+    "text": "Vamos começar?"
+  },
+  {
+    "objectID": "slide-intro-r.html#r-como-uma-calculadora",
+    "href": "slide-intro-r.html#r-como-uma-calculadora",
+    "title": "Parte I - Introdução ao R",
+    "section": "R como uma calculadora",
+    "text": "R como uma calculadora\n\nPodemos usar o R como uma calculadora:\n\n\n1 / 200 * 30\n(59 + 73 + 2) / 3\nsin(pi / 2)"
+  },
+  {
+    "objectID": "slide-intro-r.html#executando-códigos",
+    "href": "slide-intro-r.html#executando-códigos",
+    "title": "Parte I - Introdução ao R",
+    "section": "Executando códigos",
+    "text": "Executando códigos\n\nO atalho Cmd/Ctrl + Enter é um dos mais úteis! Executa o código selecionado, ou o trecho de código onde o cursor está.\nO atalho Cmd/Ctrl + Shift + S executa todos os códigos do script!"
+  },
+  {
+    "objectID": "slide-intro-r.html#criando-objetos",
+    "href": "slide-intro-r.html#criando-objetos",
+    "title": "Parte I - Introdução ao R",
+    "section": "Criando objetos",
+    "text": "Criando objetos\n\nPodemos criar objetos (e guardar resultados) usando o operador de atribuição <-, e a estrutura a seguir:\n\nnome_do_objeto <- valor\nExemplo:\n\nx <- 3 * 4\n\nPodemos ver o conteúdo do objeto escrevendo o nome e executando:\n\nx"
+  },
+  {
+    "objectID": "slide-intro-r.html#boas-práticas-e-objetos",
+    "href": "slide-intro-r.html#boas-práticas-e-objetos",
+    "title": "Parte I - Introdução ao R",
+    "section": "Boas práticas e objetos",
+    "text": "Boas práticas e objetos\n\nAtalho Alt - (Alt e menos) serve para escrever o sinal de atribuição mais rápido.\nO sinal = também funciona neste caso: não use :)\nAproveite para usar a tecla Tab no RStudio: ajuda a autocompletar!\nO R é case sensitive:\n\n\nr_rocks <- 2 ^ 3\n\n\nr_rock\n#> Error: object 'r_rock' not found\nR_rocks\n#> Error: object 'R_rocks' not found\nr_rocks\n#> [1] 8"
+  },
+  {
+    "objectID": "slide-intro-r.html#boas-práticas-e-objetos-1",
+    "href": "slide-intro-r.html#boas-práticas-e-objetos-1",
+    "title": "Parte I - Introdução ao R",
+    "section": "Boas práticas e objetos",
+    "text": "Boas práticas e objetos\n\nErros de digitação e de maiúscula/minúscula importam!\nCuidado ao dar nomes aos objetos:\n\n\neu_uso_snake_case\noutrasPessoasUsamCamelCase\nalgumas.pessoas.usam.pontos\nE_Algumas.Pessoas_RENUNCIAMconvenções"
+  },
+  {
+    "objectID": "slide-intro-r.html#utilizando-funções",
+    "href": "slide-intro-r.html#utilizando-funções",
+    "title": "Parte I - Introdução ao R",
+    "section": "Utilizando funções",
+    "text": "Utilizando funções\n\nO R possui muitas funções disponíveis\nEstrutura para utilizar uma função:\n\n\nnome_da_funcao(nome_do_argumento_1 = valor_para_o_argumento1,\n               nome_do_argumento_2 = valor_para_o_argumento2,\n               nome_do_argumento_3 = valor_para_o_argumento3,\n               ...)\n\nExemplo:\n\nseq(from = 1, to = 10)\n\n\nParênteses (e aspas) sempre devem estar em “duplas”: se abrirmos, temos que fechar."
+  },
+  {
+    "objectID": "slide-intro-r.html#scripts",
+    "href": "slide-intro-r.html#scripts",
+    "title": "Parte I - Introdução ao R",
+    "section": "Scripts",
+    "text": "Scripts\n\nPodemos salvar nossos scripts para utilizar depois!\nConsidere tudo no console como temporário, pois não salvamos o conteúdo.\nEscreva no Script/Editor os códigos importantes para a análise."
+  },
+  {
+    "objectID": "slide-intro-r.html#workflow-projetos-no-rstudio",
+    "href": "slide-intro-r.html#workflow-projetos-no-rstudio",
+    "title": "Parte I - Introdução ao R",
+    "section": "Workflow: Projetos no RStudio",
+    "text": "Workflow: Projetos no RStudio\nO que é “real”?\n\nO que você salvaria como o último registro do que aconteceu na análise?\nOnde a nossa análise “vive”?\nScripts x Environment\n\nÉ muito mais fácil recriar os objetos do Environment a partir dos códigos que escrevemos no script do que o contrário."
+  },
+  {
+    "objectID": "slide-intro-r.html#onde-as-análises-vivem",
+    "href": "slide-intro-r.html#onde-as-análises-vivem",
+    "title": "Parte I - Introdução ao R",
+    "section": "Onde as análises vivem?",
+    "text": "Onde as análises vivem?\n\nWorking directory/diretório de trabalho: é o lugar (uma pasta no computador) onde o R irá procurar pelos arquivos quando queremos importá-los, ou onde ele irá salvar os arquivos quando queremos exportá-los."
+  },
+  {
+    "objectID": "slide-intro-r.html#diretório-de-trabalho",
+    "href": "slide-intro-r.html#diretório-de-trabalho",
+    "title": "Parte I - Introdução ao R",
+    "section": "Diretório de trabalho",
+    "text": "Diretório de trabalho\nComo saber qual é o diretório de trabalho atual?\n\nOlhando o console;\nUsando a função getwd():\n\n\ngetwd() # para saber qual é o diretório de trabalho\n\n## [1] \"/Users/beatrizmilz/GitHub/grupo_de_estudos/\"\nTambém existe a função setwd() para mudar o diretório de trabalho, mas isso não é recomendado!"
+  },
+  {
+    "objectID": "slide-intro-r.html#caminhos",
+    "href": "slide-intro-r.html#caminhos",
+    "title": "Parte I - Introdução ao R",
+    "section": "Caminhos",
+    "text": "Caminhos\n\nCaminhos absolutos vs Caminhos relativos\nCaminhos absolutos são caminhos que apontam para o mesmo lugar independente do diretório de trabalho.\nCaminhos relativos são caminhos que partem do diretório de trabalho."
+  },
+  {
+    "objectID": "slide-intro-r.html#exemplo",
+    "href": "slide-intro-r.html#exemplo",
+    "title": "Parte I - Introdução ao R",
+    "section": "Exemplo",
+    "text": "Exemplo\nCaminhos até o arquivo index.html desta apresentação\n\nCaminho absoluto:\n\n\"~/GitHub/grupo_de_estudos/r4ds/02-workflow/index.html\"\n\nCaminho relativo:\n\n\"r4ds/02-workflow/index.html\"\n\n“Você nunca deve usar caminhos absolutos em seus scripts, porque eles dificultam o compartilhamento: ninguém mais terá exatamente a mesma configuração de diretório que você.”"
+  },
+  {
+    "objectID": "slide-intro-r.html#projetos-do-rstudio",
+    "href": "slide-intro-r.html#projetos-do-rstudio",
+    "title": "Parte I - Introdução ao R",
+    "section": "Projetos do RStudio",
+    "text": "Projetos do RStudio\n\nO projeto é um local (uma pasta no nosso computador) onde teremos todos os arquivos necessários para nossa análise:\n\nDados utilizados\nScripts em R\nFiguras\nResultados de análises\nEntre outros\n\nQuando usamos projetos do RStudio, o nosso diretório de trabalho é a pasta do projeto."
+  },
+  {
+    "objectID": "slide-intro-r.html#projetos-do-rstudio-1",
+    "href": "slide-intro-r.html#projetos-do-rstudio-1",
+    "title": "Parte I - Introdução ao R",
+    "section": "Projetos do RStudio",
+    "text": "Projetos do RStudio\n\nCrie um projeto do RStudio .RProj para cada novo projeto de análise de dados;\nSempre use caminhos relativos;"
+  },
+  {
+    "objectID": "slide-intro-r.html#criando-um-projeto",
+    "href": "slide-intro-r.html#criando-um-projeto",
+    "title": "Parte I - Introdução ao R",
+    "section": "Criando um projeto",
+    "text": "Criando um projeto"
+  },
+  {
+    "objectID": "slide-intro-r.html#criando-um-projeto-1",
+    "href": "slide-intro-r.html#criando-um-projeto-1",
+    "title": "Parte I - Introdução ao R",
+    "section": "Criando um projeto",
+    "text": "Criando um projeto"
+  },
+  {
+    "objectID": "slide-intro-r.html#criando-um-projeto-2",
+    "href": "slide-intro-r.html#criando-um-projeto-2",
+    "title": "Parte I - Introdução ao R",
+    "section": "Criando um projeto",
+    "text": "Criando um projeto\n\n\n\n\n\n\n\n\n\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
   },
   {
     "objectID": "slide-rladies.html#o-que-é-a-r-ladies",
@@ -173,5 +292,306 @@
     "title": "Conhecendo a R-Ladies São Paulo",
     "section": "Saiba mais sobre a R-Ladies",
     "text": "Saiba mais sobre a R-Ladies\n\nR-Ladies Global: Website,  Twitter\nR-Ladies São Paulo:\n\n Twitter\n Instagram\n Facebook\n Meetup\n GitHub\n Youtube\n\nCapítulos da R-Ladies no Brasil - Não tem capítulo na sua cidade e quer iniciar um? Saiba como em R-Ladies - How do get involved!\n\n\n\n\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#transformando-dados",
+    "href": "slide-intro-tidyverse.html#transformando-dados",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "Transformando dados",
+    "text": "Transformando dados\nVisualização é importante, mas raramente os dados vão estar exatamente do jeito que você precisa. Para isso, existe o pacote dplyr – uma gramática para transformação de dados.\nAs principais funções não chamam “verbos” por acaso – cada uma define uma ação específica para lidar com bases de dados:\n\nselect() seleciona variáveis a partir do nome;\nfilter() filtra linhas a partir dos valores;\narrange() altera a ordem das linhas;\nmutate() cria variáveis novas a partir de colunas já existentes;\nsummarise() resume múltiplos valores em menos linhas.\nE o último, group_by(), os ajuda a operar “por grupos” – vamos explicar melhor mais a frente."
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#gramática-do-dplyr",
+    "href": "slide-intro-tidyverse.html#gramática-do-dplyr",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "Gramática do dplyr",
+    "text": "Gramática do dplyr\nCom as principais funções, você consegue dividir em passos o que precisa fazer com o dataset. É como usar os verbos da gramática para construir uma frase, como o que você está lendo agora.\nPor exemplo, se você precisa descobrir quais voos da companhia American Airlines tiveram o maior tempo de atraso, consegue separar essa pergunta em diferentes etapas:\n\nquais voos da companhia American Airlines: filtrar voos da AA\ntiveram o maior tempo de atraso: ordenar pelo tempo de atraso\n\n\nUm bom exercício nas etapas de tranformação de dados é pensar como os diferentes verbos do dplyr podem atender as diversas operações que você precisa fazer."
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#gramática-do-dplyr-verbos",
+    "href": "slide-intro-tidyverse.html#gramática-do-dplyr-verbos",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "Gramática do dplyr: verbos",
+    "text": "Gramática do dplyr: verbos\nCada verbo é uma função diferente, mas com funcionamento similar:\n\nO primeiro argumento é o data frame a ser transformando\nOs próximos argumentos descrevem o que fazer com o data frame. Aqui, o nome das colunas não precisa de aspas.\nO resultado é o data frame transformado\n\nEm pseudo-código, assumindo que estamos trabalhando com o dataset voos, daria para escrever:\n\nfiltrar(voos, companhia_aerea == \"American Airlines\")\nordenar(voos, atraso_saida)"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#gramática-do-dplyr-pipe",
+    "href": "slide-intro-tidyverse.html#gramática-do-dplyr-pipe",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "Gramática do dplyr: pipe",
+    "text": "Gramática do dplyr: pipe\nComo cada verbo gera um novo dataframe, seria pouco eficiente armazenar o resultado das funções em diferentes objetos, certo?\nExemplo:\nvoos_aa <- filtrar(voos, companhia_aerea == \"American Airlines\")\n\nvoos_atraso <- ordenar(voos_aa, atraso_saida)\nPara isso existe o operador pipe |>, que passa o resultado da função anterior como primeiro argumento da próxima função, sem precisar de um novo objeto para isso."
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#gramática-do-dplyr-pipe-1",
+    "href": "slide-intro-tidyverse.html#gramática-do-dplyr-pipe-1",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "Gramática do dplyr: pipe",
+    "text": "Gramática do dplyr: pipe\nNa prática, o pipe funciona assim:\n\n\n\nUsando nosso exemplo anterior, ficaria assim:\nvoos |> filtrar(companhia == “American Airlines”) |> ordenar(atraso_saida)\nNo lugar de:\nordenar(filtrar(voos, companhia == “American Airlines”), atraso_saida)"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#filter-introdução",
+    "href": "slide-intro-tidyverse.html#filter-introdução",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "filter(): introdução",
+    "text": "filter(): introdução\n\nA função filter(), como o nome já diz, filtra as linhas a partir de seus valores e retorna um novo dataset que atendem aos requisitos.\nO primeiro argumento é o dataset e os outros argumentos são expressões lógicas para filtrar os dados. A função abaixo retorna todos os voos do dia 6 de junho.\n\n\nfilter(voos, mes == 6, dia == 6)\n\n\nVocê pode salvar os resultados em um novo dataset atribuindo a um novo objeto com <-:\n\n\nvoos_6_junho <- filter(voos, mes == 6, dia == 6)\n\n\nA função filter() não altera os valores do dataset, apenas remove as linhas que não resultam em TRUE."
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#filter-operadores-relacionais",
+    "href": "slide-intro-tidyverse.html#filter-operadores-relacionais",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "filter(): operadores relacionais",
+    "text": "filter(): operadores relacionais\nA mágica do filter() vem quando você tem fluência dos operadores que avaliam os valores das colunas.\nOs operadores relacionais comparam o quanto os valores estão dentro do intervalo esperado, a partir das expressões:\n\n> maior que\n>= maior ou igual\n< menor que\n<= menor ou igual\n!= diferente\n== igual (cuidado com =, que não deve ser usado para isso)"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#filter-operadores-relacionais-1",
+    "href": "slide-intro-tidyverse.html#filter-operadores-relacionais-1",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "filter(): operadores relacionais",
+    "text": "filter(): operadores relacionais\nOu seja, para filtrar voos que saíram com 1 hora ou mais de atraso:\n\nfilter(voos, atraso_saida >= 60)\n\nOu voos que saíram adiantados (atraso de saída menor que zero):\n\nfilter(voos, atraso_saida < 0)\n\nOu voos que saíram exatamente no horário:\n\nfilter(voos, atraso_saida == 0)"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#filter-operadores-lógicos",
+    "href": "slide-intro-tidyverse.html#filter-operadores-lógicos",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "filter(): operadores lógicos",
+    "text": "filter(): operadores lógicos\nPara combinar múltiplas avaliações, é só usar operadores lógicos (ou booleanos), que esse diagrama resume:"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#filter-operadores-lógicos-1",
+    "href": "slide-intro-tidyverse.html#filter-operadores-lógicos-1",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "filter(): operadores lógicos",
+    "text": "filter(): operadores lógicos\nOu seja, para filtrar voos que saíram com mais de 1 hora de atraso, mas não atrasaram na chegada, você pode usar tanto:\n\nfilter(voos, atraso_saida >= 60, atraso_chegada <= 0)\n\nquanto:\n\nfilter(voos, atraso_saida >= 60 & atraso_chegada <= 0)\n\n(espero que todes desses voos tenham chego bem.)"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#filter-outras-funções-úteis",
+    "href": "slide-intro-tidyverse.html#filter-outras-funções-úteis",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "filter(): outras funções úteis",
+    "text": "filter(): outras funções úteis\nAlém de operadores, você também pode usar outras funções lógicas (ou seja, que retornam TRUE ou FALSE) dentro do filter(), como:"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#filter-outras-funções-úteis-1",
+    "href": "slide-intro-tidyverse.html#filter-outras-funções-úteis-1",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "filter(): outras funções úteis",
+    "text": "filter(): outras funções úteis\nis.na()\nencontra valores faltando (nulos)\n\nfilter(voos, is.na(atraso_saida))\n\n!is.na()\ntambém pode ser combinada com o operador de negação ! para excluir valores nulos\n\nfilter(voos, !is.na(atraso_saida))"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#filter-outras-funções-úteis-2",
+    "href": "slide-intro-tidyverse.html#filter-outras-funções-úteis-2",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "filter(): outras funções úteis",
+    "text": "filter(): outras funções úteis\n%in%\nencontra linhas com alguns dos valores listados (não precisa ser todos)\n\nfilter(voos, origem %in% c(\"LAX\", \"SDF\"))\n\né mais eficiente que:\n\nfilter(voos, origem == \"LAX\" | origem == \"SDF\"))"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#filter-outras-funções-úteis-3",
+    "href": "slide-intro-tidyverse.html#filter-outras-funções-úteis-3",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "filter(): outras funções úteis",
+    "text": "filter(): outras funções úteis\nstr_detect()\ndetecta padrões em texto (strings) e pode ser usado com expressões regulares (regex)\n\nfilter(voos, stringr::str_detect(cauda, \"^N7\"))\n\n(esse código encontra o registro de aeronaves (tail number) que começa com N7)"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#filter-cuidados",
+    "href": "slide-intro-tidyverse.html#filter-cuidados",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "filter(): cuidados",
+    "text": "filter(): cuidados\n\n= não é == (para filtros, sempre é o último)\nqualquer comparação com NA retorna NA\nparênteses para combinar operadores"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#arrange-introdução",
+    "href": "slide-intro-tidyverse.html#arrange-introdução",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "arrange(): introdução",
+    "text": "arrange(): introdução\nO arrange() também opera nas linhas, mas em vez de filtrar os valores, ele muda a ordem com base nos valores do dataset. O primeiro argumento é o nome do dataset e os outros são as colunas para ordenar, em ordem de “prioridade”.\nÉ útil se você precisa conferir as linhas em ordem a partir de um valor, como os voos que mais saíram adiantado:\n\narrange(voos, atraso_saida)\n\npor padrão, o arrange() ordena de forma crescente"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#arrange-introdução-1",
+    "href": "slide-intro-tidyverse.html#arrange-introdução-1",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "arrange(): introdução",
+    "text": "arrange(): introdução\nse você quiser filtrar voos que mais atrasaram, pode recorrer a função desc() ou -:\n\narrange(voos, desc(atraso_saida))\n\n(imagina que ruim estar no voo que atrasou 14 horas…)"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#arrange-dicas",
+    "href": "slide-intro-tidyverse.html#arrange-dicas",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "arrange(): dicas",
+    "text": "arrange(): dicas\n\nnão altera a ordem de como as variáveis categoricas aparecem no ggplot2. para isso, consulte o pacote forcats\nquando há valores faltando (NA), eles sempre ficam no final do dataset\né útil quando a ordem importa. por exemplo, com a função distinct() ou coalesce()"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#select",
+    "href": "slide-intro-tidyverse.html#select",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "select()",
+    "text": "select()"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#select-introdução",
+    "href": "slide-intro-tidyverse.html#select-introdução",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "select(): introdução",
+    "text": "select(): introdução\nEssa função, ao contrário das duas últimas, não olha os valores (linhas) e sim as colunas. o primeiro argumento é o dataset e os outros são as colunas para serem selecionadas.\nÚtil para reduzir datasets de centenas de colunas em apenas algumas que são interessantes para você. e ainda ajuda a economizar memória RAM 😄\n\nselect(voos, ano, companhia_aerea, origem, destino)"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#select-operadores",
+    "href": "slide-intro-tidyverse.html#select-operadores",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "select(): operadores",
+    "text": "select(): operadores\n:\nseleciona todas as colunas entre x e y:\n\nselect(voos, voo:tempo_voo) |> colnames()\n\n-\nexclui determinada(s) coluna(s)\n\nselect(voos, -ano, -mes, -dia) |>  colnames()"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#select-operadores-1",
+    "href": "slide-intro-tidyverse.html#select-operadores-1",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "select(): operadores",
+    "text": "select(): operadores\nambos podem ser combinados:\n\nselect(voos, -(horario_saida:companhia_aerea)) |>\n  colnames()"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#select-tidyselect",
+    "href": "slide-intro-tidyverse.html#select-tidyselect",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "select(): tidyselect",
+    "text": "select(): tidyselect\npacote que traz uma série de funções para filtrar colunas, como:\nstarts_with ou ends_with\nseleciona colunas que começam ou terminam com uma certa expressão, como:\n\nselect(voos, tidyselect::starts_with(\"horario\")) |> colnames()\n\nou\n\nselect(voos, tidyselect::ends_with(c(\"chegada\", \"saida\"))) |> colnames()"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#select-tidyselect-1",
+    "href": "slide-intro-tidyverse.html#select-tidyselect-1",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "select(): tidyselect",
+    "text": "select(): tidyselect\ncontains ou matches\navalia se no nome da coluna contém um determinado padrão. enquanto contains é literal, matches usa regex\n\nselect(voos, tidyselect::contains(\"voo\")) |> colnames()\n\nou\n\nselect(voos, tidyselect::matches(\"chegada$\")) |> colnames()"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#select-tidyselect-2",
+    "href": "slide-intro-tidyverse.html#select-tidyselect-2",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "select(): tidyselect",
+    "text": "select(): tidyselect\neverything\nseleciona todas as outras colunas. se usada depois de outras seleções, as colunas que não foram retornadas nas primeiras são incluídas\n\nselect(voos, voo, tidyselect::everything()) |> colnames()"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#select-renomear",
+    "href": "slide-intro-tidyverse.html#select-renomear",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "select(): renomear",
+    "text": "select(): renomear\no select() também consegue renomear colunas, mas não é o ideal, porque ele exclui todas as outras colunas\n\nselect(voos, registro_aviao = cauda) |> colnames()\n\nnesses casos, o ideal é usar a função rename():\n\nrename(voos, registro_aviao = cauda) |> colnames()"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#mutate",
+    "href": "slide-intro-tidyverse.html#mutate",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "mutate()",
+    "text": "mutate()"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#mutate-introdução",
+    "href": "slide-intro-tidyverse.html#mutate-introdução",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "mutate(): introdução",
+    "text": "mutate(): introdução\nEssa função, assim como o select(), faz operações no sentido de colunas, não de linhas.\nO mutate() é utilizado para adicionar novas colunas ao final do dataset, preservando as que já existem.O primeiro argumento é o dataset e os outros são as colunas que serão criadas.\n\ndados_dist_atraso <- select(voos,distancia , tempo_voo, atraso_chegada, atraso_saida)\n\nmutate(dados_dist_atraso,\n              velocidade = distancia/tempo_voo,\n              difatraso = atraso_chegada-atraso_saida)"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#mutate-introdução-1",
+    "href": "slide-intro-tidyverse.html#mutate-introdução-1",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "mutate(): introdução",
+    "text": "mutate(): introdução\nÉ possível fazer referência as novas colunas criadas:\n\nmutate(dados_dist_atraso,\n              difatraso = atraso_chegada-atraso_saida,\n              dif_prop = abs(difatraso/tempo_voo))"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#mutate-funções",
+    "href": "slide-intro-tidyverse.html#mutate-funções",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "mutate(): funções",
+    "text": "mutate(): funções\nExistem várias funções que podemos utilizar para criar novas variáveis. Para isso é importante pontuarmos alguns operadores principais:\n\nOperadores aritméticos: +,-, *, /, ^\nAritmética modular: %/% (divisão inteira) e %% (resto)\nLogaritmo: log(), log2(), log10()\nCumulativos de somas, produtos, mínimos e máximos: cumsum(), cumprod(), cummin(), cummax()\nComparações lógicas: <, <=, >, >=, != e =="
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#mutate-case_when",
+    "href": "slide-intro-tidyverse.html#mutate-case_when",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "mutate(): case_when()",
+    "text": "mutate(): case_when()\nEsta função permite vetorizar várias instruções if_else(). É equivalente à função com o mesmo nome no SQL.\nSe nenhum caso coincidir com as instruções especificadas, NA é retornado.\n\nvoos |> \n  select(atraso_chegada)  |> \n  mutate(atraso = case_when(atraso_chegada <= 0 ~ \"sem atraso\",\n                        atraso_chegada <= 10  ~ \"pequeno\",\n                        atraso_chegada <= 20  ~ \"médio\",\n                        atraso_chegada > 20  ~ \"alto\"))"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#summarise",
+    "href": "slide-intro-tidyverse.html#summarise",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "summarise()",
+    "text": "summarise()"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#summarise-introdução",
+    "href": "slide-intro-tidyverse.html#summarise-introdução",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "summarise(): introdução",
+    "text": "summarise(): introdução\nO último verbo é utilizado para resumir informações a depender das especificações contidas nela. O primeiro argumento é o dataset e os outros são as variáveis resumo que serão criadas a partir das variáveis existentes no dataset.\n\nvoos |>\n  summarise(count = n(),\n                   dist = mean(distancia, na.rm = TRUE),\n                   atraso = mean(atraso_chegada, na.rm = TRUE))\n\nna.rm indica se os valores de NA devem ser removidos antes que o cálculo continue."
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#summarise-introdução-1",
+    "href": "slide-intro-tidyverse.html#summarise-introdução-1",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "summarise(): introdução",
+    "text": "summarise(): introdução\nEssa função cria um novo dataset.\nsummarise() e summarize() são sinônimos.\nExistem várias possibilidades de funções para criarmos medidas descritivas."
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#summarise-funções",
+    "href": "slide-intro-tidyverse.html#summarise-funções",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "summarise(): funções",
+    "text": "summarise(): funções\nAlgumas medidas são:\n\nMedidas resumo: média mean(x), mediana median(x).\nMedidas de dispersão: desvio padrão sd(x), desvio médio absoluto mad(x).\nMedidas de classificação: mínimo min(x), quantis quantile(x, 0.25), máximo max(x).\nMedidas de posição: first(x), nth(x, 2), last(x).\nContadores: tamanho do grupo n(), número de não missing sum(!is.na(x)), valores distintos n_distinct(x)."
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#summarise-funções-1",
+    "href": "slide-intro-tidyverse.html#summarise-funções-1",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "summarise(): funções",
+    "text": "summarise(): funções\n\nnao_cancelados <- voos |> \n  filter(!is.na(atraso_chegada), !is.na(atraso_saida))\n\nnao_cancelados |>\n  summarise(mais_adiantado = min(atraso_chegada),\n                   qt_25= quantile(atraso_chegada, 0.25),\n                   mediana=median(atraso_chegada),\n                   qt_75= quantile(atraso_chegada, 0.75),\n                   mais_atrasado = max(atraso_chegada))"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#summarise-agrupado",
+    "href": "slide-intro-tidyverse.html#summarise-agrupado",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "summarise(): agrupado",
+    "text": "summarise(): agrupado\nA função summarise() é bastante utilizada com a próxima função que veremos: group_by(). Quando combinadas, elas retornam resumos agrupados das colunas de interesse.\n\natrasos <- voos |>\n  group_by(destino) |> \n  summarise(\n    count = n(),\n    dist = mean(distancia, na.rm = TRUE),\n    atraso = mean(atraso_chegada, na.rm = TRUE)\n  )"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#group_by-introdução",
+    "href": "slide-intro-tidyverse.html#group_by-introdução",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "group_by(): introdução",
+    "text": "group_by(): introdução\nPode ser usado na preparação da base de dados para utilizar verbos como summarise(), mutate() e filter().\nA função group_by() utiliza um dataset existente e o converte em um agrupado, no qual as operações serão realizadas por grupo.\nAs operações serão feitas pelos grupos das variáveis definidos, mas vale lembrar que essa função não é um verbo, ela não executa nada, é como se carimbasse o dataset.\nungroup() remove o agrupamento."
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#group_by-introdução-1",
+    "href": "slide-intro-tidyverse.html#group_by-introdução-1",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "group_by(): introdução",
+    "text": "group_by(): introdução\nComo calculamos a quantidade de voos de cada destino?\n\nvoos |>\n  group_by(destino) |>\n  head(5)"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#group_by-introdução-2",
+    "href": "slide-intro-tidyverse.html#group_by-introdução-2",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "group_by(): introdução",
+    "text": "group_by(): introdução\nComo calculamos a quantidade de voos de cada destino?\n\nvoos |>\n  group_by(destino) |> \n  summarise(\n    count = n()) |>\n  head(5)"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#group_by-multiplas-variáveis",
+    "href": "slide-intro-tidyverse.html#group_by-multiplas-variáveis",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "group_by(): multiplas variáveis",
+    "text": "group_by(): multiplas variáveis\nComo calculamos a quantidade de voos por dia?\n\ndiario<- group_by(voos, ano, mes, dia)\n\n(por_dia   <- summarise(diario, \n                               qtde_voos = n()))"
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#group_by-multiplas-variáveis-1",
+    "href": "slide-intro-tidyverse.html#group_by-multiplas-variáveis-1",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "group_by(): multiplas variáveis",
+    "text": "group_by(): multiplas variáveis\nComo calculamos a quantidade de voos por mês?\n\n(mensal <- summarise(por_dia, \n                            qtde_voos = sum(qtde_voos)))\n\nQuando você agrupa por várias variáveis, cada summarise() descola um nível do agrupamento.\nCuidado! Para algumas medidas faz sentido (soma), mas para outras não (mediana)."
+  },
+  {
+    "objectID": "slide-intro-tidyverse.html#group_by-ungroup",
+    "href": "slide-intro-tidyverse.html#group_by-ungroup",
+    "title": "Parte II - Introdução ao tidyverse",
+    "section": "group_by(): ungroup()",
+    "text": "group_by(): ungroup()\nSe quisermos desagrupar e fazer um summarise().\n\ndiario<- group_by(voos, ano, mes, dia)\n\ndiario |> \n  ungroup() |>            \n  summarise(qtde_voos = n())\n\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
   }
 ]
