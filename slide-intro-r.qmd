@@ -6,7 +6,12 @@ date: "Novembro de 2022"
 format: 
   rladies-revealjs:
     footer: "Slides feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html) e [Quarto R-Ladies Theme](https://github.com/beatrizmilz/quarto-rladies-theme#quarto-r-ladies-theme)."
-incremental: true
+incremental: false
+knitr:
+  opts_chunk: 
+    eval: false
+    echo: true
+    fig.align: "center"
 ---
 
 ## O que é o ...
@@ -153,3 +158,241 @@ glimpse(voos)
 ```
 
 ## Vamos começar? {.middle .center}
+
+## R como uma calculadora
+
+- Podemos usar o R como uma calculadora:
+
+
+```{r}
+1 / 200 * 30
+(59 + 73 + 2) / 3
+sin(pi / 2)
+```
+
+
+## Executando códigos
+
+- O atalho  `Cmd/Ctrl + Enter` é um dos mais úteis! Executa o código selecionado, ou o trecho de código onde o cursor está.
+
+- O atalho `Cmd/Ctrl + Shift + S` executa todos os códigos do script!
+
+
+## Criando objetos
+
+- Podemos criar objetos (e guardar resultados) usando o operador de atribuição `<-`, e a estrutura a seguir:
+
+```{{r}}
+nome_do_objeto <- valor
+```
+
+Exemplo:
+
+```{r}
+x <- 3 * 4
+```
+
+Podemos ver o conteúdo do objeto escrevendo o nome e executando:
+
+```{r}
+x
+```
+
+
+## Boas práticas e objetos
+
+- Atalho `Alt -` (Alt e menos) serve para escrever o sinal de atribuição mais rápido.
+
+- O sinal `=` também funciona  neste caso: não use :)
+
+- Aproveite para usar a tecla Tab no RStudio: ajuda a autocompletar!
+
+- O R é *case sensitive*:
+
+
+```{r}
+r_rocks <- 2 ^ 3
+```
+
+```{r eval=FALSE, include=TRUE}
+r_rock
+#> Error: object 'r_rock' not found
+R_rocks
+#> Error: object 'R_rocks' not found
+r_rocks
+#> [1] 8
+```
+
+
+
+## Boas práticas e objetos
+
+
+- Erros de digitação e de maiúscula/minúscula importam!
+
+- Cuidado ao dar nomes aos objetos:
+
+```{r eval=FALSE, include=TRUE}
+eu_uso_snake_case
+outrasPessoasUsamCamelCase
+algumas.pessoas.usam.pontos
+E_Algumas.Pessoas_RENUNCIAMconvenções
+```
+
+
+
+
+## Utilizando funções
+
+- O R possui muitas funções disponíveis
+
+- Estrutura para utilizar uma função:
+
+```{r eval=FALSE, include=TRUE}
+nome_da_funcao(nome_do_argumento_1 = valor_para_o_argumento1,
+               nome_do_argumento_2 = valor_para_o_argumento2,
+               nome_do_argumento_3 = valor_para_o_argumento3,
+               ...)
+```
+
+Exemplo:
+
+```{r}
+seq(from = 1, to = 10)
+```
+
+- Parênteses (e aspas) sempre devem estar em "duplas": se abrirmos, temos que fechar. 
+
+
+
+## Scripts
+
+
+- Podemos salvar nossos scripts para utilizar depois! 
+
+- Considere tudo no console como temporário, pois não salvamos o conteúdo.
+
+- Escreva no Script/Editor os códigos importantes para a análise.
+
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("https://r4ds.hadley.nz/diagrams/rstudio-editor.png")
+```
+
+
+## Workflow: Projetos no RStudio
+
+
+### O que é "real"?
+
+- O que você salvaria como o último registro do que aconteceu na análise?
+
+- Onde a nossa análise "vive"? 
+
+
+
+- Scripts x Environment
+  - É muito mais fácil recriar os objetos do Environment a partir dos códigos que escrevemos no script do que o contrário.
+  
+
+
+
+
+## Onde as análises vivem?
+
+- **Working directory/diretório de trabalho**: é o lugar (uma pasta no computador) onde o R irá procurar pelos arquivos quando queremos importá-los, ou onde ele irá salvar os arquivos quando queremos exportá-los.
+
+## Diretório de trabalho
+
+Como saber qual é o diretório de trabalho atual?
+
+- Olhando o console;
+
+- Usando a função `getwd()`:
+
+```{r eval=FALSE, include=TRUE}
+getwd() # para saber qual é o diretório de trabalho
+```
+
+```
+## [1] "/Users/beatrizmilz/GitHub/grupo_de_estudos/"
+```
+
+
+Também existe a função `setwd()` para mudar o diretório de trabalho, mas isso **não é recomendado**!
+
+
+## Caminhos
+
+- **Caminhos absolutos** vs **Caminhos relativos**
+
+- Caminhos absolutos são caminhos que apontam para o mesmo lugar independente do diretório de trabalho. 
+
+- Caminhos relativos são caminhos que partem do diretório de trabalho.
+
+
+
+## Exemplo
+
+Caminhos até o arquivo [`index.html` desta apresentação](https://github.com/R-Ladies-Sao-Paulo/grupo_de_estudos/blob/main/r4ds/02-workflow/index.html)
+
+- Caminho absoluto:
+```
+"~/GitHub/grupo_de_estudos/r4ds/02-workflow/index.html"
+```
+
+
+- Caminho relativo:
+```
+"r4ds/02-workflow/index.html"
+```
+
+> "Você **nunca** deve usar caminhos absolutos em seus scripts, porque eles dificultam o compartilhamento: ninguém mais terá exatamente a mesma configuração de diretório que você."
+
+## Projetos do RStudio
+
+
+- O projeto é um local (uma pasta no nosso computador) onde teremos todos os arquivos necessários para nossa análise:
+  - Dados utilizados
+  - Scripts em R
+  - Figuras
+  - Resultados de análises
+  - Entre outros
+
+- Quando usamos projetos do RStudio, o nosso diretório de trabalho é a pasta do projeto. 
+
+## Projetos do RStudio
+
+- Crie um projeto do RStudio `.RProj` para cada novo projeto de análise de dados;
+
+- Sempre use caminhos relativos;
+
+
+## Criando um projeto
+
+
+```{r echo=FALSE, out.width="70%"}
+#| eval: true
+knitr::include_graphics("https://r4ds.hadley.nz/screenshots/rstudio-project-1.png")
+```
+
+
+## Criando um projeto
+
+```{r echo=FALSE, out.width="70%"}
+#| eval: true
+knitr::include_graphics("https://r4ds.hadley.nz/screenshots/rstudio-project-2.png")
+```
+
+
+
+
+## Criando um projeto
+
+```{r out.width="70%"}
+#| eval: true
+#| echo: false
+knitr::include_graphics("https://r4ds.hadley.nz/screenshots/rstudio-project-3.png")
+```
+
+
