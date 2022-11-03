@@ -7,6 +7,104 @@
     "text": "Essa oficina está prevista para acontecer presencialmente, em São Paulo, em 26/11/2022. Mais informações em breve! Inscrições serão através da plataforma Meetup.\n\n\nEste código de conduta aplica-se a todos os espaços R-Ladies, incluindo: meetups, Twitter, Slack, listas de discussão, tanto online como offline: Clique aqui para acessar o código de conduta.\n\n\n\n\nMeetup\nYoutube\nTwitter\nInstagram"
   },
   {
+    "objectID": "slide-intro-r.html#o-que-é-o",
+    "href": "slide-intro-r.html#o-que-é-o",
+    "title": "Parte I - Introdução ao R",
+    "section": "O que é o …",
+    "text": "O que é o …\nR?\nR é um ambiente de software livre para computação estatística e gráficos. (https://www.r-project.org/)\nRStudio?\nRStudio é uma IDE (integrated development environment) da Linguagem R, ou seja, um ambiente de desenvolvimento que utilizamos para editar e executar os códigos em R.\nRStudio Cloud?\nÉ a IDE RStudio que podemos utilizar diretamente do navegador (sem que seja necessário instalar nada)."
+  },
+  {
+    "objectID": "slide-intro-r.html#pré-requisitos",
+    "href": "slide-intro-r.html#pré-requisitos",
+    "title": "Parte I - Introdução ao R",
+    "section": "Pré-requisitos",
+    "text": "Pré-requisitos\nNesta oficina:\n\nRStudio Cloud\n\nPara usar no dia-a-dia:\n\nR e RStudio instalados no seu computador:\nLinks para instalação:\n\nR\nRStudio"
+  },
+  {
+    "objectID": "slide-intro-r.html#por-quê-usar-linguagens-de-programação-para-analisar-dados",
+    "href": "slide-intro-r.html#por-quê-usar-linguagens-de-programação-para-analisar-dados",
+    "title": "Parte I - Introdução ao R",
+    "section": "Por quê usar linguagens de programação para analisar dados?",
+    "text": "Por quê usar linguagens de programação para analisar dados?"
+  },
+  {
+    "objectID": "slide-intro-r.html#as-vantagens-de-analisar-dados-usando-linguagens-de-programação",
+    "href": "slide-intro-r.html#as-vantagens-de-analisar-dados-usando-linguagens-de-programação",
+    "title": "Parte I - Introdução ao R",
+    "section": "As vantagens de analisar dados usando linguagens de programação",
+    "text": "As vantagens de analisar dados usando linguagens de programação\n\nO código é uma linguagem, então podemos documentar a nossa análise\nO código é texto, então podemos copiar e colar\nAs principais linguagens de programação para ciência de dados são de código aberto\n\n\nSlide por Curso-R."
+  },
+  {
+    "objectID": "slide-intro-r.html#o-que-significa-ser-código-aberto",
+    "href": "slide-intro-r.html#o-que-significa-ser-código-aberto",
+    "title": "Parte I - Introdução ao R",
+    "section": "O que significa ser código aberto?",
+    "text": "O que significa ser código aberto?\n\nAcesso gratuito.\nTodas as pessoas podem usar as melhores ferramentas independentemente do poder financeiro.\nEstudantes podem usar as mesmas ferramentas que profissionais.\nVocê pode corrigir problemas e aprimorar a linguagem.\nVocê pode desenvolver suas próprias ferramentas.\nPossibilita a existência de uma comunidade ativa.\n\n\nSlide por Curso-R."
+  },
+  {
+    "objectID": "slide-intro-r.html#por-quê-o-r",
+    "href": "slide-intro-r.html#por-quê-o-r",
+    "title": "Parte I - Introdução ao R",
+    "section": "Por quê o R?",
+    "text": "Por quê o R?"
+  },
+  {
+    "objectID": "slide-intro-r.html#o-ciclo-da-ciência-de-dados",
+    "href": "slide-intro-r.html#o-ciclo-da-ciência-de-dados",
+    "title": "Parte I - Introdução ao R",
+    "section": "O ciclo da ciência de dados",
+    "text": "O ciclo da ciência de dados\n\n\nSlide por Curso-R."
+  },
+  {
+    "objectID": "slide-intro-r.html#o-ciclo-da-ciência-de-dados-com-o-r",
+    "href": "slide-intro-r.html#o-ciclo-da-ciência-de-dados-com-o-r",
+    "title": "Parte I - Introdução ao R",
+    "section": "O ciclo da ciência de dados com o R",
+    "text": "O ciclo da ciência de dados com o R\n\n\nSlide por Curso-R."
+  },
+  {
+    "objectID": "slide-intro-r.html#por-quê-usar-o-r",
+    "href": "slide-intro-r.html#por-quê-usar-o-r",
+    "title": "Parte I - Introdução ao R",
+    "section": "Por quê usar o R?",
+    "text": "Por quê usar o R?\n\nÉ uma linguagem de programação que possui muitas ferramentas para análise de dados\nÉ código aberto (open source)\nPossui uma comunidade ativa de pessoas desenvolvedoras\nÉ flexível, permite desenvolver funções e pacotes para facilitar o trabalho\nEstá disponível, gratuitamente, em diferentes plataformas: Windows, Linux e Mac\nMantido pela R Development Core Team"
+  },
+  {
+    "objectID": "slide-intro-r.html#plano-para-hoje",
+    "href": "slide-intro-r.html#plano-para-hoje",
+    "title": "Parte I - Introdução ao R",
+    "section": "Plano para hoje!",
+    "text": "Plano para hoje!\n\nTemas:\n\nR base\nIntrodução à importação de tabelas\nIntrodução à manipulação de dados\nApresentação de ferramenta para começar a criar gráficos"
+  },
+  {
+    "objectID": "slide-intro-r.html#quais-dados-vamos-usar",
+    "href": "slide-intro-r.html#quais-dados-vamos-usar",
+    "title": "Parte I - Introdução ao R",
+    "section": "Quais dados vamos usar?",
+    "text": "Quais dados vamos usar?\nDados disponibilizados no pacote dados.\nAutoria: Riva Quiroga, Sara Mortara, Beatriz Milz, Andrea Sánchez-Tapia, Alejandra Andrea Tapia Silva, Beatriz Maurer Costa, Jean Prado, Renata Hirota, William Amorim, Emmanuelle Rodrigues Nunes\n\nlibrary(tidyverse)\nlibrary(dados)"
+  },
+  {
+    "objectID": "slide-intro-r.html#pinguins",
+    "href": "slide-intro-r.html#pinguins",
+    "title": "Parte I - Introdução ao R",
+    "section": "Pinguins!",
+    "text": "Pinguins!\n\nglimpse(pinguins)\n\nRows: 344\nColumns: 8\n$ especie               <fct> Pinguim-de-adélia, Pinguim-de-adélia, Pinguim-de…\n$ ilha                  <fct> Torgersen, Torgersen, Torgersen, Torgersen, Torg…\n$ comprimento_bico      <dbl> 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34…\n$ profundidade_bico     <dbl> 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18…\n$ comprimento_nadadeira <int> 181, 186, 195, NA, 193, 190, 181, 195, 193, 190,…\n$ massa_corporal        <int> 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 34…\n$ sexo                  <fct> macho, fêmea, fêmea, NA, fêmea, macho, fêmea, ma…\n$ ano                   <int> 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, …"
+  },
+  {
+    "objectID": "slide-intro-r.html#star-wars",
+    "href": "slide-intro-r.html#star-wars",
+    "title": "Parte I - Introdução ao R",
+    "section": "Star Wars",
+    "text": "Star Wars\n\nglimpse(starwars)\n\nRows: 87\nColumns: 14\n$ name       <chr> \"Luke Skywalker\", \"C-3PO\", \"R2-D2\", \"Darth Vader\", \"Leia Or…\n$ height     <int> 172, 167, 96, 202, 150, 178, 165, 97, 183, 182, 188, 180, 2…\n$ mass       <dbl> 77.0, 75.0, 32.0, 136.0, 49.0, 120.0, 75.0, 32.0, 84.0, 77.…\n$ hair_color <chr> \"blond\", NA, NA, \"none\", \"brown\", \"brown, grey\", \"brown\", N…\n$ skin_color <chr> \"fair\", \"gold\", \"white, blue\", \"white\", \"light\", \"light\", \"…\n$ eye_color  <chr> \"blue\", \"yellow\", \"red\", \"yellow\", \"brown\", \"blue\", \"blue\",…\n$ birth_year <dbl> 19.0, 112.0, 33.0, 41.9, 19.0, 52.0, 47.0, NA, 24.0, 57.0, …\n$ sex        <chr> \"male\", \"none\", \"none\", \"male\", \"female\", \"male\", \"female\",…\n$ gender     <chr> \"masculine\", \"masculine\", \"masculine\", \"masculine\", \"femini…\n$ homeworld  <chr> \"Tatooine\", \"Tatooine\", \"Naboo\", \"Tatooine\", \"Alderaan\", \"T…\n$ species    <chr> \"Human\", \"Droid\", \"Droid\", \"Human\", \"Human\", \"Human\", \"Huma…\n$ films      <list> <\"The Empire Strikes Back\", \"Revenge of the Sith\", \"Return…\n$ vehicles   <list> <\"Snowspeeder\", \"Imperial Speeder Bike\">, <>, <>, <>, \"Imp…\n$ starships  <list> <\"X-wing\", \"Imperial shuttle\">, <>, <>, \"TIE Advanced x1\",…"
+  },
+  {
+    "objectID": "slide-intro-r.html#vamos-começar",
+    "href": "slide-intro-r.html#vamos-começar",
+    "title": "Parte I - Introdução ao R",
+    "section": "Vamos começar?",
+    "text": "Vamos começar?\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
+  },
+  {
     "objectID": "slide-rladies.html#o-que-é-a-r-ladies",
     "href": "slide-rladies.html#o-que-é-a-r-ladies",
     "title": "Conhecendo a R-Ladies São Paulo",
