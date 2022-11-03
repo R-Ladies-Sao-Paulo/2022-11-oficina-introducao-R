@@ -6,7 +6,148 @@ date: "Novembro de 2022"
 format: 
   rladies-revealjs:
     footer: "Slides feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html) e [Quarto R-Ladies Theme](https://github.com/beatrizmilz/quarto-rladies-theme#quarto-r-ladies-theme)."
-incremental: false
+incremental: true
 ---
 
-Em breve!
+## O que é o ...
+
+### R?
+
+R é um ambiente de software livre para computação estatística e gráficos. (https://www.r-project.org/)
+
+### RStudio?
+
+**RStudio** é uma IDE (*integrated development environment*) da Linguagem R, ou seja, um ambiente de desenvolvimento que utilizamos para editar e executar os códigos em R.
+
+### RStudio Cloud?
+
+É a IDE RStudio que podemos utilizar diretamente do navegador (sem que seja necessário instalar nada).
+
+## Pré-requisitos
+
+### Nesta oficina:
+
+-   [RStudio Cloud](https://rstudio.cloud)
+
+### Para usar no dia-a-dia:
+
+-   `R` e `RStudio` instalados no seu computador:
+
+-   Links para instalação:
+
+    -   [R](https://cran.r-project.org/bin/windows/base/)
+    -   [RStudio](https://rstudio.com/products/rstudio/download/)
+
+## Por quê usar linguagens de programação para analisar dados? {.middle .center}
+
+## As vantagens de analisar dados usando linguagens de programação
+
+-   O código é uma linguagem, então podemos documentar a nossa análise
+
+-   O código é texto, então podemos copiar e colar
+
+-   As principais linguagens de programação para ciência de dados são de código aberto
+
+::: footer
+Slide por [Curso-R](https://curso-r.com/).
+:::
+
+## O que significa ser código aberto?
+
+1.  Acesso gratuito.
+
+2.  Todas as pessoas podem usar as melhores ferramentas independentemente do poder financeiro.
+
+3.  Estudantes podem usar as mesmas ferramentas que profissionais.
+
+4.  Você pode corrigir problemas e aprimorar a linguagem.
+
+5.  Você pode desenvolver suas próprias ferramentas.
+
+6.  Possibilita a existência de uma comunidade ativa.
+
+::: footer
+Slide por [Curso-R](https://curso-r.com/).
+:::
+
+## Por quê o R? {.middle .center}
+
+## O ciclo da ciência de dados
+
+<img src="img/ciclo-ciencia-de-dados.png" style="display: block; margin-left: auto; margin-right: auto;"/>
+
+::: footer
+Slide por [Curso-R](https://curso-r.com/).
+:::
+
+## O ciclo da ciência de dados com o R
+
+<img src="img/ciclo-ciencia-de-dados-pacotes.png" style="display: block; margin-left: auto; margin-right: auto;"/>
+
+::: footer
+Slide por [Curso-R](https://curso-r.com/).
+:::
+
+## Por quê usar o R?
+
+-   É uma linguagem de programação que possui muitas ferramentas para análise de dados
+
+-   É *código aberto* (open source)
+
+-   Possui uma comunidade ativa de pessoas desenvolvedoras
+
+-   É flexível, permite desenvolver funções e pacotes para facilitar o trabalho
+
+-   Está disponível, gratuitamente, em diferentes plataformas: Windows, Linux e Mac
+
+-   Mantido pela [R Development Core Team](https://cran.r-project.org/)
+
+## Plano para hoje!
+
+-   Temas:
+
+    -   R base
+
+    -   Introdução à importação de tabelas
+
+    -   Introdução à manipulação de dados
+
+    -   Apresentação de ferramenta para começar a criar gráficos
+
+## Quais dados vamos usar?
+
+Dados disponibilizados no pacote [dados](https://cienciadedatos.github.io/dados/).
+
+
+
+**Autoria:** Riva Quiroga, Sara Mortara, Beatriz Milz, Andrea Sánchez-Tapia, Alejandra Andrea Tapia Silva, Beatriz Maurer Costa, Jean Prado, Renata Hirota, William Amorim, Emmanuelle Rodrigues Nunes
+
+
+```{r}
+#| echo: true
+
+library(tidyverse)
+library(dados)
+
+```
+
+![](https://cienciadedatos.github.io/dados/reference/figures/dados-hex.png){fig-align="center" width="50%"}
+
+
+
+
+## Pinguins!
+
+```{r}
+#| echo: true
+glimpse(pinguins)
+```
+
+## Star Wars
+
+```{r}
+#| echo: true
+glimpse(starwars)
+```
+
+## Vamos começar? {.middle .center}
