@@ -143,11 +143,13 @@ library(dados)
 glimpse(pinguins)
 ```
 
-## Star Wars
+## Vôos
+
+- `dados::voos`, que é tradução do `nycflights13`, que reune os voos de NYC em 2013.
 
 ```{r}
 #| echo: true
-glimpse(starwars)
+glimpse(voos)
 ```
 
 ## Vamos começar? {.middle .center}

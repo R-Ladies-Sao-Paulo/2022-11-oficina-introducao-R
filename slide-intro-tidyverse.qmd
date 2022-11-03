@@ -6,7 +6,778 @@ date: "Novembro de 2022"
 format: 
   rladies-revealjs:
     footer: "Slides feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html) e [Quarto R-Ladies Theme](https://github.com/beatrizmilz/quarto-rladies-theme#quarto-r-ladies-theme)."
-incremental: false
+incremental: true
+knitr:
+  opts_chunk: 
+    eval: false
+    echo: true
 ---
 
-Em breve!
+
+# Transformação de dados
+
+```{r}
+library(tidyverse)
+library(dados)
+```
+
+
+
+## Transformando dados
+
+Visualização é importante, mas raramente os dados vão estar **exatamente** do jeito que você precisa. Para isso, existe o pacote `dplyr` – uma gramática para transformação de dados.
+
+
+As principais funções não chamam "verbos" por acaso – cada uma define uma ação específica para lidar com bases de dados:
+
+
+- `select()` seleciona variáveis a partir do nome;
+
+- `filter()` filtra linhas a partir dos valores;
+
+- `arrange()` altera a ordem das linhas;
+
+- `mutate()` cria variáveis novas a partir de colunas já existentes;
+
+- `summarise()` resume múltiplos valores em menos linhas.
+
+- E o último, `group_by()`, os ajuda a operar "por grupos" – vamos explicar melhor mais a frente.
+
+
+
+## Gramática do `dplyr`
+
+Com as principais funções, você consegue **dividir em passos** o que precisa fazer com o _dataset_. É como usar os verbos da gramática para construir uma frase, como o que você está lendo agora.
+
+
+Por exemplo, se você precisa descobrir **quais voos da companhia American Airlines tiveram o maior tempo de atraso**, consegue separar essa pergunta em diferentes etapas:
+
+
+1. *quais voos da companhia American Airlines*: **filtrar** voos da AA
+
+
+2. *tiveram o maior tempo de atraso*: **ordenar** pelo tempo de atraso
+
+- Um bom exercício nas etapas de tranformação de dados é pensar como os diferentes verbos do dplyr podem atender as diversas operações que você precisa fazer.
+
+
+## Gramática do `dplyr`: verbos
+
+Cada verbo é uma função diferente, mas com funcionamento similar:
+
+
+
+1. O primeiro argumento é o _data frame_ a ser **transformando**
+
+
+2. Os próximos argumentos descrevem **o que fazer** com o _data frame_. Aqui, o nome das colunas **não precisa** de aspas.
+
+
+3. O resultado é o _data frame_ transformado
+
+
+
+Em pseudo-código, assumindo que estamos trabalhando com o _dataset_ `voos`, daria para escrever:
+
+
+1. `filtrar(voos, companhia_aerea == "American Airlines")`
+
+
+2. `ordenar(voos, atraso_saida)`
+
+
+
+## Gramática do `dplyr`: pipe
+
+Como cada verbo gera um novo dataframe, seria pouco eficiente armazenar o resultado das funções em diferentes objetos, certo?
+
+
+Exemplo:
+
+```{{r}}
+voos_aa <- filtrar(voos, companhia_aerea == "American Airlines")
+
+voos_atraso <- ordenar(voos_aa, atraso_saida)
+```
+
+
+Para isso existe o **operador pipe** `|>`, que passa o resultado da função anterior como primeiro argumento da próxima função, sem precisar de um novo objeto para isso.
+
+
+
+## Gramática do `dplyr`: pipe
+
+Na prática, o **pipe** funciona assim:
+
+```{r echo=FALSE, out.width="100%", fig.align='center'}
+knitr::include_graphics("https://rstudio-education.github.io/tidyverse-cookbook/images/dplyr-pipe.png")
+```
+
+
+Usando nosso exemplo anterior, ficaria assim:
+
+<span style="color:#5457E0">voos</span> |>
+  <span style="color:#489EFA">filtrar(companhia == "American Airlines")</span> |>
+  <span style="color:#AA53F5">ordenar(atraso_saida)</span>
+
+
+
+No lugar de:
+
+<span style="color:#AA53F5">ordenar(<span style="color:#489EFA">filtrar(<span style="color: #5457E0">voos</span>, companhia == "American Airlines")</span>, atraso_saida)</span>
+
+
+
+# Principais verbos
+
+# `filter()`
+
+## `filter()`: introdução
+
+- A função `filter()`, como o nome já diz, filtra as linhas a partir de seus valores e retorna um novo _dataset_ que atendem aos requisitos.
+
+
+
+- O primeiro argumento é o _dataset_ e os outros argumentos são expressões lógicas para filtrar os dados. A função abaixo retorna **todos os voos do dia 6 de junho**.
+
+
+```{r }
+#| echo: true
+#| eval: false
+filter(voos, mes == 6, dia == 6)
+```
+
+
+- Você pode salvar os resultados em um novo _dataset_ atribuindo a um novo objeto com `<-`:
+
+
+```{r}
+#| echo: true
+#| eval: false
+voos_6_junho <- filter(voos, mes == 6, dia == 6)
+```
+
+
+
+- A função `filter()` não altera os valores do dataset, apenas remove as linhas que não resultam em `TRUE`.
+
+
+
+## `filter()`: operadores relacionais
+
+A mágica do `filter()` vem quando você tem fluência dos operadores que avaliam os valores das colunas.
+
+
+
+Os **operadores relacionais** comparam o quanto os valores estão dentro do intervalo esperado, a partir das expressões:
+
+
+
+- `>` maior que
+
+
+
+- `>=` maior ou igual
+
+
+
+- `<` menor que
+
+
+
+- `<=` menor ou igual
+
+
+
+- `!=` diferente
+
+
+
+- `==` igual (cuidado com `=`, que não deve ser usado para isso)
+
+
+
+## `filter()`: operadores relacionais
+
+Ou seja, para filtrar voos que saíram com 1 hora ou mais de atraso:
+
+```{r}
+#| echo: true
+#| eval: false
+filter(voos, atraso_saida >= 60)
+```
+
+
+Ou voos que saíram adiantados (atraso de saída menor que zero):
+
+```{r}
+#| echo: true
+#| eval: false
+filter(voos, atraso_saida < 0)
+```
+
+
+
+Ou voos que saíram exatamente no horário:
+
+```{r}
+#| echo: true
+#| eval: false
+filter(voos, atraso_saida == 0)
+```
+
+
+
+## `filter()`: operadores lógicos
+
+Para combinar múltiplas avaliações, é só usar operadores lógicos (ou booleanos), que esse diagrama resume:
+
+```{r echo=FALSE, out.width="70%"}
+knitr::include_graphics("https://d33wubrfki0l68.cloudfront.net/01f4b6d39d2be8269740a3ad7946faa79f7243cf/8369a/diagrams/transform-logical.png")
+```
+
+
+
+## `filter()`: operadores lógicos
+
+Ou seja, para filtrar voos que saíram com mais de 1 hora de atraso, mas não atrasaram na chegada, você pode usar tanto:
+
+
+```{r}
+#| echo: true
+#| eval: false
+filter(voos, atraso_saida >= 60, atraso_chegada <= 0)
+```
+
+quanto:
+
+
+
+```{r }
+#| echo: true
+#| eval: false
+filter(voos, atraso_saida >= 60 & atraso_chegada <= 0)
+```
+
+
+
+(espero que todes desses voos tenham chego bem.)
+
+
+
+## `filter()`: outras funções úteis
+
+Além de operadores, você também pode usar outras funções lógicas (ou seja, que retornam `TRUE` ou `FALSE`) dentro do `filter()`, como:
+
+
+
+
+
+## `filter()`: outras funções úteis
+
+**`is.na()`**
+
+encontra valores faltando (nulos)
+
+
+
+```{r }
+filter(voos, is.na(atraso_saida))
+```
+
+
+
+**`!is.na()`**
+
+também pode ser combinada com o operador de negação `!` para excluir valores nulos
+
+
+
+```{r }
+filter(voos, !is.na(atraso_saida))
+```
+
+
+
+## `filter()`: outras funções úteis
+
+**`%in%`**
+
+encontra linhas com alguns dos valores listados (não precisa ser todos)
+
+
+
+```{r }
+filter(voos, origem %in% c("LAX", "SDF"))
+```
+
+
+
+é mais eficiente que:
+
+```{r }
+filter(voos, origem == "LAX" | origem == "SDF"))
+```
+
+
+
+## `filter()`: outras funções úteis
+
+**`str_detect()`**
+
+detecta padrões em texto (strings) e pode ser usado com expressões regulares (regex)
+
+
+
+```{r }
+filter(voos, stringr::str_detect(cauda, "^N7"))
+```
+
+(esse código encontra o registro de aeronaves (tail number) que começa com `N7`)
+
+
+
+## `filter()`: cuidados
+
+- `=` não é `==` (para filtros, sempre é o último)
+
+
+
+- qualquer comparação com `NA` retorna `NA`
+
+
+
+- parênteses para combinar operadores
+
+
+
+
+
+# `arrange()`
+
+
+
+## `arrange()`: introdução
+
+O `arrange()` também opera nas linhas, mas em vez de filtrar os valores, ele muda a ordem com base nos valores do _dataset_. O primeiro argumento é o nome do _dataset_ e os outros são as colunas para ordenar, em ordem de "prioridade".
+
+
+
+É útil se você precisa conferir as linhas em ordem a partir de um valor, como **os voos que mais saíram adiantado**:
+
+
+
+```{r }
+arrange(voos, atraso_saida)
+```
+
+por padrão, o `arrange()` ordena de forma crescente
+
+
+
+## `arrange()`: introdução
+
+se você quiser filtrar voos que **mais atrasaram**, pode recorrer a função `desc()` ou `-`:
+
+
+
+```{r }
+arrange(voos, desc(atraso_saida))
+```
+
+
+
+(imagina que ruim estar no voo que atrasou 14 horas...)
+
+
+
+## `arrange()`: dicas
+
+- não altera a ordem de como as variáveis categoricas aparecem no `ggplot2`. para isso, consulte o pacote [`forcats`](https://forcats.tidyverse.org/)
+
+
+
+- quando há valores faltando (`NA`), eles sempre ficam no final do _dataset_
+
+
+
+- é útil quando a ordem importa. por exemplo, com a função `distinct()` ou `coalesce()`
+
+
+
+
+## `select()`
+
+
+
+## `select()`: introdução
+
+Essa função, ao contrário das duas últimas, não olha os valores (linhas) e sim as **colunas**. o primeiro argumento é o _dataset_ e os outros são as colunas para serem selecionadas.
+
+
+
+Útil para reduzir _datasets_ de centenas de colunas em apenas algumas que são interessantes para você. e ainda ajuda a economizar memória RAM `r emo::ji("smile")`
+
+
+
+```{r}
+select(voos, ano, companhia_aerea, origem, destino)
+```
+
+
+
+## `select()`: operadores
+
+**`:`**
+
+seleciona todas as colunas entre `x` e `y`:
+
+
+
+```{r}
+select(voos, voo:tempo_voo) |> colnames()
+```
+
+
+
+**`-`**
+
+exclui determinada(s) coluna(s)
+
+
+
+```{r}
+select(voos, -ano, -mes, -dia) |>  colnames()
+```
+
+
+
+## `select()`: operadores
+
+ambos podem ser combinados:
+
+```{r}
+select(voos, -(horario_saida:companhia_aerea)) |>
+  colnames()
+```
+
+
+
+## `select()`: tidyselect
+
+pacote que traz uma série de funções para filtrar colunas, como:
+
+**`starts_with`** ou **`ends_with`**
+
+seleciona colunas que começam ou terminam com uma certa expressão, como:
+
+
+
+```{r}
+select(voos, tidyselect::starts_with("horario")) |> colnames()
+```
+
+ou
+
+
+
+```{r}
+select(voos, tidyselect::ends_with(c("chegada", "saida"))) |> colnames()
+```
+
+
+
+## `select()`: tidyselect
+
+**contains** ou **matches**
+
+avalia se no nome da coluna contém um determinado padrão. enquanto **contains** é literal, **matches** usa regex
+
+
+
+
+
+```{r}
+select(voos, tidyselect::contains("voo")) |> colnames()
+```
+
+ou
+
+
+
+```{r}
+select(voos, tidyselect::matches("chegada$")) |> colnames()
+```
+
+
+
+## `select()`: tidyselect
+
+**everything**
+
+seleciona todas as outras colunas. se usada depois de outras seleções, as colunas que não foram retornadas nas primeiras são incluídas
+
+
+
+```{r}
+select(voos, voo, tidyselect::everything()) |> colnames()
+```
+
+
+
+## `select()`: renomear
+
+o `select()` também consegue renomear colunas, mas não é o ideal, porque ele exclui todas as outras colunas
+
+
+
+```{r}
+select(voos, registro_aviao = cauda) |> colnames()
+```
+
+nesses casos, o ideal é usar a função `rename()`:
+
+
+
+```{r}
+rename(voos, registro_aviao = cauda) |> colnames()
+```
+
+
+
+## `mutate()`
+
+
+
+## `mutate()`: introdução
+
+Essa função, assim como o `select()`,  faz operações no sentido de **colunas**, não de **linhas**. 
+
+O `mutate()` é utilizado para adicionar novas colunas ao final do _dataset_, preservando as que já existem.O primeiro argumento é o _dataset_ e os outros são as colunas que serão criadas.
+
+
+
+```{r}
+dados_dist_atraso <- select(voos,distancia , tempo_voo, atraso_chegada, atraso_saida)
+
+mutate(dados_dist_atraso,
+              velocidade = distancia/tempo_voo,
+              difatraso = atraso_chegada-atraso_saida) 
+```
+
+
+
+## `mutate()`: introdução
+
+É possível fazer referência as novas colunas criadas:
+
+```{r}
+
+mutate(dados_dist_atraso,
+              difatraso = atraso_chegada-atraso_saida,
+              dif_prop = abs(difatraso/tempo_voo))
+```
+
+
+
+## `mutate()`: funções
+
+
+Existem várias funções que podemos utilizar para criar novas variáveis. Para isso é importante pontuarmos alguns operadores principais:
+
+- Operadores aritméticos: `+`,`-`, `*`, `/`, `^`
+
+- Aritmética modular: `%/%` (divisão inteira) e `%%` (resto)
+
+- Logaritmo: `log()`, `log2()`, `log10()`
+
+- Cumulativos de somas, produtos, mínimos e máximos: `cumsum()`, `cumprod()`, `cummin()`, `cummax()`
+
+- Comparações lógicas: `<`, `<=`, `>`, `>=`, `!=` e `==`
+
+
+
+## `mutate()`: `case_when()`
+
+Esta função permite vetorizar várias instruções `if_else()`. É equivalente à função com o mesmo nome no SQL. 
+
+Se nenhum caso coincidir com as instruções especificadas, _NA_ é retornado.
+
+```{r}
+voos |> 
+  select(atraso_chegada)  |> 
+  mutate(atraso = case_when(atraso_chegada <= 0 ~ "sem atraso",
+                        atraso_chegada <= 10  ~ "pequeno",
+                        atraso_chegada <= 20  ~ "médio",
+                        atraso_chegada > 20  ~ "alto"))
+```
+
+
+
+## `summarise()`
+
+
+
+## `summarise()`: introdução
+
+
+O último verbo é utilizado para resumir informações a depender das especificações contidas nela. O primeiro argumento é o _dataset_ e os outros são as variáveis resumo que serão criadas a partir das variáveis existentes no _dataset_.
+
+
+```{r}
+voos |>
+  summarise(count = n(),
+                   dist = mean(distancia, na.rm = TRUE),
+                   atraso = mean(atraso_chegada, na.rm = TRUE))
+
+```
+
+`na.rm` indica se os valores de NA devem ser removidos antes que o cálculo continue.
+
+
+
+## `summarise()`: introdução
+
+Essa função cria um novo _dataset_.
+
+`summarise()` e `summarize()` são sinônimos.
+
+Existem várias possibilidades de funções para criarmos medidas descritivas.
+
+
+
+## `summarise()`: funções
+
+Algumas medidas são:
+
+- Medidas resumo: média  `mean(x)`, mediana `median(x)`.
+
+- Medidas de dispersão: desvio padrão `sd(x)`, desvio médio absoluto `mad(x)`.
+
+- Medidas de classificação: mínimo `min(x)`, quantis `quantile(x, 0.25)`, máximo `max(x)`.
+
+- Medidas de posição:  `first(x)`, `nth(x, 2)`, `last(x)`.
+
+- Contadores: tamanho do grupo `n()`, número de não missing `sum(!is.na(x))`, valores distintos `n_distinct(x)`.
+
+
+
+## `summarise()`: funções
+
+```{r}
+nao_cancelados <- voos |> 
+  filter(!is.na(atraso_chegada), !is.na(atraso_saida))
+
+nao_cancelados |>
+  summarise(mais_adiantado = min(atraso_chegada),
+                   qt_25= quantile(atraso_chegada, 0.25),
+                   mediana=median(atraso_chegada),
+                   qt_75= quantile(atraso_chegada, 0.75),
+                   mais_atrasado = max(atraso_chegada))
+
+```
+
+
+
+
+
+## `summarise()`: agrupado
+
+
+A função `summarise()` é bastante utilizada com a próxima função que veremos: `group_by()`. Quando combinadas, elas retornam resumos agrupados das colunas de interesse.
+
+```{r }
+atrasos <- voos |>
+  group_by(destino) |> 
+  summarise(
+    count = n(),
+    dist = mean(distancia, na.rm = TRUE),
+    atraso = mean(atraso_chegada, na.rm = TRUE)
+  )
+```
+
+
+# Um aliado poderoso: `group_by()`
+
+
+
+## `group_by()`: introdução
+
+Pode ser usado na preparação da base de dados para utilizar verbos como  `summarise()`, `mutate()` e `filter()`.
+
+A função `group_by()` utiliza um _dataset_ existente e o converte em um agrupado, no qual as operações serão realizadas **por grupo**. 
+
+As operações serão feitas pelos **grupos das variáveis definidos**, mas vale lembrar que essa função não é um verbo, ela não executa nada, é como se carimbasse o _dataset_. 
+
+`ungroup()` remove o agrupamento.
+
+
+
+## `group_by()`: introdução
+
+Como calculamos a quantidade de voos de cada destino?
+
+```{r}
+voos |>
+  group_by(destino) |>
+  head(5)
+```
+
+
+
+## `group_by()`: introdução
+
+Como calculamos a quantidade de voos de cada destino?
+
+```{r}
+voos |>
+  group_by(destino) |> 
+  summarise(
+    count = n()) |>
+  head(5)
+```
+
+
+
+
+## `group_by()`: multiplas variáveis
+
+Como calculamos a quantidade de voos por dia?
+
+```{r}
+diario<- group_by(voos, ano, mes, dia)
+
+(por_dia   <- summarise(diario, 
+                               qtde_voos = n()))
+```
+
+
+
+
+## `group_by()`: multiplas variáveis
+
+Como calculamos a quantidade de voos por mês?
+
+```{r }
+(mensal <- summarise(por_dia, 
+                            qtde_voos = sum(qtde_voos)))
+```
+
+Quando você agrupa por várias variáveis, cada `summarise()` **descola um nível do agrupamento**.
+
+Cuidado! Para algumas medidas faz sentido (soma), mas para outras não (mediana).
+
+
+
+
+## `group_by()`: `ungroup()`
+
+Se quisermos desagrupar e fazer um `summarise()`.
+
+```{r}
+diario<- group_by(voos, ano, mes, dia)
+
+diario |> 
+  ungroup() |>            
+  summarise(qtde_voos = n())
+```
