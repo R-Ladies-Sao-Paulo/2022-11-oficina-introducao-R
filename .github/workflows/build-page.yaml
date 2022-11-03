@@ -33,6 +33,8 @@ jobs:
             any::dados
             any::janitor
             any::esquisse
+            github::hadley/emo
+            any::knitr
 
 
       - name: Publish to GitHub Pages (and render)
