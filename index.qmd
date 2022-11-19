@@ -7,7 +7,13 @@ editor: visual
 
 ## Boas vindas!
 
-Essa oficina está prevista para acontecer presencialmente, em São Paulo, em 26/11/2022. Mais informações em breve! Inscrições serão através da plataforma [Meetup](https://www.meetup.com/rladies-sao-paulo/).
+Essa oficina acontecerá presencialmente, em São Paulo, em 26/11/2022. 
+
+Inscrições através da plataforma [Meetup](https://www.meetup.com/rladies-sao-paulo/events/289755187/).
+
+### Protocolos referentes à COVID-19
+
+Recomendamos que pessoas adultas que compareçam ao eventos tenham tomado pelo menos 2 doses da vacina contra Covid-19 e que o uso de máscara ocorra durante todo o período do evento.
 
 ### Código de conduta
 
