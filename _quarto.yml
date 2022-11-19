@@ -31,6 +31,7 @@ website:
       - section: "Informações sobre o Espaço"
         contents:
            - como-chegar.qmd
+           - alimentacao.qmd
         
       - section: "Slides"
         contents:

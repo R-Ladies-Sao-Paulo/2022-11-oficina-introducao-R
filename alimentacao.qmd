@@ -1,0 +1,25 @@
+---
+title: "Alimentação"
+author: "R-Ladies São Paulo"
+format: html
+editor: visual
+---
+
+Neste evento, não teremos café colaborativo. As pessoas participantes são livres para trazer seus próprios lanches, comidas, etc. Além disso, existem diversas opções de alimentação no Insper e nas proximidades.
+
+## Alimentação no Insper
+
+O Insper tem duas unidades na mesma rua:
+
+-   No prédio 1 (Rua Quatá 300), no 5º andar existe um restaurante por kilo, e também um refeitório com microondas.
+
+-   No prédio 2 (Quatá 200), no 6º  andar existe uma lanchonete, um refeitório com mesas e microondas, além de um terraço com mesas. 
+
+
+
+Mais informações no [site do Insper](https://www.insper.edu.br/campus/mapa-dos-andares/).
+
+
+## Lista de restaurantes na proximidade
+
+Em breve!
