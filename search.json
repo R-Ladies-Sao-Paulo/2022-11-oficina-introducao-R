@@ -32,7 +32,7 @@
     "href": "como-chegar.html#estacionamento",
     "title": "Como chegar",
     "section": "Estacionamento",
-    "text": "Estacionamento\nExistem estacionamentos pagos nas duas unidades do Insper."
+    "text": "Estacionamento\nExistem estacionamentos pagos nos dois prédios do Insper. Mais informações no site do Insper."
   },
   {
     "objectID": "apoio.html#bolsas-para-sorteio",
@@ -341,6 +341,27 @@
     "title": "Parte II - Introdução ao tidyverse",
     "section": "group_by(): ungroup()",
     "text": "group_by(): ungroup()\nSe quisermos desagrupar e fazer um summarise().\n\ndiario<- group_by(voos, ano, mes, dia)\n\ndiario |> \n  ungroup() |>            \n  summarise(qtde_voos = n())\n\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
+  },
+  {
+    "objectID": "alimentacao.html",
+    "href": "alimentacao.html",
+    "title": "Alimentação",
+    "section": "",
+    "text": "Neste evento, não teremos café colaborativo. As pessoas participantes são livres para trazer seus próprios lanches, comidas, etc. Além disso, existem diversas opções de alimentação no Insper e nas proximidades."
+  },
+  {
+    "objectID": "alimentacao.html#alimentação-no-insper",
+    "href": "alimentacao.html#alimentação-no-insper",
+    "title": "Alimentação",
+    "section": "Alimentação no Insper",
+    "text": "Alimentação no Insper\nO Insper tem duas unidades na mesma rua:\n\nNo prédio 1 (Rua Quatá 300), no 5º andar existe um restaurante por kilo, e também um refeitório com microondas.\nNo prédio 2 (Quatá 200), no 6º andar existe uma lanchonete, um refeitório com mesas e microondas, além de um terraço com mesas.\n\nMais informações no site do Insper."
+  },
+  {
+    "objectID": "alimentacao.html#lista-de-restaurantes-na-proximidade",
+    "href": "alimentacao.html#lista-de-restaurantes-na-proximidade",
+    "title": "Alimentação",
+    "section": "Lista de restaurantes na proximidade",
+    "text": "Lista de restaurantes na proximidade\nEm breve!"
   },
   {
     "objectID": "slide-rladies.html#o-que-é-a-r-ladies",
