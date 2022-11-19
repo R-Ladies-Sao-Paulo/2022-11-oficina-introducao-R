@@ -27,7 +27,11 @@ website:
       - href: index.qmd
         text: "Página inicial" 
       - href: apoio.qmd
-        text: "Apoio"         
+        text: "Apoio"     
+      - section: "Informações sobre o Espaço"
+        contents:
+           - como-chegar.qmd
+        
       - section: "Slides"
         contents:
            - slide-rladies.qmd
