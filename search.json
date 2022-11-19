@@ -7,291 +7,39 @@
     "text": "Essa oficina está prevista para acontecer presencialmente, em São Paulo, em 26/11/2022. Mais informações em breve! Inscrições serão através da plataforma Meetup.\n\n\nEste código de conduta aplica-se a todos os espaços R-Ladies, incluindo: meetups, Twitter, Slack, listas de discussão, tanto online como offline: Clique aqui para acessar o código de conduta.\n\n\n\n\nMeetup\nYoutube\nTwitter\nInstagram"
   },
   {
-    "objectID": "slide-intro-r.html#o-que-é-o",
-    "href": "slide-intro-r.html#o-que-é-o",
-    "title": "Parte I - Introdução ao R",
-    "section": "O que é o …",
-    "text": "O que é o …\nR?\nR é um ambiente de software livre para computação estatística e gráficos. (https://www.r-project.org/)\nRStudio?\nRStudio é uma IDE (integrated development environment) da Linguagem R, ou seja, um ambiente de desenvolvimento que utilizamos para editar e executar os códigos em R.\nRStudio Cloud?\nÉ a IDE RStudio que podemos utilizar diretamente do navegador (sem que seja necessário instalar nada)."
+    "objectID": "index.html#apoio",
+    "href": "index.html#apoio",
+    "title": "Oficina de Introdução ao R",
+    "section": "Apoio",
+    "text": "Apoio"
   },
   {
-    "objectID": "slide-intro-r.html#pré-requisitos",
-    "href": "slide-intro-r.html#pré-requisitos",
-    "title": "Parte I - Introdução ao R",
-    "section": "Pré-requisitos",
-    "text": "Pré-requisitos\nNesta oficina:\n\nRStudio Cloud\n\nPara usar no dia-a-dia:\n\nR e RStudio instalados no seu computador:\nLinks para instalação:\n\nR\nRStudio"
+    "objectID": "como-chegar.html",
+    "href": "como-chegar.html",
+    "title": "Como chegar",
+    "section": "",
+    "text": "O evento acontecerá no Insper, em São Paulo - SP."
   },
   {
-    "objectID": "slide-intro-r.html#por-quê-usar-linguagens-de-programação-para-analisar-dados",
-    "href": "slide-intro-r.html#por-quê-usar-linguagens-de-programação-para-analisar-dados",
-    "title": "Parte I - Introdução ao R",
-    "section": "Por quê usar linguagens de programação para analisar dados?",
-    "text": "Por quê usar linguagens de programação para analisar dados?"
+    "objectID": "como-chegar.html#como-chegar",
+    "href": "como-chegar.html#como-chegar",
+    "title": "Como chegar",
+    "section": "Como chegar",
+    "text": "Como chegar\nEndereço: Rua Quatá, 200."
   },
   {
-    "objectID": "slide-intro-r.html#as-vantagens-de-analisar-dados-usando-linguagens-de-programação",
-    "href": "slide-intro-r.html#as-vantagens-de-analisar-dados-usando-linguagens-de-programação",
-    "title": "Parte I - Introdução ao R",
-    "section": "As vantagens de analisar dados usando linguagens de programação",
-    "text": "As vantagens de analisar dados usando linguagens de programação\n\nO código é uma linguagem, então podemos documentar a nossa análise\nO código é texto, então podemos copiar e colar\nAs principais linguagens de programação para ciência de dados são de código aberto\n\n\nSlide por Curso-R."
+    "objectID": "como-chegar.html#estacionamento",
+    "href": "como-chegar.html#estacionamento",
+    "title": "Como chegar",
+    "section": "Estacionamento",
+    "text": "Estacionamento\nExistem estacionamentos pagos nas duas unidades do Insper."
   },
   {
-    "objectID": "slide-intro-r.html#o-que-significa-ser-código-aberto",
-    "href": "slide-intro-r.html#o-que-significa-ser-código-aberto",
-    "title": "Parte I - Introdução ao R",
-    "section": "O que significa ser código aberto?",
-    "text": "O que significa ser código aberto?\n\nAcesso gratuito.\nTodas as pessoas podem usar as melhores ferramentas independentemente do poder financeiro.\nEstudantes podem usar as mesmas ferramentas que profissionais.\nVocê pode corrigir problemas e aprimorar a linguagem.\nVocê pode desenvolver suas próprias ferramentas.\nPossibilita a existência de uma comunidade ativa.\n\n\nSlide por Curso-R."
-  },
-  {
-    "objectID": "slide-intro-r.html#por-quê-o-r",
-    "href": "slide-intro-r.html#por-quê-o-r",
-    "title": "Parte I - Introdução ao R",
-    "section": "Por quê o R?",
-    "text": "Por quê o R?"
-  },
-  {
-    "objectID": "slide-intro-r.html#o-ciclo-da-ciência-de-dados",
-    "href": "slide-intro-r.html#o-ciclo-da-ciência-de-dados",
-    "title": "Parte I - Introdução ao R",
-    "section": "O ciclo da ciência de dados",
-    "text": "O ciclo da ciência de dados\n\n\nSlide por Curso-R."
-  },
-  {
-    "objectID": "slide-intro-r.html#o-ciclo-da-ciência-de-dados-com-o-r",
-    "href": "slide-intro-r.html#o-ciclo-da-ciência-de-dados-com-o-r",
-    "title": "Parte I - Introdução ao R",
-    "section": "O ciclo da ciência de dados com o R",
-    "text": "O ciclo da ciência de dados com o R\n\n\nSlide por Curso-R."
-  },
-  {
-    "objectID": "slide-intro-r.html#por-quê-usar-o-r",
-    "href": "slide-intro-r.html#por-quê-usar-o-r",
-    "title": "Parte I - Introdução ao R",
-    "section": "Por quê usar o R?",
-    "text": "Por quê usar o R?\n\nÉ uma linguagem de programação que possui muitas ferramentas para análise de dados\nÉ código aberto (open source)\nPossui uma comunidade ativa de pessoas desenvolvedoras\nÉ flexível, permite desenvolver funções e pacotes para facilitar o trabalho\nEstá disponível, gratuitamente, em diferentes plataformas: Windows, Linux e Mac\nMantido pela R Development Core Team"
-  },
-  {
-    "objectID": "slide-intro-r.html#plano-para-hoje",
-    "href": "slide-intro-r.html#plano-para-hoje",
-    "title": "Parte I - Introdução ao R",
-    "section": "Plano para hoje!",
-    "text": "Plano para hoje!\n\nTemas:\n\nR base\nIntrodução à importação de tabelas\nIntrodução à manipulação de dados\nApresentação de ferramenta para começar a criar gráficos"
-  },
-  {
-    "objectID": "slide-intro-r.html#quais-dados-vamos-usar",
-    "href": "slide-intro-r.html#quais-dados-vamos-usar",
-    "title": "Parte I - Introdução ao R",
-    "section": "Quais dados vamos usar?",
-    "text": "Quais dados vamos usar?\nDados disponibilizados no pacote dados.\nAutoria: Riva Quiroga, Sara Mortara, Beatriz Milz, Andrea Sánchez-Tapia, Alejandra Andrea Tapia Silva, Beatriz Maurer Costa, Jean Prado, Renata Hirota, William Amorim, Emmanuelle Rodrigues Nunes\n\nlibrary(tidyverse)\nlibrary(dados)"
-  },
-  {
-    "objectID": "slide-intro-r.html#pinguins",
-    "href": "slide-intro-r.html#pinguins",
-    "title": "Parte I - Introdução ao R",
-    "section": "Pinguins!",
-    "text": "Pinguins!\n\nglimpse(pinguins)"
-  },
-  {
-    "objectID": "slide-intro-r.html#vôos",
-    "href": "slide-intro-r.html#vôos",
-    "title": "Parte I - Introdução ao R",
-    "section": "Vôos",
-    "text": "Vôos\n\ndados::voos, que é tradução do nycflights13, que reune os voos de NYC em 2013.\n\n\nglimpse(voos)"
-  },
-  {
-    "objectID": "slide-intro-r.html#vamos-começar",
-    "href": "slide-intro-r.html#vamos-começar",
-    "title": "Parte I - Introdução ao R",
-    "section": "Vamos começar?",
-    "text": "Vamos começar?"
-  },
-  {
-    "objectID": "slide-intro-r.html#r-como-uma-calculadora",
-    "href": "slide-intro-r.html#r-como-uma-calculadora",
-    "title": "Parte I - Introdução ao R",
-    "section": "R como uma calculadora",
-    "text": "R como uma calculadora\n\nPodemos usar o R como uma calculadora:\n\n\n1 / 200 * 30\n(59 + 73 + 2) / 3\nsin(pi / 2)"
-  },
-  {
-    "objectID": "slide-intro-r.html#executando-códigos",
-    "href": "slide-intro-r.html#executando-códigos",
-    "title": "Parte I - Introdução ao R",
-    "section": "Executando códigos",
-    "text": "Executando códigos\n\nO atalho Cmd/Ctrl + Enter é um dos mais úteis! Executa o código selecionado, ou o trecho de código onde o cursor está.\nO atalho Cmd/Ctrl + Shift + S executa todos os códigos do script!"
-  },
-  {
-    "objectID": "slide-intro-r.html#criando-objetos",
-    "href": "slide-intro-r.html#criando-objetos",
-    "title": "Parte I - Introdução ao R",
-    "section": "Criando objetos",
-    "text": "Criando objetos\n\nPodemos criar objetos (e guardar resultados) usando o operador de atribuição <-, e a estrutura a seguir:\n\nnome_do_objeto <- valor\nExemplo:\n\nx <- 3 * 4\n\nPodemos ver o conteúdo do objeto escrevendo o nome e executando:\n\nx"
-  },
-  {
-    "objectID": "slide-intro-r.html#boas-práticas-e-objetos",
-    "href": "slide-intro-r.html#boas-práticas-e-objetos",
-    "title": "Parte I - Introdução ao R",
-    "section": "Boas práticas e objetos",
-    "text": "Boas práticas e objetos\n\nAtalho Alt - (Alt e menos) serve para escrever o sinal de atribuição mais rápido.\nO sinal = também funciona neste caso: não use :)\nAproveite para usar a tecla Tab no RStudio: ajuda a autocompletar!\nO R é case sensitive:\n\n\nr_rocks <- 2 ^ 3\n\n\nr_rock\n#> Error: object 'r_rock' not found\nR_rocks\n#> Error: object 'R_rocks' not found\nr_rocks\n#> [1] 8"
-  },
-  {
-    "objectID": "slide-intro-r.html#boas-práticas-e-objetos-1",
-    "href": "slide-intro-r.html#boas-práticas-e-objetos-1",
-    "title": "Parte I - Introdução ao R",
-    "section": "Boas práticas e objetos",
-    "text": "Boas práticas e objetos\n\nErros de digitação e de maiúscula/minúscula importam!\nCuidado ao dar nomes aos objetos:\n\n\neu_uso_snake_case\noutrasPessoasUsamCamelCase\nalgumas.pessoas.usam.pontos\nE_Algumas.Pessoas_RENUNCIAMconvenções"
-  },
-  {
-    "objectID": "slide-intro-r.html#utilizando-funções",
-    "href": "slide-intro-r.html#utilizando-funções",
-    "title": "Parte I - Introdução ao R",
-    "section": "Utilizando funções",
-    "text": "Utilizando funções\n\nO R possui muitas funções disponíveis\nEstrutura para utilizar uma função:\n\n\nnome_da_funcao(nome_do_argumento_1 = valor_para_o_argumento1,\n               nome_do_argumento_2 = valor_para_o_argumento2,\n               nome_do_argumento_3 = valor_para_o_argumento3,\n               ...)\n\nExemplo:\n\nseq(from = 1, to = 10)\n\n\nParênteses (e aspas) sempre devem estar em “duplas”: se abrirmos, temos que fechar."
-  },
-  {
-    "objectID": "slide-intro-r.html#scripts",
-    "href": "slide-intro-r.html#scripts",
-    "title": "Parte I - Introdução ao R",
-    "section": "Scripts",
-    "text": "Scripts\n\nPodemos salvar nossos scripts para utilizar depois!\nConsidere tudo no console como temporário, pois não salvamos o conteúdo.\nEscreva no Script/Editor os códigos importantes para a análise."
-  },
-  {
-    "objectID": "slide-intro-r.html#workflow-projetos-no-rstudio",
-    "href": "slide-intro-r.html#workflow-projetos-no-rstudio",
-    "title": "Parte I - Introdução ao R",
-    "section": "Workflow: Projetos no RStudio",
-    "text": "Workflow: Projetos no RStudio\nO que é “real”?\n\nO que você salvaria como o último registro do que aconteceu na análise?\nOnde a nossa análise “vive”?\nScripts x Environment\n\nÉ muito mais fácil recriar os objetos do Environment a partir dos códigos que escrevemos no script do que o contrário."
-  },
-  {
-    "objectID": "slide-intro-r.html#onde-as-análises-vivem",
-    "href": "slide-intro-r.html#onde-as-análises-vivem",
-    "title": "Parte I - Introdução ao R",
-    "section": "Onde as análises vivem?",
-    "text": "Onde as análises vivem?\n\nWorking directory/diretório de trabalho: é o lugar (uma pasta no computador) onde o R irá procurar pelos arquivos quando queremos importá-los, ou onde ele irá salvar os arquivos quando queremos exportá-los."
-  },
-  {
-    "objectID": "slide-intro-r.html#diretório-de-trabalho",
-    "href": "slide-intro-r.html#diretório-de-trabalho",
-    "title": "Parte I - Introdução ao R",
-    "section": "Diretório de trabalho",
-    "text": "Diretório de trabalho\nComo saber qual é o diretório de trabalho atual?\n\nOlhando o console;\nUsando a função getwd():\n\n\ngetwd() # para saber qual é o diretório de trabalho\n\n## [1] \"/Users/beatrizmilz/GitHub/grupo_de_estudos/\"\nTambém existe a função setwd() para mudar o diretório de trabalho, mas isso não é recomendado!"
-  },
-  {
-    "objectID": "slide-intro-r.html#caminhos",
-    "href": "slide-intro-r.html#caminhos",
-    "title": "Parte I - Introdução ao R",
-    "section": "Caminhos",
-    "text": "Caminhos\n\nCaminhos absolutos vs Caminhos relativos\nCaminhos absolutos são caminhos que apontam para o mesmo lugar independente do diretório de trabalho.\nCaminhos relativos são caminhos que partem do diretório de trabalho."
-  },
-  {
-    "objectID": "slide-intro-r.html#exemplo",
-    "href": "slide-intro-r.html#exemplo",
-    "title": "Parte I - Introdução ao R",
-    "section": "Exemplo",
-    "text": "Exemplo\nCaminhos até o arquivo index.html desta apresentação\n\nCaminho absoluto:\n\n\"~/GitHub/grupo_de_estudos/r4ds/02-workflow/index.html\"\n\nCaminho relativo:\n\n\"r4ds/02-workflow/index.html\"\n\n“Você nunca deve usar caminhos absolutos em seus scripts, porque eles dificultam o compartilhamento: ninguém mais terá exatamente a mesma configuração de diretório que você.”"
-  },
-  {
-    "objectID": "slide-intro-r.html#projetos-do-rstudio",
-    "href": "slide-intro-r.html#projetos-do-rstudio",
-    "title": "Parte I - Introdução ao R",
-    "section": "Projetos do RStudio",
-    "text": "Projetos do RStudio\n\nO projeto é um local (uma pasta no nosso computador) onde teremos todos os arquivos necessários para nossa análise:\n\nDados utilizados\nScripts em R\nFiguras\nResultados de análises\nEntre outros\n\nQuando usamos projetos do RStudio, o nosso diretório de trabalho é a pasta do projeto."
-  },
-  {
-    "objectID": "slide-intro-r.html#projetos-do-rstudio-1",
-    "href": "slide-intro-r.html#projetos-do-rstudio-1",
-    "title": "Parte I - Introdução ao R",
-    "section": "Projetos do RStudio",
-    "text": "Projetos do RStudio\n\nCrie um projeto do RStudio .RProj para cada novo projeto de análise de dados;\nSempre use caminhos relativos;"
-  },
-  {
-    "objectID": "slide-intro-r.html#criando-um-projeto",
-    "href": "slide-intro-r.html#criando-um-projeto",
-    "title": "Parte I - Introdução ao R",
-    "section": "Criando um projeto",
-    "text": "Criando um projeto"
-  },
-  {
-    "objectID": "slide-intro-r.html#criando-um-projeto-1",
-    "href": "slide-intro-r.html#criando-um-projeto-1",
-    "title": "Parte I - Introdução ao R",
-    "section": "Criando um projeto",
-    "text": "Criando um projeto"
-  },
-  {
-    "objectID": "slide-intro-r.html#criando-um-projeto-2",
-    "href": "slide-intro-r.html#criando-um-projeto-2",
-    "title": "Parte I - Introdução ao R",
-    "section": "Criando um projeto",
-    "text": "Criando um projeto\n\n\n\n\n\n\n\n\n\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
-  },
-  {
-    "objectID": "slide-rladies.html#o-que-é-a-r-ladies",
-    "href": "slide-rladies.html#o-que-é-a-r-ladies",
-    "title": "Conhecendo a R-Ladies São Paulo",
-    "section": "O que é a R-Ladies?",
-    "text": "O que é a R-Ladies?\nR-Ladies é uma organização mundial cuja missão é promover a diversidade de gênero na comunidade da linguagem R.\nR-Ladies São Paulo integra, orgulhosamente, a organização R-Ladies Global, em São Paulo."
-  },
-  {
-    "objectID": "slide-rladies.html#como",
-    "href": "slide-rladies.html#como",
-    "title": "Conhecendo a R-Ladies São Paulo",
-    "section": "Como?",
-    "text": "Como?\nAtravés de meetups e mentorias em um ambiente seguro e amigável.\nNosso principal objetivo é promover a linguagem computacional estatística R compartilhando conhecimento, assim, quem tiver interesse na linguagem será bem-vinda, independente do nível de conhecimento.\n\nFonte: About us - R-Ladies, Meetup - São Paulo"
-  },
-  {
-    "objectID": "slide-rladies.html#para-quem",
-    "href": "slide-rladies.html#para-quem",
-    "title": "Conhecendo a R-Ladies São Paulo",
-    "section": "Para quem?",
-    "text": "Para quem?\nNosso principal público-alvo são as pessoas que se identificam com gêneros sub-representados na comunidade R, portanto: mulheres cis, mulheres trans, homens trans, pessoas não-binárias e queer."
-  },
-  {
-    "objectID": "slide-rladies.html#missão",
-    "href": "slide-rladies.html#missão",
-    "title": "Conhecendo a R-Ladies São Paulo",
-    "section": "Missão",
-    "text": "Missão\nComo uma iniciativa de diversidade, a missão das R-Ladies é alcançar uma representação proporcional de pessoas de gêneros atualmente sub-representados na comunidade R, incentivando, inspirando e capacitando-as."
-  },
-  {
-    "objectID": "slide-rladies.html#código-de-conduta",
-    "href": "slide-rladies.html#código-de-conduta",
-    "title": "Conhecendo a R-Ladies São Paulo",
-    "section": "Código de conduta",
-    "text": "Código de conduta\nA R-Ladies dedica-se a proporcionar uma experiência livre de assédio para todas as pessoas partcicipantes, desta forma, não é tolerada nenhuma forma de assédio. Código de conduta - R-Ladies\n\nFonte: About us - R-Ladies, Meetup - São Paulo"
-  },
-  {
-    "objectID": "slide-rladies.html#r-ladies---capítulos-no-mundo",
-    "href": "slide-rladies.html#r-ladies---capítulos-no-mundo",
-    "title": "Conhecendo a R-Ladies São Paulo",
-    "section": "R-Ladies - Capítulos no mundo",
-    "text": "R-Ladies - Capítulos no mundo\n\n\n\n\n\nRegião\nNúmero de Capítulos\nTotal de participantes\n\n\n\n\nUS/Canada\n59\n30112\n\n\nLatin America\n58\n27774\n\n\nEurope\n57\n25056\n\n\nAsia\n19\n5806\n\n\nAfrica\n12\n5688\n\n\nAustralia\n10\n5371\n\n\nPacific/Galapagos\n1\n460\n\n\n\n\n\n\nAtualizado em: 11/2022. Fonte: R Community Explorer"
-  },
-  {
-    "objectID": "slide-rladies.html#r-ladies-no-brasil",
-    "href": "slide-rladies.html#r-ladies-no-brasil",
-    "title": "Conhecendo a R-Ladies São Paulo",
-    "section": "R-Ladies no Brasil",
-    "text": "R-Ladies no Brasil\n\n\n\n\n\n\n\n\n\n\n\n\nCapítulo\nParticipantes\n\n\n\n\nR-Ladies São Paulo\n1340\n\n\nR-Ladies Belo Horizonte\n894\n\n\nR-Ladies Niterói\n760\n\n\nR-Ladies Rio de Janeiro\n644\n\n\nR-Ladies Natal\n456\n\n\nR-Ladies Floripa\n448\n\n\nR-Ladies Goiânia\n417\n\n\nR-Ladies Porto Alegre\n362\n\n\nR-Ladies Salvador\n246\n\n\n\n\n\n\nAtualizado em: 11/2022. Fonte: R Community Explorer"
-  },
-  {
-    "objectID": "slide-rladies.html#r-ladies-no-brasil-1",
-    "href": "slide-rladies.html#r-ladies-no-brasil-1",
-    "title": "Conhecendo a R-Ladies São Paulo",
-    "section": "R-Ladies no Brasil",
-    "text": "R-Ladies no Brasil\n\n\n\n\n\n\n\n\n\nCapítulo\nParticipantes\n\n\n\n\nR-Ladies Vitória\n218\n\n\nR-Ladies Recife\n153\n\n\nR-Ladies Fortaleza\n112\n\n\nR-Ladies Lavras\n66\n\n\nR-Ladies Curitiba\n63\n\n\nR-Ladies Brasília\n61\n\n\nR-Ladies São Mateus\n10\n\n\n\n\n\n\nAtualizado em: 11/2022. Fonte: R Community Explorer"
-  },
-  {
-    "objectID": "slide-rladies.html#r-ladies-em-são-paulo",
-    "href": "slide-rladies.html#r-ladies-em-são-paulo",
-    "title": "Conhecendo a R-Ladies São Paulo",
-    "section": "R-Ladies em São Paulo",
-    "text": "R-Ladies em São Paulo\n\n\nPrimeiro encontro da R-Ladies São Paulo - 2018\n+ 1340 pessoas participantes - 11/2022"
-  },
-  {
-    "objectID": "slide-rladies.html#saiba-mais-sobre-a-r-ladies",
-    "href": "slide-rladies.html#saiba-mais-sobre-a-r-ladies",
-    "title": "Conhecendo a R-Ladies São Paulo",
-    "section": "Saiba mais sobre a R-Ladies",
-    "text": "Saiba mais sobre a R-Ladies\n\nR-Ladies Global: Website,  Twitter\nR-Ladies São Paulo:\n\n Twitter\n Instagram\n Facebook\n Meetup\n GitHub\n Youtube\n\nCapítulos da R-Ladies no Brasil - Não tem capítulo na sua cidade e quer iniciar um? Saiba como em R-Ladies - How do get involved!\n\n\n\n\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
+    "objectID": "apoio.html#bolsas-para-sorteio",
+    "href": "apoio.html#bolsas-para-sorteio",
+    "title": "Apoio",
+    "section": "Bolsas para sorteio",
+    "text": "Bolsas para sorteio"
   },
   {
     "objectID": "slide-intro-tidyverse.html#transformando-dados",
@@ -593,5 +341,292 @@
     "title": "Parte II - Introdução ao tidyverse",
     "section": "group_by(): ungroup()",
     "text": "group_by(): ungroup()\nSe quisermos desagrupar e fazer um summarise().\n\ndiario<- group_by(voos, ano, mes, dia)\n\ndiario |> \n  ungroup() |>            \n  summarise(qtde_voos = n())\n\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
+  },
+  {
+    "objectID": "slide-rladies.html#o-que-é-a-r-ladies",
+    "href": "slide-rladies.html#o-que-é-a-r-ladies",
+    "title": "Conhecendo a R-Ladies São Paulo",
+    "section": "O que é a R-Ladies?",
+    "text": "O que é a R-Ladies?\nR-Ladies é uma organização mundial cuja missão é promover a diversidade de gênero na comunidade da linguagem R.\nR-Ladies São Paulo integra, orgulhosamente, a organização R-Ladies Global, em São Paulo."
+  },
+  {
+    "objectID": "slide-rladies.html#como",
+    "href": "slide-rladies.html#como",
+    "title": "Conhecendo a R-Ladies São Paulo",
+    "section": "Como?",
+    "text": "Como?\nAtravés de meetups e mentorias em um ambiente seguro e amigável.\nNosso principal objetivo é promover a linguagem computacional estatística R compartilhando conhecimento, assim, quem tiver interesse na linguagem será bem-vinda, independente do nível de conhecimento.\n\nFonte: About us - R-Ladies, Meetup - São Paulo"
+  },
+  {
+    "objectID": "slide-rladies.html#para-quem",
+    "href": "slide-rladies.html#para-quem",
+    "title": "Conhecendo a R-Ladies São Paulo",
+    "section": "Para quem?",
+    "text": "Para quem?\nNosso principal público-alvo são as pessoas que se identificam com gêneros sub-representados na comunidade R, portanto: mulheres cis, mulheres trans, homens trans, pessoas não-binárias e queer."
+  },
+  {
+    "objectID": "slide-rladies.html#missão",
+    "href": "slide-rladies.html#missão",
+    "title": "Conhecendo a R-Ladies São Paulo",
+    "section": "Missão",
+    "text": "Missão\nComo uma iniciativa de diversidade, a missão das R-Ladies é alcançar uma representação proporcional de pessoas de gêneros atualmente sub-representados na comunidade R, incentivando, inspirando e capacitando-as."
+  },
+  {
+    "objectID": "slide-rladies.html#código-de-conduta",
+    "href": "slide-rladies.html#código-de-conduta",
+    "title": "Conhecendo a R-Ladies São Paulo",
+    "section": "Código de conduta",
+    "text": "Código de conduta\nA R-Ladies dedica-se a proporcionar uma experiência livre de assédio para todas as pessoas partcicipantes, desta forma, não é tolerada nenhuma forma de assédio. Código de conduta - R-Ladies\n\nFonte: About us - R-Ladies, Meetup - São Paulo"
+  },
+  {
+    "objectID": "slide-rladies.html#r-ladies---capítulos-no-mundo",
+    "href": "slide-rladies.html#r-ladies---capítulos-no-mundo",
+    "title": "Conhecendo a R-Ladies São Paulo",
+    "section": "R-Ladies - Capítulos no mundo",
+    "text": "R-Ladies - Capítulos no mundo\n\n\n\n\n\nRegião\nNúmero de Capítulos\nTotal de participantes\n\n\n\n\nUS/Canada\n59\n30112\n\n\nLatin America\n58\n27774\n\n\nEurope\n57\n25056\n\n\nAsia\n19\n5806\n\n\nAfrica\n12\n5688\n\n\nAustralia\n10\n5371\n\n\nPacific/Galapagos\n1\n460\n\n\n\n\n\n\nAtualizado em: 11/2022. Fonte: R Community Explorer"
+  },
+  {
+    "objectID": "slide-rladies.html#r-ladies-no-brasil",
+    "href": "slide-rladies.html#r-ladies-no-brasil",
+    "title": "Conhecendo a R-Ladies São Paulo",
+    "section": "R-Ladies no Brasil",
+    "text": "R-Ladies no Brasil\n\n\n\n\n\n\n\n\n\n\n\n\nCapítulo\nParticipantes\n\n\n\n\nR-Ladies São Paulo\n1340\n\n\nR-Ladies Belo Horizonte\n894\n\n\nR-Ladies Niterói\n760\n\n\nR-Ladies Rio de Janeiro\n644\n\n\nR-Ladies Natal\n456\n\n\nR-Ladies Floripa\n448\n\n\nR-Ladies Goiânia\n417\n\n\nR-Ladies Porto Alegre\n362\n\n\nR-Ladies Salvador\n246\n\n\n\n\n\n\nAtualizado em: 11/2022. Fonte: R Community Explorer"
+  },
+  {
+    "objectID": "slide-rladies.html#r-ladies-no-brasil-1",
+    "href": "slide-rladies.html#r-ladies-no-brasil-1",
+    "title": "Conhecendo a R-Ladies São Paulo",
+    "section": "R-Ladies no Brasil",
+    "text": "R-Ladies no Brasil\n\n\n\n\n\n\n\n\n\nCapítulo\nParticipantes\n\n\n\n\nR-Ladies Vitória\n218\n\n\nR-Ladies Recife\n153\n\n\nR-Ladies Fortaleza\n112\n\n\nR-Ladies Lavras\n66\n\n\nR-Ladies Curitiba\n63\n\n\nR-Ladies Brasília\n61\n\n\nR-Ladies São Mateus\n10\n\n\n\n\n\n\nAtualizado em: 11/2022. Fonte: R Community Explorer"
+  },
+  {
+    "objectID": "slide-rladies.html#r-ladies-em-são-paulo",
+    "href": "slide-rladies.html#r-ladies-em-são-paulo",
+    "title": "Conhecendo a R-Ladies São Paulo",
+    "section": "R-Ladies em São Paulo",
+    "text": "R-Ladies em São Paulo\n\n\nPrimeiro encontro da R-Ladies São Paulo - 2018\n+ 1340 pessoas participantes - 11/2022"
+  },
+  {
+    "objectID": "slide-rladies.html#saiba-mais-sobre-a-r-ladies",
+    "href": "slide-rladies.html#saiba-mais-sobre-a-r-ladies",
+    "title": "Conhecendo a R-Ladies São Paulo",
+    "section": "Saiba mais sobre a R-Ladies",
+    "text": "Saiba mais sobre a R-Ladies\n\nR-Ladies Global: Website,  Twitter\nR-Ladies São Paulo:\n\n Twitter\n Instagram\n Facebook\n Meetup\n GitHub\n Youtube\n\nCapítulos da R-Ladies no Brasil - Não tem capítulo na sua cidade e quer iniciar um? Saiba como em R-Ladies - How do get involved!\n\n\n\n\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
+  },
+  {
+    "objectID": "slide-intro-r.html#o-que-é-o",
+    "href": "slide-intro-r.html#o-que-é-o",
+    "title": "Parte I - Introdução ao R",
+    "section": "O que é o …",
+    "text": "O que é o …\nR?\nR é um ambiente de software livre para computação estatística e gráficos. (https://www.r-project.org/)\nRStudio?\nRStudio é uma IDE (integrated development environment) da Linguagem R, ou seja, um ambiente de desenvolvimento que utilizamos para editar e executar os códigos em R.\nRStudio Cloud?\nÉ a IDE RStudio que podemos utilizar diretamente do navegador (sem que seja necessário instalar nada)."
+  },
+  {
+    "objectID": "slide-intro-r.html#pré-requisitos",
+    "href": "slide-intro-r.html#pré-requisitos",
+    "title": "Parte I - Introdução ao R",
+    "section": "Pré-requisitos",
+    "text": "Pré-requisitos\nNesta oficina:\n\nRStudio Cloud\n\nPara usar no dia-a-dia:\n\nR e RStudio instalados no seu computador:\nLinks para instalação:\n\nR\nRStudio"
+  },
+  {
+    "objectID": "slide-intro-r.html#por-quê-usar-linguagens-de-programação-para-analisar-dados",
+    "href": "slide-intro-r.html#por-quê-usar-linguagens-de-programação-para-analisar-dados",
+    "title": "Parte I - Introdução ao R",
+    "section": "Por quê usar linguagens de programação para analisar dados?",
+    "text": "Por quê usar linguagens de programação para analisar dados?"
+  },
+  {
+    "objectID": "slide-intro-r.html#as-vantagens-de-analisar-dados-usando-linguagens-de-programação",
+    "href": "slide-intro-r.html#as-vantagens-de-analisar-dados-usando-linguagens-de-programação",
+    "title": "Parte I - Introdução ao R",
+    "section": "As vantagens de analisar dados usando linguagens de programação",
+    "text": "As vantagens de analisar dados usando linguagens de programação\n\nO código é uma linguagem, então podemos documentar a nossa análise\nO código é texto, então podemos copiar e colar\nAs principais linguagens de programação para ciência de dados são de código aberto\n\n\nSlide por Curso-R."
+  },
+  {
+    "objectID": "slide-intro-r.html#o-que-significa-ser-código-aberto",
+    "href": "slide-intro-r.html#o-que-significa-ser-código-aberto",
+    "title": "Parte I - Introdução ao R",
+    "section": "O que significa ser código aberto?",
+    "text": "O que significa ser código aberto?\n\nAcesso gratuito.\nTodas as pessoas podem usar as melhores ferramentas independentemente do poder financeiro.\nEstudantes podem usar as mesmas ferramentas que profissionais.\nVocê pode corrigir problemas e aprimorar a linguagem.\nVocê pode desenvolver suas próprias ferramentas.\nPossibilita a existência de uma comunidade ativa.\n\n\nSlide por Curso-R."
+  },
+  {
+    "objectID": "slide-intro-r.html#por-quê-o-r",
+    "href": "slide-intro-r.html#por-quê-o-r",
+    "title": "Parte I - Introdução ao R",
+    "section": "Por quê o R?",
+    "text": "Por quê o R?"
+  },
+  {
+    "objectID": "slide-intro-r.html#o-ciclo-da-ciência-de-dados",
+    "href": "slide-intro-r.html#o-ciclo-da-ciência-de-dados",
+    "title": "Parte I - Introdução ao R",
+    "section": "O ciclo da ciência de dados",
+    "text": "O ciclo da ciência de dados\n\n\nSlide por Curso-R."
+  },
+  {
+    "objectID": "slide-intro-r.html#o-ciclo-da-ciência-de-dados-com-o-r",
+    "href": "slide-intro-r.html#o-ciclo-da-ciência-de-dados-com-o-r",
+    "title": "Parte I - Introdução ao R",
+    "section": "O ciclo da ciência de dados com o R",
+    "text": "O ciclo da ciência de dados com o R\n\n\nSlide por Curso-R."
+  },
+  {
+    "objectID": "slide-intro-r.html#por-quê-usar-o-r",
+    "href": "slide-intro-r.html#por-quê-usar-o-r",
+    "title": "Parte I - Introdução ao R",
+    "section": "Por quê usar o R?",
+    "text": "Por quê usar o R?\n\nÉ uma linguagem de programação que possui muitas ferramentas para análise de dados\nÉ código aberto (open source)\nPossui uma comunidade ativa de pessoas desenvolvedoras\nÉ flexível, permite desenvolver funções e pacotes para facilitar o trabalho\nEstá disponível, gratuitamente, em diferentes plataformas: Windows, Linux e Mac\nMantido pela R Development Core Team"
+  },
+  {
+    "objectID": "slide-intro-r.html#plano-para-hoje",
+    "href": "slide-intro-r.html#plano-para-hoje",
+    "title": "Parte I - Introdução ao R",
+    "section": "Plano para hoje!",
+    "text": "Plano para hoje!\n\nTemas:\n\nR base\nIntrodução à importação de tabelas\nIntrodução à manipulação de dados\nApresentação de ferramenta para começar a criar gráficos"
+  },
+  {
+    "objectID": "slide-intro-r.html#quais-dados-vamos-usar",
+    "href": "slide-intro-r.html#quais-dados-vamos-usar",
+    "title": "Parte I - Introdução ao R",
+    "section": "Quais dados vamos usar?",
+    "text": "Quais dados vamos usar?\nDados disponibilizados no pacote dados.\nAutoria: Riva Quiroga, Sara Mortara, Beatriz Milz, Andrea Sánchez-Tapia, Alejandra Andrea Tapia Silva, Beatriz Maurer Costa, Jean Prado, Renata Hirota, William Amorim, Emmanuelle Rodrigues Nunes\n\nlibrary(tidyverse)\nlibrary(dados)"
+  },
+  {
+    "objectID": "slide-intro-r.html#pinguins",
+    "href": "slide-intro-r.html#pinguins",
+    "title": "Parte I - Introdução ao R",
+    "section": "Pinguins!",
+    "text": "Pinguins!\n\nglimpse(pinguins)"
+  },
+  {
+    "objectID": "slide-intro-r.html#vôos",
+    "href": "slide-intro-r.html#vôos",
+    "title": "Parte I - Introdução ao R",
+    "section": "Vôos",
+    "text": "Vôos\n\ndados::voos, que é tradução do nycflights13, que reune os voos de NYC em 2013.\n\n\nglimpse(voos)"
+  },
+  {
+    "objectID": "slide-intro-r.html#vamos-começar",
+    "href": "slide-intro-r.html#vamos-começar",
+    "title": "Parte I - Introdução ao R",
+    "section": "Vamos começar?",
+    "text": "Vamos começar?"
+  },
+  {
+    "objectID": "slide-intro-r.html#r-como-uma-calculadora",
+    "href": "slide-intro-r.html#r-como-uma-calculadora",
+    "title": "Parte I - Introdução ao R",
+    "section": "R como uma calculadora",
+    "text": "R como uma calculadora\n\nPodemos usar o R como uma calculadora:\n\n\n1 / 200 * 30\n(59 + 73 + 2) / 3\nsin(pi / 2)"
+  },
+  {
+    "objectID": "slide-intro-r.html#executando-códigos",
+    "href": "slide-intro-r.html#executando-códigos",
+    "title": "Parte I - Introdução ao R",
+    "section": "Executando códigos",
+    "text": "Executando códigos\n\nO atalho Cmd/Ctrl + Enter é um dos mais úteis! Executa o código selecionado, ou o trecho de código onde o cursor está.\nO atalho Cmd/Ctrl + Shift + S executa todos os códigos do script!"
+  },
+  {
+    "objectID": "slide-intro-r.html#criando-objetos",
+    "href": "slide-intro-r.html#criando-objetos",
+    "title": "Parte I - Introdução ao R",
+    "section": "Criando objetos",
+    "text": "Criando objetos\n\nPodemos criar objetos (e guardar resultados) usando o operador de atribuição <-, e a estrutura a seguir:\n\nnome_do_objeto <- valor\nExemplo:\n\nx <- 3 * 4\n\nPodemos ver o conteúdo do objeto escrevendo o nome e executando:\n\nx"
+  },
+  {
+    "objectID": "slide-intro-r.html#boas-práticas-e-objetos",
+    "href": "slide-intro-r.html#boas-práticas-e-objetos",
+    "title": "Parte I - Introdução ao R",
+    "section": "Boas práticas e objetos",
+    "text": "Boas práticas e objetos\n\nAtalho Alt - (Alt e menos) serve para escrever o sinal de atribuição mais rápido.\nO sinal = também funciona neste caso: não use :)\nAproveite para usar a tecla Tab no RStudio: ajuda a autocompletar!\nO R é case sensitive:\n\n\nr_rocks <- 2 ^ 3\n\n\nr_rock\n#> Error: object 'r_rock' not found\nR_rocks\n#> Error: object 'R_rocks' not found\nr_rocks\n#> [1] 8"
+  },
+  {
+    "objectID": "slide-intro-r.html#boas-práticas-e-objetos-1",
+    "href": "slide-intro-r.html#boas-práticas-e-objetos-1",
+    "title": "Parte I - Introdução ao R",
+    "section": "Boas práticas e objetos",
+    "text": "Boas práticas e objetos\n\nErros de digitação e de maiúscula/minúscula importam!\nCuidado ao dar nomes aos objetos:\n\n\neu_uso_snake_case\noutrasPessoasUsamCamelCase\nalgumas.pessoas.usam.pontos\nE_Algumas.Pessoas_RENUNCIAMconvenções"
+  },
+  {
+    "objectID": "slide-intro-r.html#utilizando-funções",
+    "href": "slide-intro-r.html#utilizando-funções",
+    "title": "Parte I - Introdução ao R",
+    "section": "Utilizando funções",
+    "text": "Utilizando funções\n\nO R possui muitas funções disponíveis\nEstrutura para utilizar uma função:\n\n\nnome_da_funcao(nome_do_argumento_1 = valor_para_o_argumento1,\n               nome_do_argumento_2 = valor_para_o_argumento2,\n               nome_do_argumento_3 = valor_para_o_argumento3,\n               ...)\n\nExemplo:\n\nseq(from = 1, to = 10)\n\n\nParênteses (e aspas) sempre devem estar em “duplas”: se abrirmos, temos que fechar."
+  },
+  {
+    "objectID": "slide-intro-r.html#scripts",
+    "href": "slide-intro-r.html#scripts",
+    "title": "Parte I - Introdução ao R",
+    "section": "Scripts",
+    "text": "Scripts\n\nPodemos salvar nossos scripts para utilizar depois!\nConsidere tudo no console como temporário, pois não salvamos o conteúdo.\nEscreva no Script/Editor os códigos importantes para a análise."
+  },
+  {
+    "objectID": "slide-intro-r.html#workflow-projetos-no-rstudio",
+    "href": "slide-intro-r.html#workflow-projetos-no-rstudio",
+    "title": "Parte I - Introdução ao R",
+    "section": "Workflow: Projetos no RStudio",
+    "text": "Workflow: Projetos no RStudio\nO que é “real”?\n\nO que você salvaria como o último registro do que aconteceu na análise?\nOnde a nossa análise “vive”?\nScripts x Environment\n\nÉ muito mais fácil recriar os objetos do Environment a partir dos códigos que escrevemos no script do que o contrário."
+  },
+  {
+    "objectID": "slide-intro-r.html#onde-as-análises-vivem",
+    "href": "slide-intro-r.html#onde-as-análises-vivem",
+    "title": "Parte I - Introdução ao R",
+    "section": "Onde as análises vivem?",
+    "text": "Onde as análises vivem?\n\nWorking directory/diretório de trabalho: é o lugar (uma pasta no computador) onde o R irá procurar pelos arquivos quando queremos importá-los, ou onde ele irá salvar os arquivos quando queremos exportá-los."
+  },
+  {
+    "objectID": "slide-intro-r.html#diretório-de-trabalho",
+    "href": "slide-intro-r.html#diretório-de-trabalho",
+    "title": "Parte I - Introdução ao R",
+    "section": "Diretório de trabalho",
+    "text": "Diretório de trabalho\nComo saber qual é o diretório de trabalho atual?\n\nOlhando o console;\nUsando a função getwd():\n\n\ngetwd() # para saber qual é o diretório de trabalho\n\n## [1] \"/Users/beatrizmilz/GitHub/grupo_de_estudos/\"\nTambém existe a função setwd() para mudar o diretório de trabalho, mas isso não é recomendado!"
+  },
+  {
+    "objectID": "slide-intro-r.html#caminhos",
+    "href": "slide-intro-r.html#caminhos",
+    "title": "Parte I - Introdução ao R",
+    "section": "Caminhos",
+    "text": "Caminhos\n\nCaminhos absolutos vs Caminhos relativos\nCaminhos absolutos são caminhos que apontam para o mesmo lugar independente do diretório de trabalho.\nCaminhos relativos são caminhos que partem do diretório de trabalho."
+  },
+  {
+    "objectID": "slide-intro-r.html#exemplo",
+    "href": "slide-intro-r.html#exemplo",
+    "title": "Parte I - Introdução ao R",
+    "section": "Exemplo",
+    "text": "Exemplo\nCaminhos até o arquivo index.html desta apresentação\n\nCaminho absoluto:\n\n\"~/GitHub/grupo_de_estudos/r4ds/02-workflow/index.html\"\n\nCaminho relativo:\n\n\"r4ds/02-workflow/index.html\"\n\n“Você nunca deve usar caminhos absolutos em seus scripts, porque eles dificultam o compartilhamento: ninguém mais terá exatamente a mesma configuração de diretório que você.”"
+  },
+  {
+    "objectID": "slide-intro-r.html#projetos-do-rstudio",
+    "href": "slide-intro-r.html#projetos-do-rstudio",
+    "title": "Parte I - Introdução ao R",
+    "section": "Projetos do RStudio",
+    "text": "Projetos do RStudio\n\nO projeto é um local (uma pasta no nosso computador) onde teremos todos os arquivos necessários para nossa análise:\n\nDados utilizados\nScripts em R\nFiguras\nResultados de análises\nEntre outros\n\nQuando usamos projetos do RStudio, o nosso diretório de trabalho é a pasta do projeto."
+  },
+  {
+    "objectID": "slide-intro-r.html#projetos-do-rstudio-1",
+    "href": "slide-intro-r.html#projetos-do-rstudio-1",
+    "title": "Parte I - Introdução ao R",
+    "section": "Projetos do RStudio",
+    "text": "Projetos do RStudio\n\nCrie um projeto do RStudio .RProj para cada novo projeto de análise de dados;\nSempre use caminhos relativos;"
+  },
+  {
+    "objectID": "slide-intro-r.html#criando-um-projeto",
+    "href": "slide-intro-r.html#criando-um-projeto",
+    "title": "Parte I - Introdução ao R",
+    "section": "Criando um projeto",
+    "text": "Criando um projeto"
+  },
+  {
+    "objectID": "slide-intro-r.html#criando-um-projeto-1",
+    "href": "slide-intro-r.html#criando-um-projeto-1",
+    "title": "Parte I - Introdução ao R",
+    "section": "Criando um projeto",
+    "text": "Criando um projeto"
+  },
+  {
+    "objectID": "slide-intro-r.html#criando-um-projeto-2",
+    "href": "slide-intro-r.html#criando-um-projeto-2",
+    "title": "Parte I - Introdução ao R",
+    "section": "Criando um projeto",
+    "text": "Criando um projeto\n\n\n\n\n\n\n\n\n\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
   }
 ]
