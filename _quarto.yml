@@ -26,6 +26,8 @@ website:
     contents:
       - href: index.qmd
         text: "Página inicial" 
+      - href: apoio.qmd
+        text: "Apoio"         
       - section: "Slides"
         contents:
            - slide-rladies.qmd

@@ -22,3 +22,10 @@ Este código de conduta aplica-se a todos os espaços R-Ladies, incluindo: meetu
 -   [Twitter](https://twitter.com/RLadiesSaoPaulo)
 
 -   [Instagram](https://instagram.com/rladiessaopaulo)
+
+
+## Apoio
+
+[![](https://www.insper.edu.br/wp-content/uploads/2020/04/Insper-positivo.png){fig-alt="Logo do Insper" fig-align="center" width="30%"}](https://www.insper.edu.br/)   
+
+[![](https://blog.curso-r.com/images/logo.webp){fig-alt="Logo da Curso-R" fig-align="center" width="30%"}](https://curso-r.com/)
