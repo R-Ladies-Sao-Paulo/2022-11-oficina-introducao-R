@@ -32,12 +32,10 @@ website:
         contents:
            - como-chegar.qmd
            - alimentacao.qmd
-        
-      - section: "Slides"
+
+      - section: "Materiais"
         contents:
-           - slide-rladies.qmd
-           - slide-intro-r.qmd
-           - slide-intro-tidyverse.qmd
+           - slides.qmd
 
   
 

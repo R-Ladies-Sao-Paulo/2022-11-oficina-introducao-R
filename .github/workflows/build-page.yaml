@@ -35,6 +35,7 @@ jobs:
             any::esquisse
             github::hadley/emo
             any::knitr
+            any::kableExtra
 
 
       - name: Publish to GitHub Pages (and render)

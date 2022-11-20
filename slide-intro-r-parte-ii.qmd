@@ -1,0 +1,303 @@
+---
+title: "Introdução ao R - Parte II"
+subtitle: "Oficina de Introdução ao R"
+author: "[R-Ladies São Paulo](https://www.meetup.com/rladies-sao-paulo/)"
+date: "Novembro de 2022"
+format: 
+  rladies-revealjs:
+    footer: "Slides feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html) e [Quarto R-Ladies Theme](https://github.com/beatrizmilz/quarto-rladies-theme#quarto-r-ladies-theme)."
+incremental: false
+knitr:
+  opts_chunk: 
+    fig.align: "center"
+    echo: true
+    eval: true
+---
+
+# Conceitos iniciais de programação
+
+## Scripts
+
+-   Podemos salvar nossos scripts para utilizar depois!
+
+-   Considere tudo no console como temporário, pois não salvamos o conteúdo.
+
+-   Escreva no Script/Editor os códigos importantes para a análise.
+
+```{r echo=FALSE, out.width="100%"}
+knitr::include_graphics("https://r4ds.hadley.nz/diagrams/rstudio-editor.png")
+```
+
+
+
+
+## R como uma calculadora
+
+-   Podemos usar o R como uma calculadora:
+
+```{r}
+1 / 200 * 30
+(59 + 73 + 2) / 3
+sin(pi / 2)
+```
+
+## Executando códigos
+
+-   O atalho `Cmd/Ctrl + Enter` é um dos mais úteis! Executa o código selecionado, ou o trecho de código onde o cursor está.
+
+-   O atalho `Cmd/Ctrl + Shift + S` executa todos os códigos do script!
+
+## Criando objetos
+
+-   Podemos criar objetos (e guardar resultados) usando o operador de atribuição `<-`, e a estrutura a seguir:
+
+``` {{r}}
+nome_do_objeto <- valor
+```
+
+Exemplo:
+
+```{r}
+x <- 3 * 4
+```
+
+Podemos ver o conteúdo do objeto escrevendo o nome e executando:
+
+```{r}
+x
+```
+
+## Boas práticas e objetos
+
+-   Atalho `Alt -` (Alt e menos) serve para escrever o sinal de atribuição mais rápido.
+
+-   O sinal `=` também funciona neste caso: não use :)
+
+-   Aproveite para usar a tecla Tab no RStudio: ajuda a autocompletar!
+
+-   O R é *case sensitive*:
+
+```{r}
+r_rocks <- 2 ^ 3
+```
+
+```{r eval=FALSE, include=TRUE}
+r_rock
+#> Error: object 'r_rock' not found
+R_rocks
+#> Error: object 'R_rocks' not found
+r_rocks
+#> [1] 8
+```
+
+## Boas práticas e objetos
+
+-   Erros de digitação e de maiúscula/minúscula importam!
+
+-   Cuidado ao dar nomes aos objetos:
+
+```{r eval=FALSE, include=TRUE}
+eu_uso_snake_case
+outrasPessoasUsamCamelCase
+algumas.pessoas.usam.pontos
+E_Algumas.Pessoas_RENUNCIAMconvenções
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## O que pode ser um "valor"
+
+(pense neles como **substantivos**!)
+
+-   Valores não precisam ser números.
+-   Eles podem ser texto, por exemplo.
+-   Porém, precisam ser escritos entre aspas.
+-   Nesse caso, o R entende que o objeto é da classe de "character"
+
+```{r}
+#| echo: true
+#| fig-width: 10
+#| fig-height: 4.5
+quem_manda_aqui <- "Carol + Lucas"
+quem_manda_aqui
+```
+
+##  As classes dos objetos
+
+-   Os objetos podem ter vários tipos (um texto, um número etc.). É o que chamamos de **classe**.
+
+-   As classes principais são:
+
+| CLASSE        | SINÔNIMO                            |
+|---------------|-------------------------------------|
+| **character** | texto, string, caractere            |
+| **numeric**   | número, double, valor real, integer |
+| **logic**     | lógico, booleano, valor TRUE/FALSE  |
+
+## Exemplos de classes
+
+**character:** "Carol" / "40" / "verdadeiro"
+
+**numeric:** -5 / 1.5 / 3.1416
+
+**logic:** TRUE / FALSE
+
+## Operadores relacionais
+
+| Operador | Descrição          |
+|----------|--------------------|
+| ==       | igual              |
+| !=       | diferente          |
+| \>       | maior              |
+| \<       | menor              |
+| \>=      | maior ou igual a   |
+| \<=      | menor ou igual que |
+
+## Operadores lógicos
+
+| Operador | Descrição          |
+|----------|--------------------|
+| !        | significa NÃO      |
+| &        | significa E        |
+| `|`      | significa OU       |
+| %in%     | significa "contém" |
+
+## O operador pipe: %\>% ou \|\>
+
+(pense nele como uma **vírgula**!)
+
+-   pipe = cano, encanamento, fazer a informação fluir
+
+-   o valor do lado esquerdo do pipe vira argumento para a função do lado direito e assim por diante
+
+![](img/img07_pipe.png)
+
+-   Atalho: *CTRL + SHIFT + M*
+
+
+
+## 6- O que é uma função?
+
+-   Função: uma palavra que, no código, dá um comando ao computador.
+-   Ela é escrita seguida de parênteses.
+-   Nos parênteses incluímos os atributos (inputs).
+-   O output vai ser a informação que o computador retorna após rodar a função.
+
+(pense nela como um **verbo**!)
+
+## 6.1- Função no Excel
+
+<br><br>
+
+![Versão no Excel](img/img06_excel.png)
+
+##  Função no R
+
+
+```{r}
+#| echo: true
+#| fig-width: 10
+#| fig-height: 4.5
+altura_carol <- 1.54
+altura_lucas <- 1.89
+altura_media <- mean(c(altura_carol, altura_lucas))
+altura_media
+```
+
+<br>
+
+-   mean = função para calcular a média
+-   argumentos = informações que vão entre parênteses para indicar o que a função deve fazer
+-   c() = para criar um vetor (uma lista com mais de um item a ser aplicado no cálculo)
+
+
+
+## Utilizando funções
+
+-   O R possui muitas funções disponíveis
+
+-   Estrutura para utilizar uma função:
+
+```{r eval=FALSE, include=TRUE}
+nome_da_funcao(nome_do_argumento_1 = valor_para_o_argumento1,
+               nome_do_argumento_2 = valor_para_o_argumento2,
+               nome_do_argumento_3 = valor_para_o_argumento3,
+               ...)
+```
+
+Exemplo:
+
+```{r}
+seq(from = 1, to = 10)
+```
+
+-   Parênteses (e aspas) sempre devem estar em "duplas": se abrirmos, temos que fechar.
+
+
+
+## O que é um pacote de R?
+
+-   Conjunto de funções úteis pra determinada análise.
+
+-   Eles são disponibilizados em repositórios. Os dois principais repositórios são o [CRAN](https://cran.r-project.org/) e o [GitHub](https://github.com/).
+
+-   Os pacotes são **instalados apenas uma vez** e devem **ser carregados sempre** que queremos utilizá-los.
+
+## Instalar e carregar pacotes
+
+-   Para instalar um pacote que está no CRAN, usamos a função install.packages:
+
+```r
+install.packages("tidyverse")
+```
+
+-   Caso o pacote esteja no GitHub, é possível fazer a instalação via função install_github do pacote devtools:
+
+```r
+install.packages("devtools")
+
+devtools::install_github('rfsaldanha/microdatasus')
+```    
+
+-   Para carregar o pacote usamos a função library:
+
+```r
+library(tidyverse)
+library(microdatasus)
+```
+
+## Boas práticas (resumo)
+
+**Nome de variáveis:**
+
+a)  Não usar maiúscula, espaços ou acentos pra criar o nome
+b)  Não começar o nome com um número
+c)  Escolher nomes úteis e não redundantes
+
+**Código e comentários:**
+
+a)  Inserir espaços só após as vírgulas e parênteses
+b)  Evite comentar demais e de menos (com a hashtag #)
+c)  Use a quebra de linha para facilitar a leitura
+
+## Erros mais comuns!
+
+-   Rodar uma linha de código sem ter rodado as anteriores, que fazem parte de uma "sequência" de comandos para o programa
+
+-   Pequenos erros de digitação ao escrever o código
+
+-   Não selecionar o trecho inteiro de código na hora de rodar
+
+-   Dica: o pacote **tidylog** te dá um relatório de tudo o que ele fez, e ajuda a encontrar a origem dos erros
+

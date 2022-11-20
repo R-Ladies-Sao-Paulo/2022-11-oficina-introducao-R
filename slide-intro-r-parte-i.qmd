@@ -1,0 +1,204 @@
+---
+title: "Introdução ao R - Parte I"
+subtitle: "Oficina de Introdução ao R"
+author: "[R-Ladies São Paulo](https://www.meetup.com/rladies-sao-paulo/)"
+date: "Novembro de 2022"
+format: 
+  rladies-revealjs:
+    footer: "Slides feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html) e [Quarto R-Ladies Theme](https://github.com/beatrizmilz/quarto-rladies-theme#quarto-r-ladies-theme)."
+incremental: true
+knitr:
+  opts_chunk: 
+    fig.align: "center"
+---
+
+
+## Você deveria estar aqui hoje?
+
+Você se enquadra em uma das situações abaixo?
+
+-   Não sei nada sobre R, mas sei outras linguagens
+
+-   Não conheço nada de nenhuma linguagem de programação
+
+-   Já tentei aprender R no passado, mas esqueci tudo
+
+-   Sei só um básico de Excel
+
+-   Nunca mexi no Excel
+
+-   Acho que sou "de humanas demais" pra saber programar
+
+-   Sempre fiquei de recuperação em matemática no colégio
+
+-   Quero sempre aprender coisas novas
+
+## Então a resposta é SIM!
+
+![Vamos nessa!](img/img01_conrad-poirier.png)
+
+
+
+## O que é o ...
+
+### R?
+
+R é um ambiente de software livre para computação estatística e gráficos. (https://www.r-project.org/)
+
+### RStudio?
+
+**RStudio** é uma IDE (*integrated development environment*) da Linguagem R, ou seja, um ambiente de desenvolvimento que utilizamos para editar e executar os códigos em R.
+
+### RStudio Cloud?
+
+É a IDE RStudio que podemos utilizar diretamente do navegador (sem que seja necessário instalar nada).
+
+## Pré-requisitos
+
+### Nesta oficina:
+
+-   [RStudio Cloud](https://rstudio.cloud)
+
+### Para usar no dia-a-dia:
+
+-   `R` e `RStudio` instalados no seu computador:
+
+-   Links para instalação:
+
+    -   [R](https://cran.r-project.org/bin/windows/base/)
+    -   [RStudio](https://rstudio.com/products/rstudio/download/)
+
+## Por quê usar linguagens de programação para analisar dados? {.middle .center}
+
+## As vantagens de analisar dados usando linguagens de programação
+
+-   O código é uma linguagem, então podemos documentar a nossa análise
+
+-   O código é texto, então podemos copiar e colar
+
+-   As principais linguagens de programação para ciência de dados são de código aberto
+
+::: footer
+Slide por [Curso-R](https://curso-r.com/).
+:::
+
+## O que significa ser código aberto?
+
+1.  Acesso gratuito.
+
+2.  Todas as pessoas podem usar as melhores ferramentas independentemente do poder financeiro.
+
+3.  Estudantes podem usar as mesmas ferramentas que profissionais.
+
+4.  Você pode corrigir problemas e aprimorar a linguagem.
+
+5.  Você pode desenvolver suas próprias ferramentas.
+
+6.  Possibilita a existência de uma comunidade ativa.
+
+::: footer
+Slide por [Curso-R](https://curso-r.com/).
+:::
+
+## Por quê o R? {.middle .center}
+
+## O ciclo da ciência de dados
+
+<img src="img/ciclo-ciencia-de-dados.png" style="display: block; margin-left: auto; margin-right: auto;"/>
+
+::: footer
+Slide por [Curso-R](https://curso-r.com/).
+:::
+
+## O ciclo da ciência de dados com o R
+
+<img src="img/ciclo-ciencia-de-dados-pacotes.png" style="display: block; margin-left: auto; margin-right: auto;"/>
+
+::: footer
+Slide por [Curso-R](https://curso-r.com/).
+:::
+
+## Por quê usar o R?
+
+-   É uma linguagem de programação que possui muitas ferramentas para análise de dados
+
+-   É *código aberto* (open source)
+
+-   Possui uma comunidade ativa de pessoas desenvolvedoras
+
+-   É flexível, permite desenvolver funções e pacotes para facilitar o trabalho
+
+-   Está disponível, gratuitamente, em diferentes plataformas: Windows, Linux e Mac
+
+-   Mantido pela [R Development Core Team](https://cran.r-project.org/)
+
+## E o Excel?
+
+Resposta: nem todas as bases abrem no Excel
+
+![](img/img02_excel.png)
+
+## Os limites do Excel
+
+Limite do Excel: **1.048.576 linhas e 16.384 colunas** <br> <br> Para efeito de comparação...
+
+-   Base de SRAG do Sivep-Gripe só do ano de 2021 (atualizado até fev/2022): **1.715.835 linhas**
+
+-   Base do Enem 2018: **5,5 milhões de linhas** (uma linha por pessoa inscrita)
+
+-   Base de beneficiários do Auxílio Emergencial: **40 milhões de linhas novas a cada mês**
+
+## As bases de dados e o R
+
+Podemos usar bases que tenham formato de "tabela":
+
+-   cada linha é um registro, e cada coluna traz algum detalhe sobre aquele registro
+
+-   as colunas ou linhas não estão mescladas ou agrupadas
+
+-   muitas vezes são os arquivos do poder público salvos no formato .csv (mas nem sempre)
+
+
+## Exemplo de base de dados
+
+Eleição para a Alesp em 2022:
+
+```{r}
+#| echo: false
+library(tidyverse)
+alesp <- read.csv2("data/alesp.csv", fileEncoding = "Windows-1252")
+knitr::kable(head(alesp, 10)) %>% 
+  kableExtra::kable_styling(font_size = 16)
+```
+
+
+##  Outra forma de ver
+
+![](img/img05_df.png)
+
+
+## Breve glossário
+
+-   **Data frame**: sinônimo para "tabela" ou "planilha"
+
+-   **Tibble**: idem acima
+
+-   **Objeto**: é uma forma em que guardamos valores, um exemplo de objeto é um data frame.
+
+-   **Observação**: é sinônimo de "linha" na sua tabela
+
+-   **Variável**: é sinônimo de "coluna" na sua tabela
+
+## Potencial do R
+
+-   **Abrir** uma base de dados
+
+-   **Limpar** a base de dados (ex: formatar uma data ou tirar os acentos dos nomes)
+
+-   **Transformar** a base de dados (ex: a partir da coluna de data, criar uma coluna nova só com o mês)
+
+-   **Visualizar** os dados em formatos de gráficos ou mapas (ou mesmo relatórios em PDF ou websites)
+
+-   E muito mais!
+
+# Vamos começar? {.middle .center}

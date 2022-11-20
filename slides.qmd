@@ -1,0 +1,23 @@
+---
+title: "Slides"
+author: "R-Ladies São Paulo"
+format: html
+editor: visual
+---
+
+| Slide                                                                   | Ministrante  |
+|------------------------------------|------------------------------------|
+| [Conhecendo as R-Ladies São Paulo](slide-rladies.qmd){target="_blank"} | Tatyane Paz |
+| [Introdução ao R - Parte 1](slide-intro-r-parte-i.qmd){target="_blank"} | Beatriz Milz |
+| [Introdução ao R - Parte 2](slide-intro-r-parte-ii.qmd){target="_blank"} | Bruna Garbes |
+| [Introdução ao Tidyverse](slide-intro-tidyverse.qmd){target="_blank"} | Ana Carolina Moreno e Jean Prado |
+
+## Agradecimentos
+
+Agradecimentos pela contribuição, direta ou indireta, neste material.
+
+**TODO!**
+
+**Ana Carolina Moreno:** Jornalista de dados sênior da TV Globo. Produz reportagens dirigidas por dados desde 2017 usando R e SQL. Participa do R-Ladies São Paulo desde 2019. [LinkedIn](https://www.linkedin.com/in/anacarolinamoreno/ "Leia mais sobre a Carol").
+
+**Lucas Gelape:** Cientista político e analista de dados. Doutor em Ciência Política pela USP. Produziu reportagens com dados das eleições 2018 para o G1 e contribuiu para projetos do Volt Data Lab. [LinkedIn](https://www.linkedin.com/in/lucas-gelape-9729a1178/ "Leia mais sobre o Lucas").
