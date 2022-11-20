@@ -42,305 +42,270 @@
     "text": "Bolsas para sorteio"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#transformando-dados",
-    "href": "slide-intro-tidyverse.html#transformando-dados",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "Transformando dados",
-    "text": "Transformando dados\nVisualização é importante, mas raramente os dados vão estar exatamente do jeito que você precisa. Para isso, existe o pacote dplyr – uma gramática para transformação de dados.\nAs principais funções não chamam “verbos” por acaso – cada uma define uma ação específica para lidar com bases de dados:\n\nselect() seleciona variáveis a partir do nome;\nfilter() filtra linhas a partir dos valores;\narrange() altera a ordem das linhas;\nmutate() cria variáveis novas a partir de colunas já existentes;\nsummarise() resume múltiplos valores em menos linhas.\nE o último, group_by(), os ajuda a operar “por grupos” – vamos explicar melhor mais a frente."
+    "objectID": "slides.html",
+    "href": "slides.html",
+    "title": "Slides",
+    "section": "",
+    "text": "Slide\nMinistrante\n\n\n\n\nConhecendo as R-Ladies São Paulo\nTatyane Paz\n\n\nIntrodução ao R - Parte 1\nBeatriz Milz\n\n\nIntrodução ao R - Parte 2\nBruna Garbes\n\n\nIntrodução ao Tidyverse\nAna Carolina Moreno e Jean Prado"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#gramática-do-dplyr",
-    "href": "slide-intro-tidyverse.html#gramática-do-dplyr",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "Gramática do dplyr",
-    "text": "Gramática do dplyr\nCom as principais funções, você consegue dividir em passos o que precisa fazer com o dataset. É como usar os verbos da gramática para construir uma frase, como o que você está lendo agora.\nPor exemplo, se você precisa descobrir quais voos da companhia American Airlines tiveram o maior tempo de atraso, consegue separar essa pergunta em diferentes etapas:\n\nquais voos da companhia American Airlines: filtrar voos da AA\ntiveram o maior tempo de atraso: ordenar pelo tempo de atraso\n\n\nUm bom exercício nas etapas de tranformação de dados é pensar como os diferentes verbos do dplyr podem atender as diversas operações que você precisa fazer."
+    "objectID": "slides.html#agradecimentos",
+    "href": "slides.html#agradecimentos",
+    "title": "Slides",
+    "section": "Agradecimentos",
+    "text": "Agradecimentos\nAgradecimentos pela contribuição, direta ou indireta, neste material.\nTODO!\nAna Carolina Moreno: Jornalista de dados sênior da TV Globo. Produz reportagens dirigidas por dados desde 2017 usando R e SQL. Participa do R-Ladies São Paulo desde 2019. LinkedIn.\nLucas Gelape: Cientista político e analista de dados. Doutor em Ciência Política pela USP. Produziu reportagens com dados das eleições 2018 para o G1 e contribuiu para projetos do Volt Data Lab. LinkedIn."
   },
   {
-    "objectID": "slide-intro-tidyverse.html#gramática-do-dplyr-verbos",
-    "href": "slide-intro-tidyverse.html#gramática-do-dplyr-verbos",
+    "objectID": "slide-intro-tidyverse.html#tidyverse",
+    "href": "slide-intro-tidyverse.html#tidyverse",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "Gramática do dplyr: verbos",
-    "text": "Gramática do dplyr: verbos\nCada verbo é uma função diferente, mas com funcionamento similar:\n\nO primeiro argumento é o data frame a ser transformando\nOs próximos argumentos descrevem o que fazer com o data frame. Aqui, o nome das colunas não precisa de aspas.\nO resultado é o data frame transformado\n\nEm pseudo-código, assumindo que estamos trabalhando com o dataset voos, daria para escrever:\n\nfiltrar(voos, companhia_aerea == \"American Airlines\")\nordenar(voos, atraso_saida)"
+    "section": "Tidyverse",
+    "text": "Tidyverse"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#gramática-do-dplyr-pipe",
-    "href": "slide-intro-tidyverse.html#gramática-do-dplyr-pipe",
+    "objectID": "slide-intro-tidyverse.html#o-que-é",
+    "href": "slide-intro-tidyverse.html#o-que-é",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "Gramática do dplyr: pipe",
-    "text": "Gramática do dplyr: pipe\nComo cada verbo gera um novo dataframe, seria pouco eficiente armazenar o resultado das funções em diferentes objetos, certo?\nExemplo:\nvoos_aa <- filtrar(voos, companhia_aerea == \"American Airlines\")\n\nvoos_atraso <- ordenar(voos_aa, atraso_saida)\nPara isso existe o operador pipe |>, que passa o resultado da função anterior como primeiro argumento da próxima função, sem precisar de um novo objeto para isso."
+    "section": "O que é?",
+    "text": "O que é?\n\nUm conjunto de pacotes que compartilham a mesma gramática e estrutura.\nQuando você instala/carrega o tidyverse, todos esses pacotes vêm junto de uma vez.\nServe pra fazer o trabalho de análise mais rápido e fácil"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#gramática-do-dplyr-pipe-1",
-    "href": "slide-intro-tidyverse.html#gramática-do-dplyr-pipe-1",
+    "objectID": "slide-intro-tidyverse.html#pacotes-dentro-do-tidyverse",
+    "href": "slide-intro-tidyverse.html#pacotes-dentro-do-tidyverse",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "Gramática do dplyr: pipe",
-    "text": "Gramática do dplyr: pipe\nNa prática, o pipe funciona assim:\n\n\n\nUsando nosso exemplo anterior, ficaria assim:\nvoos |> filtrar(companhia == “American Airlines”) |> ordenar(atraso_saida)\nNo lugar de:\nordenar(filtrar(voos, companhia == “American Airlines”), atraso_saida)"
+    "section": "Pacotes dentro do Tidyverse",
+    "text": "Pacotes dentro do Tidyverse\nSão vários os pacotes (https://www.tidyverse.org/packages/)\nAlguns muito úteis são:\n\nreadr: abrir arquivos (bases de dados) e salvar tabelas\ndplyr: manipular a base (filtrar, criar colunas, agrupar, resumir, ordenar etc.)\nstringr: arrumar textos (string) identifcando padrões (regex)\nlubridate: ajusta datas e horas (ex: AAAA-MM-DD)\nggplot2: visualização de dados\ntidyr: para organizar/arrumar os dados"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#filter-introdução",
-    "href": "slide-intro-tidyverse.html#filter-introdução",
+    "objectID": "slide-intro-tidyverse.html#verbos-mágicos-do-dplyr",
+    "href": "slide-intro-tidyverse.html#verbos-mágicos-do-dplyr",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "filter(): introdução",
-    "text": "filter(): introdução\n\nA função filter(), como o nome já diz, filtra as linhas a partir de seus valores e retorna um novo dataset que atendem aos requisitos.\nO primeiro argumento é o dataset e os outros argumentos são expressões lógicas para filtrar os dados. A função abaixo retorna todos os voos do dia 6 de junho.\n\n\nfilter(voos, mes == 6, dia == 6)\n\n\nVocê pode salvar os resultados em um novo dataset atribuindo a um novo objeto com <-:\n\n\nvoos_6_junho <- filter(voos, mes == 6, dia == 6)\n\n\nA função filter() não altera os valores do dataset, apenas remove as linhas que não resultam em TRUE."
+    "section": "‘Verbos mágicos’ do dplyr",
+    "text": "‘Verbos mágicos’ do dplyr\nSaber poucos comandos já basta pra começar a analisar!\n\n\n\nFUNÇÃO\nO QUE FAZ\n\n\n\n\nselect\nseleciona só algumas colunas da base\n\n\nfilter\nseleciona só algumas linhas da base\n\n\nmutate\ncria colunas ou altera valores de uma coluna\n\n\ngroup_by\nagrupa linhas de valores iguais em uma coluna\n\n\nsummarise\npar do group_by, cria o resumo desses grupos\n\n\narrange\nordena a forma de visualizar a tabela"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#filter-operadores-relacionais",
-    "href": "slide-intro-tidyverse.html#filter-operadores-relacionais",
+    "objectID": "slide-intro-tidyverse.html#mais-verbos-úteis",
+    "href": "slide-intro-tidyverse.html#mais-verbos-úteis",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "filter(): operadores relacionais",
-    "text": "filter(): operadores relacionais\nA mágica do filter() vem quando você tem fluência dos operadores que avaliam os valores das colunas.\nOs operadores relacionais comparam o quanto os valores estão dentro do intervalo esperado, a partir das expressões:\n\n> maior que\n>= maior ou igual\n< menor que\n<= menor ou igual\n!= diferente\n== igual (cuidado com =, que não deve ser usado para isso)"
+    "section": "Mais ‘verbos úteis’",
+    "text": "Mais ‘verbos úteis’\n\n\n\nFUNÇÃO\nO QUE FAZ\n\n\n\n\nread_csv\nabre o seu arquivo separado por vírgula\n\n\nread_csv2\narquivo separado por ponto e vírgula\n\n\nwrite_csv\nsalva a tabela num arquivo no computador\n\n\nrename\nrenomeia uma coluna\n\n\nreplace_*\ntroca um valor p/ outro quando ele aparece\n\n\npivot_*\ntransforma linhas em colunas e vice-versa\n\n\nbind_rows*\njunta as linhas de duas tabelas diferentes\n\n\nstr_sub*\npuxa só parte do valor de uma coluna"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#filter-operadores-relacionais-1",
-    "href": "slide-intro-tidyverse.html#filter-operadores-relacionais-1",
+    "objectID": "slide-intro-tidyverse.html#exercícios",
+    "href": "slide-intro-tidyverse.html#exercícios",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "filter(): operadores relacionais",
-    "text": "filter(): operadores relacionais\nOu seja, para filtrar voos que saíram com 1 hora ou mais de atraso:\n\nfilter(voos, atraso_saida >= 60)\n\nOu voos que saíram adiantados (atraso de saída menor que zero):\n\nfilter(voos, atraso_saida < 0)\n\nOu voos que saíram exatamente no horário:\n\nfilter(voos, atraso_saida == 0)"
+    "section": "Exercícios",
+    "text": "Exercícios\nObservem a tabela para responder às próximas questões.\n\ntabela alesp.csv no Google Planilhas"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#filter-operadores-lógicos",
-    "href": "slide-intro-tidyverse.html#filter-operadores-lógicos",
+    "objectID": "slide-intro-tidyverse.html#pergunta-1",
+    "href": "slide-intro-tidyverse.html#pergunta-1",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "filter(): operadores lógicos",
-    "text": "filter(): operadores lógicos\nPara combinar múltiplas avaliações, é só usar operadores lógicos (ou booleanos), que esse diagrama resume:"
+    "section": "Pergunta 1:",
+    "text": "Pergunta 1:\nQuais mulheres foram eleitas em 2022?\n \n(Dica: é com “select” ou com “filter”?)"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#filter-operadores-lógicos-1",
-    "href": "slide-intro-tidyverse.html#filter-operadores-lógicos-1",
+    "objectID": "slide-intro-tidyverse.html#código-1",
+    "href": "slide-intro-tidyverse.html#código-1",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "filter(): operadores lógicos",
-    "text": "filter(): operadores lógicos\nOu seja, para filtrar voos que saíram com mais de 1 hora de atraso, mas não atrasaram na chegada, você pode usar tanto:\n\nfilter(voos, atraso_saida >= 60, atraso_chegada <= 0)\n\nquanto:\n\nfilter(voos, atraso_saida >= 60 & atraso_chegada <= 0)\n\n(espero que todes desses voos tenham chego bem.)"
+    "section": "Código 1:",
+    "text": "Código 1:\nQuais mulheres foram eleitas em 2022?\n\nlibrary(tidyverse)\n\nalesp <- read.csv2(\"data/alesp.csv\",\n                   fileEncoding = \"Windows-1252\")\n\nsexo_feminino <- alesp %>% \n  filter(genero == \"FEMININO\")"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#filter-outras-funções-úteis",
-    "href": "slide-intro-tidyverse.html#filter-outras-funções-úteis",
+    "objectID": "slide-intro-tidyverse.html#resposta-1",
+    "href": "slide-intro-tidyverse.html#resposta-1",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "filter(): outras funções úteis",
-    "text": "filter(): outras funções úteis\nAlém de operadores, você também pode usar outras funções lógicas (ou seja, que retornam TRUE ou FALSE) dentro do filter(), como:"
+    "section": "Resposta 1:",
+    "text": "Resposta 1:\nQuais mulheres foram eleitas em 2022?\n\n\n\n\n \n  \n    ranking \n    nome_urna_candidato \n    sigla_partido \n    votos_2022 \n    votos_2018 \n    genero \n    grau_instrucao \n    cor_raca \n    ocupacao \n  \n \n\n  \n    3 \n    PAULA DA BANCADA FEMINISTA \n    PSOL \n    259771 \n    NA \n    FEMININO \n    SUPERIOR COMPLETO \n    PRETA \n    ADVOGADO \n  \n  \n    10 \n    ANA CAROLINA SERRA \n    CID \n    198698 \n    NA \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    ADVOGADO \n  \n  \n    13 \n    BRUNA FURLAN \n    PSDB \n    195436 \n    NA \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    DEPUTADO \n  \n  \n    18 \n    CARLA MORANDO \n    PSDB \n    177773 \n    89636 \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    EMPRESÁRIO \n  \n  \n    20 \n    EDIANE MARIA \n    PSOL \n    175617 \n    NA \n    FEMININO \n    LÊ E ESCREVE \n    PRETA \n    EMPREGADO DOMÉSTICO \n  \n  \n    21 \n    MARTA COSTA \n    PSD \n    170541 \n    117156 \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    SERVIDOR PÚBLICO ESTADUAL \n  \n  \n    23 \n    PROFESSORA BEBEL \n    PT \n    155983 \n    87169 \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    DEPUTADO \n  \n  \n    30 \n    VALERIA BOLSONARO \n    PL \n    131557 \n    54519 \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    DEPUTADO \n  \n  \n    39 \n    MARCIA LIA \n    PT \n    108587 \n    63751 \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    DEPUTADO \n  \n  \n    41 \n    MONICA DO MOVIMENTO PRETAS \n    PSOL \n    106781 \n    149844 \n    FEMININO \n    SUPERIOR COMPLETO \n    PRETA \n    JORNALISTA E REDATOR \n  \n  \n    50 \n    THAINARA FARIA \n    PT \n    91388 \n    NA \n    FEMININO \n    SUPERIOR COMPLETO \n    PRETA \n    VEREADOR \n  \n  \n    53 \n    LECI BRANDÃO \n    PCdoB \n    90496 \n    64487 \n    FEMININO \n    ENSINO MÉDIO COMPLETO \n    PRETA \n    CANTOR E COMPOSITOR \n  \n  \n    55 \n    ANALICE FERNANDES \n    PSDB \n    90135 \n    110089 \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    ENFERMEIRO \n  \n  \n    56 \n    ANDRÉA WERNER \n    PSB \n    88820 \n    NA \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    JORNALISTA E REDATOR \n  \n  \n    60 \n    MARINA HELOU \n    REDE \n    85517 \n    39839 \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    DEPUTADO \n  \n  \n    63 \n    EDNA MACEDO \n    REP \n    82932 \n    84144 \n    FEMININO \n    ENSINO MÉDIO COMPLETO \n    BRANCA \n    DEPUTADO \n  \n  \n    67 \n    SOLANGE FREITAS \n    UNIÃO \n    81870 \n    NA \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    JORNALISTA E REDATOR \n  \n  \n    69 \n    DANI ALONSO \n    PL \n    80337 \n    NA \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    EMPRESÁRIO \n  \n  \n    70 \n    ANA PERUGINI \n    PT \n    79061 \n    NA \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    SERVENTUÁRIO DE JUSTIÇA \n  \n  \n    79 \n    DELEGADA GRACIELA \n    PL \n    68955 \n    63089 \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    DEPUTADO \n  \n  \n    80 \n    LETÍCIA AGUIAR \n    PP \n    68556 \n    60909 \n    FEMININO \n    SUPERIOR INCOMPLETO \n    BRANCA \n    OUTROS \n  \n  \n    81 \n    MARIA LUCIA AMARY \n    PSDB \n    66956 \n    70743 \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    DEPUTADO \n  \n  \n    82 \n    FABIANA B. \n    PL \n    65497 \n    NA \n    FEMININO \n    SUPERIOR COMPLETO \n    PARDA \n    EMPRESÁRIO \n  \n  \n    83 \n    BETH SAHÃO \n    PT \n    65407 \n    54900 \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    OUTROS \n  \n  \n    87 \n    CLARICE GANEM \n    PODE \n    59342 \n    NA \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    ADMINISTRADOR"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#filter-outras-funções-úteis-1",
-    "href": "slide-intro-tidyverse.html#filter-outras-funções-úteis-1",
+    "objectID": "slide-intro-tidyverse.html#pergunta-2",
+    "href": "slide-intro-tidyverse.html#pergunta-2",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "filter(): outras funções úteis",
-    "text": "filter(): outras funções úteis\nis.na()\nencontra valores faltando (nulos)\n\nfilter(voos, is.na(atraso_saida))\n\n!is.na()\ntambém pode ser combinada com o operador de negação ! para excluir valores nulos\n\nfilter(voos, !is.na(atraso_saida))"
+    "section": "Pergunta 2:",
+    "text": "Pergunta 2:\nQual foi a média de votos em 2022 por raça?"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#filter-outras-funções-úteis-2",
-    "href": "slide-intro-tidyverse.html#filter-outras-funções-úteis-2",
+    "objectID": "slide-intro-tidyverse.html#código-2",
+    "href": "slide-intro-tidyverse.html#código-2",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "filter(): outras funções úteis",
-    "text": "filter(): outras funções úteis\n%in%\nencontra linhas com alguns dos valores listados (não precisa ser todos)\n\nfilter(voos, origem %in% c(\"LAX\", \"SDF\"))\n\né mais eficiente que:\n\nfilter(voos, origem == \"LAX\" | origem == \"SDF\"))"
+    "section": "Código 2:",
+    "text": "Código 2:\nQual foi a média de votos em 2022 por raça?\n\nmedia_raca <- alesp %>% \n  group_by(cor_raca) %>% \n  summarise(media_votos = mean(votos_2022))"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#filter-outras-funções-úteis-3",
-    "href": "slide-intro-tidyverse.html#filter-outras-funções-úteis-3",
+    "objectID": "slide-intro-tidyverse.html#resposta-2",
+    "href": "slide-intro-tidyverse.html#resposta-2",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "filter(): outras funções úteis",
-    "text": "filter(): outras funções úteis\nstr_detect()\ndetecta padrões em texto (strings) e pode ser usado com expressões regulares (regex)\n\nfilter(voos, stringr::str_detect(cauda, \"^N7\"))\n\n(esse código encontra o registro de aeronaves (tail number) que começa com N7)"
+    "section": "Resposta 2:",
+    "text": "Resposta 2:\nQual foi a média de votos em 2022 por raça?\n\n\n\n\n \n  \n    cor_raca \n    media_votos \n  \n \n\n  \n    BRANCA \n    125135.7 \n  \n  \n    PARDA \n    105330.0 \n  \n  \n    PRETA \n    129313.1"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#filter-cuidados",
-    "href": "slide-intro-tidyverse.html#filter-cuidados",
+    "objectID": "slide-intro-tidyverse.html#pergunta-3",
+    "href": "slide-intro-tidyverse.html#pergunta-3",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "filter(): cuidados",
-    "text": "filter(): cuidados\n\n= não é == (para filtros, sempre é o último)\nqualquer comparação com NA retorna NA\nparênteses para combinar operadores"
+    "section": "Pergunta 3:",
+    "text": "Pergunta 3:\nQual é o ranking de votos totais por partido em 2022?"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#arrange-introdução",
-    "href": "slide-intro-tidyverse.html#arrange-introdução",
+    "objectID": "slide-intro-tidyverse.html#código-3",
+    "href": "slide-intro-tidyverse.html#código-3",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "arrange(): introdução",
-    "text": "arrange(): introdução\nO arrange() também opera nas linhas, mas em vez de filtrar os valores, ele muda a ordem com base nos valores do dataset. O primeiro argumento é o nome do dataset e os outros são as colunas para ordenar, em ordem de “prioridade”.\nÉ útil se você precisa conferir as linhas em ordem a partir de um valor, como os voos que mais saíram adiantado:\n\narrange(voos, atraso_saida)\n\npor padrão, o arrange() ordena de forma crescente"
+    "section": "Código 3:",
+    "text": "Código 3:\nQual é o ranking de votos totais por partido em 2022?\n\nvotos_partidos <- alesp %>% \n  group_by(sigla_partido) %>% \n  summarise(total_votos = sum(votos_2022)) %>% \n  arrange(desc(total_votos))"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#arrange-introdução-1",
-    "href": "slide-intro-tidyverse.html#arrange-introdução-1",
+    "objectID": "slide-intro-tidyverse.html#resposta-3",
+    "href": "slide-intro-tidyverse.html#resposta-3",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "arrange(): introdução",
-    "text": "arrange(): introdução\nse você quiser filtrar voos que mais atrasaram, pode recorrer a função desc() ou -:\n\narrange(voos, desc(atraso_saida))\n\n(imagina que ruim estar no voo que atrasou 14 horas…)"
+    "section": "Resposta 3:",
+    "text": "Resposta 3:\nQual é o ranking de votos totais por partido em 2022?\n\n\n\n\n \n  \n    sigla_partido \n    total_votos \n  \n \n\n  \n    PL \n    2659415 \n  \n  \n    PT \n    2572961 \n  \n  \n    PSDB \n    1063131 \n  \n  \n    REP \n    929898 \n  \n  \n    UNIÃO \n    891227 \n  \n  \n    PSOL \n    864074 \n  \n  \n    PSD \n    488167 \n  \n  \n    MDB \n    424436 \n  \n  \n    PP \n    353342 \n  \n  \n    PODE \n    320828 \n  \n  \n    CID \n    275608 \n  \n  \n    PSB \n    244817 \n  \n  \n    PSC \n    123592 \n  \n  \n    NOVO \n    90688 \n  \n  \n    PCdoB \n    90496 \n  \n  \n    REDE \n    85517 \n  \n  \n    PDT \n    85195 \n  \n  \n    SD \n    58707"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#arrange-dicas",
-    "href": "slide-intro-tidyverse.html#arrange-dicas",
+    "objectID": "slide-intro-tidyverse.html#pergunta-4",
+    "href": "slide-intro-tidyverse.html#pergunta-4",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "arrange(): dicas",
-    "text": "arrange(): dicas\n\nnão altera a ordem de como as variáveis categoricas aparecem no ggplot2. para isso, consulte o pacote forcats\nquando há valores faltando (NA), eles sempre ficam no final do dataset\né útil quando a ordem importa. por exemplo, com a função distinct() ou coalesce()"
+    "section": "Pergunta 4:",
+    "text": "Pergunta 4:\nQual deputado reeleito ganhou mais votos de 2018 para 2022?"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#select",
-    "href": "slide-intro-tidyverse.html#select",
+    "objectID": "slide-intro-tidyverse.html#código-4",
+    "href": "slide-intro-tidyverse.html#código-4",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "select()",
-    "text": "select()"
+    "section": "Código 4:",
+    "text": "Código 4:\nQual deputado reeleito ganhou mais votos de 2018 para 2022?\n\ndeputados <- alesp %>% \n  filter(!is.na(votos_2018)) %>% \n  group_by(nome_urna_candidato) %>% \n  summarise(total_votos_2018 = sum(votos_2018),\n            total_votos_2022 = sum(votos_2022)) %>%\n  mutate(variacao_votos = total_votos_2022 - total_votos_2018,\n         pct_variacao_votos = ( variacao_votos * 100 ) / total_votos_2018) %>% \n  arrange(desc(pct_variacao_votos))"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#select-introdução",
-    "href": "slide-intro-tidyverse.html#select-introdução",
+    "objectID": "slide-intro-tidyverse.html#resposta-4",
+    "href": "slide-intro-tidyverse.html#resposta-4",
     "title": "Parte II - Introdução ao tidyverse",
-    "section": "select(): introdução",
-    "text": "select(): introdução\nEssa função, ao contrário das duas últimas, não olha os valores (linhas) e sim as colunas. o primeiro argumento é o dataset e os outros são as colunas para serem selecionadas.\nÚtil para reduzir datasets de centenas de colunas em apenas algumas que são interessantes para você. e ainda ajuda a economizar memória RAM 😄\n\nselect(voos, ano, companhia_aerea, origem, destino)"
+    "section": "Resposta 4:",
+    "text": "Resposta 4:\nQual deputado reeleito ganhou mais votos de 2018 para 2022?\n\n\n\n\n \n  \n    nome_urna_candidato \n    total_votos_2018 \n    total_votos_2022 \n    variacao_votos \n    pct_variacao_votos \n  \n \n\n  \n    TENENTE COIMBRA \n    24109 \n    209705 \n    185596 \n    769.8203990 \n  \n  \n    AGENTE FEDERAL DANILO BALAS \n    38661 \n    94552 \n    55891 \n    144.5668762 \n  \n  \n    VALERIA BOLSONARO \n    54519 \n    131557 \n    77038 \n    141.3048662 \n  \n  \n    EMÍDIO DE SOUZA \n    65898 \n    157834 \n    91936 \n    139.5125800 \n  \n  \n    MARCOS DAMASIO \n    81695 \n    183219 \n    101524 \n    124.2719873 \n  \n  \n    MARCIO NAKASHIMA \n    38081 \n    85195 \n    47114 \n    123.7204905 \n  \n  \n    ITAMAR BORGES \n    82185 \n    183480 \n    101295 \n    123.2524183 \n  \n  \n    MARINA HELOU \n    39839 \n    85517 \n    45678 \n    114.6564924 \n  \n  \n    CARLA MORANDO \n    89636 \n    177773 \n    88137 \n    98.3276808 \n  \n  \n    VINICIUS CAMARINHA \n    65441 \n    123316 \n    57875 \n    88.4384407 \n  \n  \n    MILTON LEITE FILHO \n    105492 \n    198429 \n    92937 \n    88.0986236 \n  \n  \n    PROFESSORA BEBEL \n    87169 \n    155983 \n    68814 \n    78.9432023 \n  \n  \n    ANDRÉ DO PRADO \n    123313 \n    216268 \n    92955 \n    75.3813467 \n  \n  \n    MAJOR MECCA \n    131531 \n    224462 \n    92931 \n    70.6533061 \n  \n  \n    MARCIA LIA \n    63751 \n    108587 \n    44836 \n    70.3298772 \n  \n  \n    THIAGO AURICCHIO \n    73435 \n    123483 \n    50048 \n    68.1527882 \n  \n  \n    LUIZ FERNANDO \n    85271 \n    141017 \n    55746 \n    65.3750982 \n  \n  \n    CAPITÃO CONTE LOPES \n    116806 \n    192454 \n    75648 \n    64.7637964 \n  \n  \n    ENIO TATTO \n    86744 \n    142785 \n    56041 \n    64.6050447 \n  \n  \n    RAFAEL SILVA \n    71992 \n    118182 \n    46190 \n    64.1599067 \n  \n  \n    ROGÉRIO NOGUEIRA \n    89040 \n    139756 \n    50716 \n    56.9586703 \n  \n  \n    CARLOS CEZAR \n    115566 \n    180690 \n    65124 \n    56.3522143 \n  \n  \n    MARTA COSTA \n    117156 \n    170541 \n    53385 \n    45.5674485 \n  \n  \n    CARLÃO PIGNATARI \n    74006 \n    105245 \n    31239 \n    42.2114423 \n  \n  \n    LECI BRANDÃO \n    64487 \n    90496 \n    26009 \n    40.3321600 \n  \n  \n    SEBASTIÃO SANTOS \n    75280 \n    104374 \n    29094 \n    38.6477152 \n  \n  \n    PAULO FIORILO \n    80430 \n    110251 \n    29821 \n    37.0769613 \n  \n  \n    PAULO CORRÊA JR \n    46438 \n    62239 \n    15801 \n    34.0260132 \n  \n  \n    DR. JORGE DO CARMO \n    61751 \n    82054 \n    20303 \n    32.8788198 \n  \n  \n    CARLOS GIANNAZI \n    218705 \n    276811 \n    58106 \n    26.5682083 \n  \n  \n    DELEGADO OLIM \n    161569 \n    201348 \n    39779 \n    24.6204408 \n  \n  \n    MAURO BRAGATO \n    65475 \n    78142 \n    12667 \n    19.3463154 \n  \n  \n    BETH SAHÃO \n    54900 \n    65407 \n    10507 \n    19.1384335 \n  \n  \n    BARBA \n    91394 \n    108071 \n    16677 \n    18.2473685 \n  \n  \n    RICARDO MADALENA \n    77554 \n    90630 \n    13076 \n    16.8605101 \n  \n  \n    GILMACI SANTOS \n    82678 \n    96361 \n    13683 \n    16.5497472 \n  \n  \n    ALTAIR MORAES \n    86230 \n    98515 \n    12285 \n    14.2467819 \n  \n  \n    LETÍCIA AGUIAR \n    60909 \n    68556 \n    7647 \n    12.5547949 \n  \n  \n    DELEGADA GRACIELA \n    63089 \n    68955 \n    5866 \n    9.2979759 \n  \n  \n    LEO OLIVEIRA \n    76703 \n    82145 \n    5442 \n    7.0948985 \n  \n  \n    JORGE WILSON XERIFE CONSUMIDOR \n    177414 \n    177614 \n    200 \n    0.1127307 \n  \n  \n    RODRIGO MORAES \n    75845 \n    75094 \n    -751 \n    -0.9901773 \n  \n  \n    BARROS MUNHOZ \n    87494 \n    86372 \n    -1122 \n    -1.2823736 \n  \n  \n    EDNA MACEDO \n    84144 \n    82932 \n    -1212 \n    -1.4403879 \n  \n  \n    CARUSO \n    83758 \n    82209 \n    -1549 \n    -1.8493756 \n  \n  \n    RAFA ZIMBALDI \n    80789 \n    76910 \n    -3879 \n    -4.8013962 \n  \n  \n    EDMIR CHEDID \n    135991 \n    129097 \n    -6894 \n    -5.0694531 \n  \n  \n    MARIA LUCIA AMARY \n    70743 \n    66956 \n    -3787 \n    -5.3531798 \n  \n  \n    GIL DINIZ \n    214037 \n    196215 \n    -17822 \n    -8.3265977 \n  \n  \n    DANIEL SOARES \n    97330 \n    81753 \n    -15577 \n    -16.0043152 \n  \n  \n    ANALICE FERNANDES \n    110089 \n    90135 \n    -19954 \n    -18.1253350 \n  \n  \n    MONICA DO MOVIMENTO PRETAS \n    149844 \n    106781 \n    -43063 \n    -28.7385548 \n  \n  \n    CAIO FRANÇA \n    162166 \n    105173 \n    -56993 \n    -35.1448516 \n  \n  \n    ALEX DE MADUREIRA \n    118294 \n    74340 \n    -43954 \n    -37.1565760"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#select-operadores",
-    "href": "slide-intro-tidyverse.html#select-operadores",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "select(): operadores",
-    "text": "select(): operadores\n:\nseleciona todas as colunas entre x e y:\n\nselect(voos, voo:tempo_voo) |> colnames()\n\n-\nexclui determinada(s) coluna(s)\n\nselect(voos, -ano, -mes, -dia) |>  colnames()"
+    "objectID": "slide-intro-r-parte-i.html#você-deveria-estar-aqui-hoje",
+    "href": "slide-intro-r-parte-i.html#você-deveria-estar-aqui-hoje",
+    "title": "Introdução ao R - Parte I",
+    "section": "Você deveria estar aqui hoje?",
+    "text": "Você deveria estar aqui hoje?\nVocê se enquadra em uma das situações abaixo?\n\nNão sei nada sobre R, mas sei outras linguagens\nNão conheço nada de nenhuma linguagem de programação\nJá tentei aprender R no passado, mas esqueci tudo\nSei só um básico de Excel\nNunca mexi no Excel\nAcho que sou “de humanas demais” pra saber programar\nSempre fiquei de recuperação em matemática no colégio\nQuero sempre aprender coisas novas"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#select-operadores-1",
-    "href": "slide-intro-tidyverse.html#select-operadores-1",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "select(): operadores",
-    "text": "select(): operadores\nambos podem ser combinados:\n\nselect(voos, -(horario_saida:companhia_aerea)) |>\n  colnames()"
+    "objectID": "slide-intro-r-parte-i.html#então-a-resposta-é-sim",
+    "href": "slide-intro-r-parte-i.html#então-a-resposta-é-sim",
+    "title": "Introdução ao R - Parte I",
+    "section": "Então a resposta é SIM!",
+    "text": "Então a resposta é SIM!\n\nVamos nessa!"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#select-tidyselect",
-    "href": "slide-intro-tidyverse.html#select-tidyselect",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "select(): tidyselect",
-    "text": "select(): tidyselect\npacote que traz uma série de funções para filtrar colunas, como:\nstarts_with ou ends_with\nseleciona colunas que começam ou terminam com uma certa expressão, como:\n\nselect(voos, tidyselect::starts_with(\"horario\")) |> colnames()\n\nou\n\nselect(voos, tidyselect::ends_with(c(\"chegada\", \"saida\"))) |> colnames()"
+    "objectID": "slide-intro-r-parte-i.html#o-que-é-o",
+    "href": "slide-intro-r-parte-i.html#o-que-é-o",
+    "title": "Introdução ao R - Parte I",
+    "section": "O que é o …",
+    "text": "O que é o …\nR?\nR é um ambiente de software livre para computação estatística e gráficos. (https://www.r-project.org/)\nRStudio?\nRStudio é uma IDE (integrated development environment) da Linguagem R, ou seja, um ambiente de desenvolvimento que utilizamos para editar e executar os códigos em R.\nRStudio Cloud?\nÉ a IDE RStudio que podemos utilizar diretamente do navegador (sem que seja necessário instalar nada)."
   },
   {
-    "objectID": "slide-intro-tidyverse.html#select-tidyselect-1",
-    "href": "slide-intro-tidyverse.html#select-tidyselect-1",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "select(): tidyselect",
-    "text": "select(): tidyselect\ncontains ou matches\navalia se no nome da coluna contém um determinado padrão. enquanto contains é literal, matches usa regex\n\nselect(voos, tidyselect::contains(\"voo\")) |> colnames()\n\nou\n\nselect(voos, tidyselect::matches(\"chegada$\")) |> colnames()"
+    "objectID": "slide-intro-r-parte-i.html#pré-requisitos",
+    "href": "slide-intro-r-parte-i.html#pré-requisitos",
+    "title": "Introdução ao R - Parte I",
+    "section": "Pré-requisitos",
+    "text": "Pré-requisitos\nNesta oficina:\n\nRStudio Cloud\n\nPara usar no dia-a-dia:\n\nR e RStudio instalados no seu computador:\nLinks para instalação:\n\nR\nRStudio"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#select-tidyselect-2",
-    "href": "slide-intro-tidyverse.html#select-tidyselect-2",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "select(): tidyselect",
-    "text": "select(): tidyselect\neverything\nseleciona todas as outras colunas. se usada depois de outras seleções, as colunas que não foram retornadas nas primeiras são incluídas\n\nselect(voos, voo, tidyselect::everything()) |> colnames()"
+    "objectID": "slide-intro-r-parte-i.html#por-quê-usar-linguagens-de-programação-para-analisar-dados",
+    "href": "slide-intro-r-parte-i.html#por-quê-usar-linguagens-de-programação-para-analisar-dados",
+    "title": "Introdução ao R - Parte I",
+    "section": "Por quê usar linguagens de programação para analisar dados?",
+    "text": "Por quê usar linguagens de programação para analisar dados?"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#select-renomear",
-    "href": "slide-intro-tidyverse.html#select-renomear",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "select(): renomear",
-    "text": "select(): renomear\no select() também consegue renomear colunas, mas não é o ideal, porque ele exclui todas as outras colunas\n\nselect(voos, registro_aviao = cauda) |> colnames()\n\nnesses casos, o ideal é usar a função rename():\n\nrename(voos, registro_aviao = cauda) |> colnames()"
+    "objectID": "slide-intro-r-parte-i.html#as-vantagens-de-analisar-dados-usando-linguagens-de-programação",
+    "href": "slide-intro-r-parte-i.html#as-vantagens-de-analisar-dados-usando-linguagens-de-programação",
+    "title": "Introdução ao R - Parte I",
+    "section": "As vantagens de analisar dados usando linguagens de programação",
+    "text": "As vantagens de analisar dados usando linguagens de programação\n\nO código é uma linguagem, então podemos documentar a nossa análise\nO código é texto, então podemos copiar e colar\nAs principais linguagens de programação para ciência de dados são de código aberto\n\n\nSlide por Curso-R."
   },
   {
-    "objectID": "slide-intro-tidyverse.html#mutate",
-    "href": "slide-intro-tidyverse.html#mutate",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "mutate()",
-    "text": "mutate()"
+    "objectID": "slide-intro-r-parte-i.html#o-que-significa-ser-código-aberto",
+    "href": "slide-intro-r-parte-i.html#o-que-significa-ser-código-aberto",
+    "title": "Introdução ao R - Parte I",
+    "section": "O que significa ser código aberto?",
+    "text": "O que significa ser código aberto?\n\nAcesso gratuito.\nTodas as pessoas podem usar as melhores ferramentas independentemente do poder financeiro.\nEstudantes podem usar as mesmas ferramentas que profissionais.\nVocê pode corrigir problemas e aprimorar a linguagem.\nVocê pode desenvolver suas próprias ferramentas.\nPossibilita a existência de uma comunidade ativa.\n\n\nSlide por Curso-R."
   },
   {
-    "objectID": "slide-intro-tidyverse.html#mutate-introdução",
-    "href": "slide-intro-tidyverse.html#mutate-introdução",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "mutate(): introdução",
-    "text": "mutate(): introdução\nEssa função, assim como o select(), faz operações no sentido de colunas, não de linhas.\nO mutate() é utilizado para adicionar novas colunas ao final do dataset, preservando as que já existem.O primeiro argumento é o dataset e os outros são as colunas que serão criadas.\n\ndados_dist_atraso <- select(voos,distancia , tempo_voo, atraso_chegada, atraso_saida)\n\nmutate(dados_dist_atraso,\n              velocidade = distancia/tempo_voo,\n              difatraso = atraso_chegada-atraso_saida)"
+    "objectID": "slide-intro-r-parte-i.html#por-quê-o-r",
+    "href": "slide-intro-r-parte-i.html#por-quê-o-r",
+    "title": "Introdução ao R - Parte I",
+    "section": "Por quê o R?",
+    "text": "Por quê o R?"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#mutate-introdução-1",
-    "href": "slide-intro-tidyverse.html#mutate-introdução-1",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "mutate(): introdução",
-    "text": "mutate(): introdução\nÉ possível fazer referência as novas colunas criadas:\n\nmutate(dados_dist_atraso,\n              difatraso = atraso_chegada-atraso_saida,\n              dif_prop = abs(difatraso/tempo_voo))"
+    "objectID": "slide-intro-r-parte-i.html#o-ciclo-da-ciência-de-dados",
+    "href": "slide-intro-r-parte-i.html#o-ciclo-da-ciência-de-dados",
+    "title": "Introdução ao R - Parte I",
+    "section": "O ciclo da ciência de dados",
+    "text": "O ciclo da ciência de dados\n\n\nSlide por Curso-R."
   },
   {
-    "objectID": "slide-intro-tidyverse.html#mutate-funções",
-    "href": "slide-intro-tidyverse.html#mutate-funções",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "mutate(): funções",
-    "text": "mutate(): funções\nExistem várias funções que podemos utilizar para criar novas variáveis. Para isso é importante pontuarmos alguns operadores principais:\n\nOperadores aritméticos: +,-, *, /, ^\nAritmética modular: %/% (divisão inteira) e %% (resto)\nLogaritmo: log(), log2(), log10()\nCumulativos de somas, produtos, mínimos e máximos: cumsum(), cumprod(), cummin(), cummax()\nComparações lógicas: <, <=, >, >=, != e =="
+    "objectID": "slide-intro-r-parte-i.html#o-ciclo-da-ciência-de-dados-com-o-r",
+    "href": "slide-intro-r-parte-i.html#o-ciclo-da-ciência-de-dados-com-o-r",
+    "title": "Introdução ao R - Parte I",
+    "section": "O ciclo da ciência de dados com o R",
+    "text": "O ciclo da ciência de dados com o R\n\n\nSlide por Curso-R."
   },
   {
-    "objectID": "slide-intro-tidyverse.html#mutate-case_when",
-    "href": "slide-intro-tidyverse.html#mutate-case_when",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "mutate(): case_when()",
-    "text": "mutate(): case_when()\nEsta função permite vetorizar várias instruções if_else(). É equivalente à função com o mesmo nome no SQL.\nSe nenhum caso coincidir com as instruções especificadas, NA é retornado.\n\nvoos |> \n  select(atraso_chegada)  |> \n  mutate(atraso = case_when(atraso_chegada <= 0 ~ \"sem atraso\",\n                        atraso_chegada <= 10  ~ \"pequeno\",\n                        atraso_chegada <= 20  ~ \"médio\",\n                        atraso_chegada > 20  ~ \"alto\"))"
+    "objectID": "slide-intro-r-parte-i.html#por-quê-usar-o-r",
+    "href": "slide-intro-r-parte-i.html#por-quê-usar-o-r",
+    "title": "Introdução ao R - Parte I",
+    "section": "Por quê usar o R?",
+    "text": "Por quê usar o R?\n\nÉ uma linguagem de programação que possui muitas ferramentas para análise de dados\nÉ código aberto (open source)\nPossui uma comunidade ativa de pessoas desenvolvedoras\nÉ flexível, permite desenvolver funções e pacotes para facilitar o trabalho\nEstá disponível, gratuitamente, em diferentes plataformas: Windows, Linux e Mac\nMantido pela R Development Core Team"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#summarise",
-    "href": "slide-intro-tidyverse.html#summarise",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "summarise()",
-    "text": "summarise()"
+    "objectID": "slide-intro-r-parte-i.html#e-o-excel",
+    "href": "slide-intro-r-parte-i.html#e-o-excel",
+    "title": "Introdução ao R - Parte I",
+    "section": "E o Excel?",
+    "text": "E o Excel?\nResposta: nem todas as bases abrem no Excel"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#summarise-introdução",
-    "href": "slide-intro-tidyverse.html#summarise-introdução",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "summarise(): introdução",
-    "text": "summarise(): introdução\nO último verbo é utilizado para resumir informações a depender das especificações contidas nela. O primeiro argumento é o dataset e os outros são as variáveis resumo que serão criadas a partir das variáveis existentes no dataset.\n\nvoos |>\n  summarise(count = n(),\n                   dist = mean(distancia, na.rm = TRUE),\n                   atraso = mean(atraso_chegada, na.rm = TRUE))\n\nna.rm indica se os valores de NA devem ser removidos antes que o cálculo continue."
+    "objectID": "slide-intro-r-parte-i.html#os-limites-do-excel",
+    "href": "slide-intro-r-parte-i.html#os-limites-do-excel",
+    "title": "Introdução ao R - Parte I",
+    "section": "Os limites do Excel",
+    "text": "Os limites do Excel\nLimite do Excel: 1.048.576 linhas e 16.384 colunas   Para efeito de comparação…\n\nBase de SRAG do Sivep-Gripe só do ano de 2021 (atualizado até fev/2022): 1.715.835 linhas\nBase do Enem 2018: 5,5 milhões de linhas (uma linha por pessoa inscrita)\nBase de beneficiários do Auxílio Emergencial: 40 milhões de linhas novas a cada mês"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#summarise-introdução-1",
-    "href": "slide-intro-tidyverse.html#summarise-introdução-1",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "summarise(): introdução",
-    "text": "summarise(): introdução\nEssa função cria um novo dataset.\nsummarise() e summarize() são sinônimos.\nExistem várias possibilidades de funções para criarmos medidas descritivas."
+    "objectID": "slide-intro-r-parte-i.html#as-bases-de-dados-e-o-r",
+    "href": "slide-intro-r-parte-i.html#as-bases-de-dados-e-o-r",
+    "title": "Introdução ao R - Parte I",
+    "section": "As bases de dados e o R",
+    "text": "As bases de dados e o R\nPodemos usar bases que tenham formato de “tabela”:\n\ncada linha é um registro, e cada coluna traz algum detalhe sobre aquele registro\nas colunas ou linhas não estão mescladas ou agrupadas\nmuitas vezes são os arquivos do poder público salvos no formato .csv (mas nem sempre)"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#summarise-funções",
-    "href": "slide-intro-tidyverse.html#summarise-funções",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "summarise(): funções",
-    "text": "summarise(): funções\nAlgumas medidas são:\n\nMedidas resumo: média mean(x), mediana median(x).\nMedidas de dispersão: desvio padrão sd(x), desvio médio absoluto mad(x).\nMedidas de classificação: mínimo min(x), quantis quantile(x, 0.25), máximo max(x).\nMedidas de posição: first(x), nth(x, 2), last(x).\nContadores: tamanho do grupo n(), número de não missing sum(!is.na(x)), valores distintos n_distinct(x)."
+    "objectID": "slide-intro-r-parte-i.html#exemplo-de-base-de-dados",
+    "href": "slide-intro-r-parte-i.html#exemplo-de-base-de-dados",
+    "title": "Introdução ao R - Parte I",
+    "section": "Exemplo de base de dados",
+    "text": "Exemplo de base de dados\nEleição para a Alesp em 2022:\n\n\n\n\n \n  \n    ranking \n    nome_urna_candidato \n    sigla_partido \n    votos_2022 \n    votos_2018 \n    genero \n    grau_instrucao \n    cor_raca \n    ocupacao \n  \n \n\n  \n    1 \n    EDUARDO SUPLICY \n    PT \n    807015 \n    NA \n    MASCULINO \n    SUPERIOR COMPLETO \n    BRANCA \n    VEREADOR \n  \n  \n    2 \n    CARLOS GIANNAZI \n    PSOL \n    276811 \n    218705 \n    MASCULINO \n    SUPERIOR COMPLETO \n    BRANCA \n    DEPUTADO \n  \n  \n    3 \n    PAULA DA BANCADA FEMINISTA \n    PSOL \n    259771 \n    NA \n    FEMININO \n    SUPERIOR COMPLETO \n    PRETA \n    ADVOGADO \n  \n  \n    4 \n    BRUNO ZAMBELLI \n    PL \n    235305 \n    NA \n    MASCULINO \n    SUPERIOR COMPLETO \n    BRANCA \n    OUTROS \n  \n  \n    5 \n    MAJOR MECCA \n    PL \n    224462 \n    131531 \n    MASCULINO \n    SUPERIOR COMPLETO \n    BRANCA \n    DEPUTADO \n  \n  \n    6 \n    TOMÉ ABDUCH \n    REP \n    221656 \n    NA \n    MASCULINO \n    SUPERIOR COMPLETO \n    BRANCA \n    ENGENHEIRO \n  \n  \n    7 \n    ANDRÉ DO PRADO \n    PL \n    216268 \n    123313 \n    MASCULINO \n    SUPERIOR COMPLETO \n    BRANCA \n    DEPUTADO \n  \n  \n    8 \n    TENENTE COIMBRA \n    PL \n    209705 \n    24109 \n    MASCULINO \n    SUPERIOR COMPLETO \n    BRANCA \n    DEPUTADO \n  \n  \n    9 \n    DELEGADO OLIM \n    PP \n    201348 \n    161569 \n    MASCULINO \n    SUPERIOR COMPLETO \n    BRANCA \n    DEPUTADO \n  \n  \n    10 \n    ANA CAROLINA SERRA \n    CID \n    198698 \n    NA \n    FEMININO \n    SUPERIOR COMPLETO \n    BRANCA \n    ADVOGADO"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#summarise-funções-1",
-    "href": "slide-intro-tidyverse.html#summarise-funções-1",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "summarise(): funções",
-    "text": "summarise(): funções\n\nnao_cancelados <- voos |> \n  filter(!is.na(atraso_chegada), !is.na(atraso_saida))\n\nnao_cancelados |>\n  summarise(mais_adiantado = min(atraso_chegada),\n                   qt_25= quantile(atraso_chegada, 0.25),\n                   mediana=median(atraso_chegada),\n                   qt_75= quantile(atraso_chegada, 0.75),\n                   mais_atrasado = max(atraso_chegada))"
+    "objectID": "slide-intro-r-parte-i.html#outra-forma-de-ver",
+    "href": "slide-intro-r-parte-i.html#outra-forma-de-ver",
+    "title": "Introdução ao R - Parte I",
+    "section": "Outra forma de ver",
+    "text": "Outra forma de ver"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#summarise-agrupado",
-    "href": "slide-intro-tidyverse.html#summarise-agrupado",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "summarise(): agrupado",
-    "text": "summarise(): agrupado\nA função summarise() é bastante utilizada com a próxima função que veremos: group_by(). Quando combinadas, elas retornam resumos agrupados das colunas de interesse.\n\natrasos <- voos |>\n  group_by(destino) |> \n  summarise(\n    count = n(),\n    dist = mean(distancia, na.rm = TRUE),\n    atraso = mean(atraso_chegada, na.rm = TRUE)\n  )"
+    "objectID": "slide-intro-r-parte-i.html#breve-glossário",
+    "href": "slide-intro-r-parte-i.html#breve-glossário",
+    "title": "Introdução ao R - Parte I",
+    "section": "Breve glossário",
+    "text": "Breve glossário\n\nData frame: sinônimo para “tabela” ou “planilha”\nTibble: idem acima\nObjeto: é uma forma em que guardamos valores, um exemplo de objeto é um data frame.\nObservação: é sinônimo de “linha” na sua tabela\nVariável: é sinônimo de “coluna” na sua tabela"
   },
   {
-    "objectID": "slide-intro-tidyverse.html#group_by-introdução",
-    "href": "slide-intro-tidyverse.html#group_by-introdução",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "group_by(): introdução",
-    "text": "group_by(): introdução\nPode ser usado na preparação da base de dados para utilizar verbos como summarise(), mutate() e filter().\nA função group_by() utiliza um dataset existente e o converte em um agrupado, no qual as operações serão realizadas por grupo.\nAs operações serão feitas pelos grupos das variáveis definidos, mas vale lembrar que essa função não é um verbo, ela não executa nada, é como se carimbasse o dataset.\nungroup() remove o agrupamento."
-  },
-  {
-    "objectID": "slide-intro-tidyverse.html#group_by-introdução-1",
-    "href": "slide-intro-tidyverse.html#group_by-introdução-1",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "group_by(): introdução",
-    "text": "group_by(): introdução\nComo calculamos a quantidade de voos de cada destino?\n\nvoos |>\n  group_by(destino) |>\n  head(5)"
-  },
-  {
-    "objectID": "slide-intro-tidyverse.html#group_by-introdução-2",
-    "href": "slide-intro-tidyverse.html#group_by-introdução-2",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "group_by(): introdução",
-    "text": "group_by(): introdução\nComo calculamos a quantidade de voos de cada destino?\n\nvoos |>\n  group_by(destino) |> \n  summarise(\n    count = n()) |>\n  head(5)"
-  },
-  {
-    "objectID": "slide-intro-tidyverse.html#group_by-multiplas-variáveis",
-    "href": "slide-intro-tidyverse.html#group_by-multiplas-variáveis",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "group_by(): multiplas variáveis",
-    "text": "group_by(): multiplas variáveis\nComo calculamos a quantidade de voos por dia?\n\ndiario<- group_by(voos, ano, mes, dia)\n\n(por_dia   <- summarise(diario, \n                               qtde_voos = n()))"
-  },
-  {
-    "objectID": "slide-intro-tidyverse.html#group_by-multiplas-variáveis-1",
-    "href": "slide-intro-tidyverse.html#group_by-multiplas-variáveis-1",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "group_by(): multiplas variáveis",
-    "text": "group_by(): multiplas variáveis\nComo calculamos a quantidade de voos por mês?\n\n(mensal <- summarise(por_dia, \n                            qtde_voos = sum(qtde_voos)))\n\nQuando você agrupa por várias variáveis, cada summarise() descola um nível do agrupamento.\nCuidado! Para algumas medidas faz sentido (soma), mas para outras não (mediana)."
-  },
-  {
-    "objectID": "slide-intro-tidyverse.html#group_by-ungroup",
-    "href": "slide-intro-tidyverse.html#group_by-ungroup",
-    "title": "Parte II - Introdução ao tidyverse",
-    "section": "group_by(): ungroup()",
-    "text": "group_by(): ungroup()\nSe quisermos desagrupar e fazer um summarise().\n\ndiario<- group_by(voos, ano, mes, dia)\n\ndiario |> \n  ungroup() |>            \n  summarise(qtde_voos = n())\n\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
+    "objectID": "slide-intro-r-parte-i.html#potencial-do-r",
+    "href": "slide-intro-r-parte-i.html#potencial-do-r",
+    "title": "Introdução ao R - Parte I",
+    "section": "Potencial do R",
+    "text": "Potencial do R\n\nAbrir uma base de dados\nLimpar a base de dados (ex: formatar uma data ou tirar os acentos dos nomes)\nTransformar a base de dados (ex: a partir da coluna de data, criar uma coluna nova só com o mês)\nVisualizar os dados em formatos de gráficos ou mapas (ou mesmo relatórios em PDF ou websites)\nE muito mais!"
   },
   {
     "objectID": "alimentacao.html",
@@ -434,220 +399,143 @@
     "text": "Saiba mais sobre a R-Ladies\n\nR-Ladies Global: Website,  Twitter\nR-Ladies São Paulo:\n\n Twitter\n Instagram\n Facebook\n Meetup\n GitHub\n Youtube\n\nCapítulos da R-Ladies no Brasil - Não tem capítulo na sua cidade e quer iniciar um? Saiba como em R-Ladies - How do get involved!\n\n\n\n\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
   },
   {
-    "objectID": "slide-intro-r.html#o-que-é-o",
-    "href": "slide-intro-r.html#o-que-é-o",
-    "title": "Parte I - Introdução ao R",
-    "section": "O que é o …",
-    "text": "O que é o …\nR?\nR é um ambiente de software livre para computação estatística e gráficos. (https://www.r-project.org/)\nRStudio?\nRStudio é uma IDE (integrated development environment) da Linguagem R, ou seja, um ambiente de desenvolvimento que utilizamos para editar e executar os códigos em R.\nRStudio Cloud?\nÉ a IDE RStudio que podemos utilizar diretamente do navegador (sem que seja necessário instalar nada)."
-  },
-  {
-    "objectID": "slide-intro-r.html#pré-requisitos",
-    "href": "slide-intro-r.html#pré-requisitos",
-    "title": "Parte I - Introdução ao R",
-    "section": "Pré-requisitos",
-    "text": "Pré-requisitos\nNesta oficina:\n\nRStudio Cloud\n\nPara usar no dia-a-dia:\n\nR e RStudio instalados no seu computador:\nLinks para instalação:\n\nR\nRStudio"
-  },
-  {
-    "objectID": "slide-intro-r.html#por-quê-usar-linguagens-de-programação-para-analisar-dados",
-    "href": "slide-intro-r.html#por-quê-usar-linguagens-de-programação-para-analisar-dados",
-    "title": "Parte I - Introdução ao R",
-    "section": "Por quê usar linguagens de programação para analisar dados?",
-    "text": "Por quê usar linguagens de programação para analisar dados?"
-  },
-  {
-    "objectID": "slide-intro-r.html#as-vantagens-de-analisar-dados-usando-linguagens-de-programação",
-    "href": "slide-intro-r.html#as-vantagens-de-analisar-dados-usando-linguagens-de-programação",
-    "title": "Parte I - Introdução ao R",
-    "section": "As vantagens de analisar dados usando linguagens de programação",
-    "text": "As vantagens de analisar dados usando linguagens de programação\n\nO código é uma linguagem, então podemos documentar a nossa análise\nO código é texto, então podemos copiar e colar\nAs principais linguagens de programação para ciência de dados são de código aberto\n\n\nSlide por Curso-R."
-  },
-  {
-    "objectID": "slide-intro-r.html#o-que-significa-ser-código-aberto",
-    "href": "slide-intro-r.html#o-que-significa-ser-código-aberto",
-    "title": "Parte I - Introdução ao R",
-    "section": "O que significa ser código aberto?",
-    "text": "O que significa ser código aberto?\n\nAcesso gratuito.\nTodas as pessoas podem usar as melhores ferramentas independentemente do poder financeiro.\nEstudantes podem usar as mesmas ferramentas que profissionais.\nVocê pode corrigir problemas e aprimorar a linguagem.\nVocê pode desenvolver suas próprias ferramentas.\nPossibilita a existência de uma comunidade ativa.\n\n\nSlide por Curso-R."
-  },
-  {
-    "objectID": "slide-intro-r.html#por-quê-o-r",
-    "href": "slide-intro-r.html#por-quê-o-r",
-    "title": "Parte I - Introdução ao R",
-    "section": "Por quê o R?",
-    "text": "Por quê o R?"
-  },
-  {
-    "objectID": "slide-intro-r.html#o-ciclo-da-ciência-de-dados",
-    "href": "slide-intro-r.html#o-ciclo-da-ciência-de-dados",
-    "title": "Parte I - Introdução ao R",
-    "section": "O ciclo da ciência de dados",
-    "text": "O ciclo da ciência de dados\n\n\nSlide por Curso-R."
-  },
-  {
-    "objectID": "slide-intro-r.html#o-ciclo-da-ciência-de-dados-com-o-r",
-    "href": "slide-intro-r.html#o-ciclo-da-ciência-de-dados-com-o-r",
-    "title": "Parte I - Introdução ao R",
-    "section": "O ciclo da ciência de dados com o R",
-    "text": "O ciclo da ciência de dados com o R\n\n\nSlide por Curso-R."
-  },
-  {
-    "objectID": "slide-intro-r.html#por-quê-usar-o-r",
-    "href": "slide-intro-r.html#por-quê-usar-o-r",
-    "title": "Parte I - Introdução ao R",
-    "section": "Por quê usar o R?",
-    "text": "Por quê usar o R?\n\nÉ uma linguagem de programação que possui muitas ferramentas para análise de dados\nÉ código aberto (open source)\nPossui uma comunidade ativa de pessoas desenvolvedoras\nÉ flexível, permite desenvolver funções e pacotes para facilitar o trabalho\nEstá disponível, gratuitamente, em diferentes plataformas: Windows, Linux e Mac\nMantido pela R Development Core Team"
-  },
-  {
-    "objectID": "slide-intro-r.html#plano-para-hoje",
-    "href": "slide-intro-r.html#plano-para-hoje",
-    "title": "Parte I - Introdução ao R",
-    "section": "Plano para hoje!",
-    "text": "Plano para hoje!\n\nTemas:\n\nR base\nIntrodução à importação de tabelas\nIntrodução à manipulação de dados\nApresentação de ferramenta para começar a criar gráficos"
-  },
-  {
-    "objectID": "slide-intro-r.html#quais-dados-vamos-usar",
-    "href": "slide-intro-r.html#quais-dados-vamos-usar",
-    "title": "Parte I - Introdução ao R",
-    "section": "Quais dados vamos usar?",
-    "text": "Quais dados vamos usar?\nDados disponibilizados no pacote dados.\nAutoria: Riva Quiroga, Sara Mortara, Beatriz Milz, Andrea Sánchez-Tapia, Alejandra Andrea Tapia Silva, Beatriz Maurer Costa, Jean Prado, Renata Hirota, William Amorim, Emmanuelle Rodrigues Nunes\n\nlibrary(tidyverse)\nlibrary(dados)"
-  },
-  {
-    "objectID": "slide-intro-r.html#pinguins",
-    "href": "slide-intro-r.html#pinguins",
-    "title": "Parte I - Introdução ao R",
-    "section": "Pinguins!",
-    "text": "Pinguins!\n\nglimpse(pinguins)"
-  },
-  {
-    "objectID": "slide-intro-r.html#vôos",
-    "href": "slide-intro-r.html#vôos",
-    "title": "Parte I - Introdução ao R",
-    "section": "Vôos",
-    "text": "Vôos\n\ndados::voos, que é tradução do nycflights13, que reune os voos de NYC em 2013.\n\n\nglimpse(voos)"
-  },
-  {
-    "objectID": "slide-intro-r.html#vamos-começar",
-    "href": "slide-intro-r.html#vamos-começar",
-    "title": "Parte I - Introdução ao R",
-    "section": "Vamos começar?",
-    "text": "Vamos começar?"
-  },
-  {
-    "objectID": "slide-intro-r.html#r-como-uma-calculadora",
-    "href": "slide-intro-r.html#r-como-uma-calculadora",
-    "title": "Parte I - Introdução ao R",
-    "section": "R como uma calculadora",
-    "text": "R como uma calculadora\n\nPodemos usar o R como uma calculadora:\n\n\n1 / 200 * 30\n(59 + 73 + 2) / 3\nsin(pi / 2)"
-  },
-  {
-    "objectID": "slide-intro-r.html#executando-códigos",
-    "href": "slide-intro-r.html#executando-códigos",
-    "title": "Parte I - Introdução ao R",
-    "section": "Executando códigos",
-    "text": "Executando códigos\n\nO atalho Cmd/Ctrl + Enter é um dos mais úteis! Executa o código selecionado, ou o trecho de código onde o cursor está.\nO atalho Cmd/Ctrl + Shift + S executa todos os códigos do script!"
-  },
-  {
-    "objectID": "slide-intro-r.html#criando-objetos",
-    "href": "slide-intro-r.html#criando-objetos",
-    "title": "Parte I - Introdução ao R",
-    "section": "Criando objetos",
-    "text": "Criando objetos\n\nPodemos criar objetos (e guardar resultados) usando o operador de atribuição <-, e a estrutura a seguir:\n\nnome_do_objeto <- valor\nExemplo:\n\nx <- 3 * 4\n\nPodemos ver o conteúdo do objeto escrevendo o nome e executando:\n\nx"
-  },
-  {
-    "objectID": "slide-intro-r.html#boas-práticas-e-objetos",
-    "href": "slide-intro-r.html#boas-práticas-e-objetos",
-    "title": "Parte I - Introdução ao R",
-    "section": "Boas práticas e objetos",
-    "text": "Boas práticas e objetos\n\nAtalho Alt - (Alt e menos) serve para escrever o sinal de atribuição mais rápido.\nO sinal = também funciona neste caso: não use :)\nAproveite para usar a tecla Tab no RStudio: ajuda a autocompletar!\nO R é case sensitive:\n\n\nr_rocks <- 2 ^ 3\n\n\nr_rock\n#> Error: object 'r_rock' not found\nR_rocks\n#> Error: object 'R_rocks' not found\nr_rocks\n#> [1] 8"
-  },
-  {
-    "objectID": "slide-intro-r.html#boas-práticas-e-objetos-1",
-    "href": "slide-intro-r.html#boas-práticas-e-objetos-1",
-    "title": "Parte I - Introdução ao R",
-    "section": "Boas práticas e objetos",
-    "text": "Boas práticas e objetos\n\nErros de digitação e de maiúscula/minúscula importam!\nCuidado ao dar nomes aos objetos:\n\n\neu_uso_snake_case\noutrasPessoasUsamCamelCase\nalgumas.pessoas.usam.pontos\nE_Algumas.Pessoas_RENUNCIAMconvenções"
-  },
-  {
-    "objectID": "slide-intro-r.html#utilizando-funções",
-    "href": "slide-intro-r.html#utilizando-funções",
-    "title": "Parte I - Introdução ao R",
-    "section": "Utilizando funções",
-    "text": "Utilizando funções\n\nO R possui muitas funções disponíveis\nEstrutura para utilizar uma função:\n\n\nnome_da_funcao(nome_do_argumento_1 = valor_para_o_argumento1,\n               nome_do_argumento_2 = valor_para_o_argumento2,\n               nome_do_argumento_3 = valor_para_o_argumento3,\n               ...)\n\nExemplo:\n\nseq(from = 1, to = 10)\n\n\nParênteses (e aspas) sempre devem estar em “duplas”: se abrirmos, temos que fechar."
-  },
-  {
-    "objectID": "slide-intro-r.html#scripts",
-    "href": "slide-intro-r.html#scripts",
-    "title": "Parte I - Introdução ao R",
+    "objectID": "slide-intro-r-parte-ii.html#scripts",
+    "href": "slide-intro-r-parte-ii.html#scripts",
+    "title": "Introdução ao R - Parte II",
     "section": "Scripts",
     "text": "Scripts\n\nPodemos salvar nossos scripts para utilizar depois!\nConsidere tudo no console como temporário, pois não salvamos o conteúdo.\nEscreva no Script/Editor os códigos importantes para a análise."
   },
   {
-    "objectID": "slide-intro-r.html#workflow-projetos-no-rstudio",
-    "href": "slide-intro-r.html#workflow-projetos-no-rstudio",
-    "title": "Parte I - Introdução ao R",
-    "section": "Workflow: Projetos no RStudio",
-    "text": "Workflow: Projetos no RStudio\nO que é “real”?\n\nO que você salvaria como o último registro do que aconteceu na análise?\nOnde a nossa análise “vive”?\nScripts x Environment\n\nÉ muito mais fácil recriar os objetos do Environment a partir dos códigos que escrevemos no script do que o contrário."
+    "objectID": "slide-intro-r-parte-ii.html#r-como-uma-calculadora",
+    "href": "slide-intro-r-parte-ii.html#r-como-uma-calculadora",
+    "title": "Introdução ao R - Parte II",
+    "section": "R como uma calculadora",
+    "text": "R como uma calculadora\n\nPodemos usar o R como uma calculadora:\n\n\n1 / 200 * 30\n\n[1] 0.15\n\n(59 + 73 + 2) / 3\n\n[1] 44.66667\n\nsin(pi / 2)\n\n[1] 1"
   },
   {
-    "objectID": "slide-intro-r.html#onde-as-análises-vivem",
-    "href": "slide-intro-r.html#onde-as-análises-vivem",
-    "title": "Parte I - Introdução ao R",
-    "section": "Onde as análises vivem?",
-    "text": "Onde as análises vivem?\n\nWorking directory/diretório de trabalho: é o lugar (uma pasta no computador) onde o R irá procurar pelos arquivos quando queremos importá-los, ou onde ele irá salvar os arquivos quando queremos exportá-los."
+    "objectID": "slide-intro-r-parte-ii.html#executando-códigos",
+    "href": "slide-intro-r-parte-ii.html#executando-códigos",
+    "title": "Introdução ao R - Parte II",
+    "section": "Executando códigos",
+    "text": "Executando códigos\n\nO atalho Cmd/Ctrl + Enter é um dos mais úteis! Executa o código selecionado, ou o trecho de código onde o cursor está.\nO atalho Cmd/Ctrl + Shift + S executa todos os códigos do script!"
   },
   {
-    "objectID": "slide-intro-r.html#diretório-de-trabalho",
-    "href": "slide-intro-r.html#diretório-de-trabalho",
-    "title": "Parte I - Introdução ao R",
-    "section": "Diretório de trabalho",
-    "text": "Diretório de trabalho\nComo saber qual é o diretório de trabalho atual?\n\nOlhando o console;\nUsando a função getwd():\n\n\ngetwd() # para saber qual é o diretório de trabalho\n\n## [1] \"/Users/beatrizmilz/GitHub/grupo_de_estudos/\"\nTambém existe a função setwd() para mudar o diretório de trabalho, mas isso não é recomendado!"
+    "objectID": "slide-intro-r-parte-ii.html#criando-objetos",
+    "href": "slide-intro-r-parte-ii.html#criando-objetos",
+    "title": "Introdução ao R - Parte II",
+    "section": "Criando objetos",
+    "text": "Criando objetos\n\nPodemos criar objetos (e guardar resultados) usando o operador de atribuição <-, e a estrutura a seguir:\n\nnome_do_objeto <- valor\nExemplo:\n\nx <- 3 * 4\n\nPodemos ver o conteúdo do objeto escrevendo o nome e executando:\n\nx\n\n[1] 12"
   },
   {
-    "objectID": "slide-intro-r.html#caminhos",
-    "href": "slide-intro-r.html#caminhos",
-    "title": "Parte I - Introdução ao R",
-    "section": "Caminhos",
-    "text": "Caminhos\n\nCaminhos absolutos vs Caminhos relativos\nCaminhos absolutos são caminhos que apontam para o mesmo lugar independente do diretório de trabalho.\nCaminhos relativos são caminhos que partem do diretório de trabalho."
+    "objectID": "slide-intro-r-parte-ii.html#boas-práticas-e-objetos",
+    "href": "slide-intro-r-parte-ii.html#boas-práticas-e-objetos",
+    "title": "Introdução ao R - Parte II",
+    "section": "Boas práticas e objetos",
+    "text": "Boas práticas e objetos\n\nAtalho Alt - (Alt e menos) serve para escrever o sinal de atribuição mais rápido.\nO sinal = também funciona neste caso: não use :)\nAproveite para usar a tecla Tab no RStudio: ajuda a autocompletar!\nO R é case sensitive:\n\n\nr_rocks <- 2 ^ 3\n\n\nr_rock\n#> Error: object 'r_rock' not found\nR_rocks\n#> Error: object 'R_rocks' not found\nr_rocks\n#> [1] 8"
   },
   {
-    "objectID": "slide-intro-r.html#exemplo",
-    "href": "slide-intro-r.html#exemplo",
-    "title": "Parte I - Introdução ao R",
-    "section": "Exemplo",
-    "text": "Exemplo\nCaminhos até o arquivo index.html desta apresentação\n\nCaminho absoluto:\n\n\"~/GitHub/grupo_de_estudos/r4ds/02-workflow/index.html\"\n\nCaminho relativo:\n\n\"r4ds/02-workflow/index.html\"\n\n“Você nunca deve usar caminhos absolutos em seus scripts, porque eles dificultam o compartilhamento: ninguém mais terá exatamente a mesma configuração de diretório que você.”"
+    "objectID": "slide-intro-r-parte-ii.html#boas-práticas-e-objetos-1",
+    "href": "slide-intro-r-parte-ii.html#boas-práticas-e-objetos-1",
+    "title": "Introdução ao R - Parte II",
+    "section": "Boas práticas e objetos",
+    "text": "Boas práticas e objetos\n\nErros de digitação e de maiúscula/minúscula importam!\nCuidado ao dar nomes aos objetos:\n\n\neu_uso_snake_case\noutrasPessoasUsamCamelCase\nalgumas.pessoas.usam.pontos\nE_Algumas.Pessoas_RENUNCIAMconvenções"
   },
   {
-    "objectID": "slide-intro-r.html#projetos-do-rstudio",
-    "href": "slide-intro-r.html#projetos-do-rstudio",
-    "title": "Parte I - Introdução ao R",
-    "section": "Projetos do RStudio",
-    "text": "Projetos do RStudio\n\nO projeto é um local (uma pasta no nosso computador) onde teremos todos os arquivos necessários para nossa análise:\n\nDados utilizados\nScripts em R\nFiguras\nResultados de análises\nEntre outros\n\nQuando usamos projetos do RStudio, o nosso diretório de trabalho é a pasta do projeto."
+    "objectID": "slide-intro-r-parte-ii.html#o-que-pode-ser-um-valor",
+    "href": "slide-intro-r-parte-ii.html#o-que-pode-ser-um-valor",
+    "title": "Introdução ao R - Parte II",
+    "section": "O que pode ser um “valor”",
+    "text": "O que pode ser um “valor”\n(pense neles como substantivos!)\n\nValores não precisam ser números.\nEles podem ser texto, por exemplo.\nPorém, precisam ser escritos entre aspas.\nNesse caso, o R entende que o objeto é da classe de “character”\n\n\nquem_manda_aqui <- \"Carol + Lucas\"\nquem_manda_aqui\n\n[1] \"Carol + Lucas\""
   },
   {
-    "objectID": "slide-intro-r.html#projetos-do-rstudio-1",
-    "href": "slide-intro-r.html#projetos-do-rstudio-1",
-    "title": "Parte I - Introdução ao R",
-    "section": "Projetos do RStudio",
-    "text": "Projetos do RStudio\n\nCrie um projeto do RStudio .RProj para cada novo projeto de análise de dados;\nSempre use caminhos relativos;"
+    "objectID": "slide-intro-r-parte-ii.html#as-classes-dos-objetos",
+    "href": "slide-intro-r-parte-ii.html#as-classes-dos-objetos",
+    "title": "Introdução ao R - Parte II",
+    "section": "As classes dos objetos",
+    "text": "As classes dos objetos\n\nOs objetos podem ter vários tipos (um texto, um número etc.). É o que chamamos de classe.\nAs classes principais são:\n\n\n\n\nCLASSE\nSINÔNIMO\n\n\n\n\ncharacter\ntexto, string, caractere\n\n\nnumeric\nnúmero, double, valor real, integer\n\n\nlogic\nlógico, booleano, valor TRUE/FALSE"
   },
   {
-    "objectID": "slide-intro-r.html#criando-um-projeto",
-    "href": "slide-intro-r.html#criando-um-projeto",
-    "title": "Parte I - Introdução ao R",
-    "section": "Criando um projeto",
-    "text": "Criando um projeto"
+    "objectID": "slide-intro-r-parte-ii.html#exemplos-de-classes",
+    "href": "slide-intro-r-parte-ii.html#exemplos-de-classes",
+    "title": "Introdução ao R - Parte II",
+    "section": "Exemplos de classes",
+    "text": "Exemplos de classes\ncharacter: “Carol” / “40” / “verdadeiro”\nnumeric: -5 / 1.5 / 3.1416\nlogic: TRUE / FALSE"
   },
   {
-    "objectID": "slide-intro-r.html#criando-um-projeto-1",
-    "href": "slide-intro-r.html#criando-um-projeto-1",
-    "title": "Parte I - Introdução ao R",
-    "section": "Criando um projeto",
-    "text": "Criando um projeto"
+    "objectID": "slide-intro-r-parte-ii.html#operadores-relacionais",
+    "href": "slide-intro-r-parte-ii.html#operadores-relacionais",
+    "title": "Introdução ao R - Parte II",
+    "section": "Operadores relacionais",
+    "text": "Operadores relacionais\n\n\n\nOperador\nDescrição\n\n\n\n\n==\nigual\n\n\n!=\ndiferente\n\n\n>\nmaior\n\n\n<\nmenor\n\n\n>=\nmaior ou igual a\n\n\n<=\nmenor ou igual que"
   },
   {
-    "objectID": "slide-intro-r.html#criando-um-projeto-2",
-    "href": "slide-intro-r.html#criando-um-projeto-2",
-    "title": "Parte I - Introdução ao R",
-    "section": "Criando um projeto",
-    "text": "Criando um projeto\n\n\n\n\n\n\n\n\n\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
+    "objectID": "slide-intro-r-parte-ii.html#operadores-lógicos",
+    "href": "slide-intro-r-parte-ii.html#operadores-lógicos",
+    "title": "Introdução ao R - Parte II",
+    "section": "Operadores lógicos",
+    "text": "Operadores lógicos\n\n\n\nOperador\nDescrição\n\n\n\n\n!\nsignifica NÃO\n\n\n&\nsignifica E\n\n\n|\nsignifica OU\n\n\n%in%\nsignifica “contém”"
+  },
+  {
+    "objectID": "slide-intro-r-parte-ii.html#o-operador-pipe-ou",
+    "href": "slide-intro-r-parte-ii.html#o-operador-pipe-ou",
+    "title": "Introdução ao R - Parte II",
+    "section": "O operador pipe: %>% ou |>",
+    "text": "O operador pipe: %>% ou |>\n(pense nele como uma vírgula!)\n\npipe = cano, encanamento, fazer a informação fluir\no valor do lado esquerdo do pipe vira argumento para a função do lado direito e assim por diante\n\n\n\nAtalho: CTRL + SHIFT + M"
+  },
+  {
+    "objectID": "slide-intro-r-parte-ii.html#o-que-é-uma-função",
+    "href": "slide-intro-r-parte-ii.html#o-que-é-uma-função",
+    "title": "Introdução ao R - Parte II",
+    "section": "6- O que é uma função?",
+    "text": "6- O que é uma função?\n\nFunção: uma palavra que, no código, dá um comando ao computador.\nEla é escrita seguida de parênteses.\nNos parênteses incluímos os atributos (inputs).\nO output vai ser a informação que o computador retorna após rodar a função.\n\n(pense nela como um verbo!)"
+  },
+  {
+    "objectID": "slide-intro-r-parte-ii.html#função-no-excel",
+    "href": "slide-intro-r-parte-ii.html#função-no-excel",
+    "title": "Introdução ao R - Parte II",
+    "section": "6.1- Função no Excel",
+    "text": "6.1- Função no Excel\n\n\nVersão no Excel"
+  },
+  {
+    "objectID": "slide-intro-r-parte-ii.html#função-no-r",
+    "href": "slide-intro-r-parte-ii.html#função-no-r",
+    "title": "Introdução ao R - Parte II",
+    "section": "Função no R",
+    "text": "Função no R\n\naltura_carol <- 1.54\naltura_lucas <- 1.89\naltura_media <- mean(c(altura_carol, altura_lucas))\naltura_media\n\n[1] 1.715\n\n\n\n\nmean = função para calcular a média\nargumentos = informações que vão entre parênteses para indicar o que a função deve fazer\nc() = para criar um vetor (uma lista com mais de um item a ser aplicado no cálculo)"
+  },
+  {
+    "objectID": "slide-intro-r-parte-ii.html#utilizando-funções",
+    "href": "slide-intro-r-parte-ii.html#utilizando-funções",
+    "title": "Introdução ao R - Parte II",
+    "section": "Utilizando funções",
+    "text": "Utilizando funções\n\nO R possui muitas funções disponíveis\nEstrutura para utilizar uma função:\n\n\nnome_da_funcao(nome_do_argumento_1 = valor_para_o_argumento1,\n               nome_do_argumento_2 = valor_para_o_argumento2,\n               nome_do_argumento_3 = valor_para_o_argumento3,\n               ...)\n\nExemplo:\n\nseq(from = 1, to = 10)\n\n [1]  1  2  3  4  5  6  7  8  9 10\n\n\n\nParênteses (e aspas) sempre devem estar em “duplas”: se abrirmos, temos que fechar."
+  },
+  {
+    "objectID": "slide-intro-r-parte-ii.html#o-que-é-um-pacote-de-r",
+    "href": "slide-intro-r-parte-ii.html#o-que-é-um-pacote-de-r",
+    "title": "Introdução ao R - Parte II",
+    "section": "O que é um pacote de R?",
+    "text": "O que é um pacote de R?\n\nConjunto de funções úteis pra determinada análise.\nEles são disponibilizados em repositórios. Os dois principais repositórios são o CRAN e o GitHub.\nOs pacotes são instalados apenas uma vez e devem ser carregados sempre que queremos utilizá-los."
+  },
+  {
+    "objectID": "slide-intro-r-parte-ii.html#instalar-e-carregar-pacotes",
+    "href": "slide-intro-r-parte-ii.html#instalar-e-carregar-pacotes",
+    "title": "Introdução ao R - Parte II",
+    "section": "Instalar e carregar pacotes",
+    "text": "Instalar e carregar pacotes\n\nPara instalar um pacote que está no CRAN, usamos a função install.packages:\n\ninstall.packages(\"tidyverse\")\n\nCaso o pacote esteja no GitHub, é possível fazer a instalação via função install_github do pacote devtools:\n\ninstall.packages(\"devtools\")\n\ndevtools::install_github('rfsaldanha/microdatasus')\n\nPara carregar o pacote usamos a função library:\n\nlibrary(tidyverse)\nlibrary(microdatasus)"
+  },
+  {
+    "objectID": "slide-intro-r-parte-ii.html#boas-práticas-resumo",
+    "href": "slide-intro-r-parte-ii.html#boas-práticas-resumo",
+    "title": "Introdução ao R - Parte II",
+    "section": "Boas práticas (resumo)",
+    "text": "Boas práticas (resumo)\nNome de variáveis:\n\nNão usar maiúscula, espaços ou acentos pra criar o nome\nNão começar o nome com um número\nEscolher nomes úteis e não redundantes\n\nCódigo e comentários:\n\nInserir espaços só após as vírgulas e parênteses\nEvite comentar demais e de menos (com a hashtag #)\nUse a quebra de linha para facilitar a leitura"
+  },
+  {
+    "objectID": "slide-intro-r-parte-ii.html#erros-mais-comuns",
+    "href": "slide-intro-r-parte-ii.html#erros-mais-comuns",
+    "title": "Introdução ao R - Parte II",
+    "section": "Erros mais comuns!",
+    "text": "Erros mais comuns!\n\nRodar uma linha de código sem ter rodado as anteriores, que fazem parte de uma “sequência” de comandos para o programa\nPequenos erros de digitação ao escrever o código\nNão selecionar o trecho inteiro de código na hora de rodar\nDica: o pacote tidylog te dá um relatório de tudo o que ele fez, e ajuda a encontrar a origem dos erros\n\n\n\n\nSlides feitos com Quarto e Quarto R-Ladies Theme."
   }
 ]
