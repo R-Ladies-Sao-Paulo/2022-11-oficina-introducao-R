@@ -28,9 +28,6 @@ knitr:
 knitr::include_graphics("https://r4ds.hadley.nz/diagrams/rstudio-editor.png")
 ```
 
-
-
-
 ## R como uma calculadora
 
 -   Podemos usar o R como uma calculadora:
@@ -103,19 +100,6 @@ algumas.pessoas.usam.pontos
 E_Algumas.Pessoas_RENUNCIAMconvenções
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## O que pode ser um "valor"
 
 (pense neles como **substantivos**!)
@@ -133,9 +117,9 @@ quem_manda_aqui <- "Carol + Lucas"
 quem_manda_aqui
 ```
 
-##  As classes dos objetos
+## As classes dos objetos
 
--   Os objetos podem ter vários tipos (um texto, um número etc.). É o que chamamos de **classe**.
+-   Os objetos podem ter vários tipos (um texto, um número, um booleano). É o que chamamos de **classe**.
 
 -   As classes principais são:
 
@@ -152,6 +136,23 @@ quem_manda_aqui
 **numeric:** -5 / 1.5 / 3.1416
 
 **logic:** TRUE / FALSE
+
+DICA: a função `class()` mostra a classe de um objeto
+
+```{r}
+nome <- 'R-ladies SP'
+class(nome)
+```
+
+## Os tipos de objetos
+
+**Vector:** armazena elementos de mesma classe
+
+**Matrix:** vetores de duas dimensões que armazenam elementos de mesma classe.
+
+**List:** tipo especial de vetor que aceita elementos de classes diferentes.
+
+**Data.frame:** são tabelas de dados com linhas e colunas, como uma tabela do Excel. Como são listas, essas colunas podem ser de classes diferentes.
 
 ## Operadores relacionais
 
@@ -185,8 +186,6 @@ quem_manda_aqui
 
 -   Atalho: *CTRL + SHIFT + M*
 
-
-
 ## 6- O que é uma função?
 
 -   Função: uma palavra que, no código, dá um comando ao computador.
@@ -202,8 +201,7 @@ quem_manda_aqui
 
 ![Versão no Excel](img/img06_excel.png)
 
-##  Função no R
-
+## Função no R
 
 ```{r}
 #| echo: true
@@ -220,8 +218,6 @@ altura_media
 -   mean = função para calcular a média
 -   argumentos = informações que vão entre parênteses para indicar o que a função deve fazer
 -   c() = para criar um vetor (uma lista com mais de um item a ser aplicado no cálculo)
-
-
 
 ## Utilizando funções
 
@@ -244,8 +240,6 @@ seq(from = 1, to = 10)
 
 -   Parênteses (e aspas) sempre devem estar em "duplas": se abrirmos, temos que fechar.
 
-
-
 ## O que é um pacote de R?
 
 -   Conjunto de funções úteis pra determinada análise.
@@ -258,21 +252,21 @@ seq(from = 1, to = 10)
 
 -   Para instalar um pacote que está no CRAN, usamos a função install.packages:
 
-```r
+``` r
 install.packages("tidyverse")
 ```
 
 -   Caso o pacote esteja no GitHub, é possível fazer a instalação via função install_github do pacote devtools:
 
-```r
+``` r
 install.packages("devtools")
 
 devtools::install_github('rfsaldanha/microdatasus')
-```    
+```
 
 -   Para carregar o pacote usamos a função library:
 
-```r
+``` r
 library(tidyverse)
 library(microdatasus)
 ```
@@ -300,4 +294,3 @@ c)  Use a quebra de linha para facilitar a leitura
 -   Não selecionar o trecho inteiro de código na hora de rodar
 
 -   Dica: o pacote **tidylog** te dá um relatório de tudo o que ele fez, e ajuda a encontrar a origem dos erros
-
