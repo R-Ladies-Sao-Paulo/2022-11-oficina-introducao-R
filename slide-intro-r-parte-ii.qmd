@@ -111,10 +111,8 @@ E_Algumas.Pessoas_RENUNCIAMconvenções
 
 ```{r}
 #| echo: true
-#| fig-width: 10
-#| fig-height: 4.5
-quem_manda_aqui <- "Carol + Lucas"
-quem_manda_aqui
+quem_esta_apresentando <- "Bruna"
+quem_esta_apresentando 
 ```
 
 ## As classes dos objetos
