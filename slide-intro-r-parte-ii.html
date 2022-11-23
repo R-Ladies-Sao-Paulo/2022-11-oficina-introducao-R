@@ -514,7 +514,7 @@
 <section id="as-classes-dos-objetos" class="slide level2">
 <h2>As classes dos objetos</h2>
 <ul>
-<li><p>Os objetos podem ter vários tipos (um texto, um número etc.). É o que chamamos de <strong>classe</strong>.</p></li>
+<li><p>Os objetos podem ter vários tipos (um texto, um número, um booleano). É o que chamamos de <strong>classe</strong>.</p></li>
 <li><p>As classes principais são:</p></li>
 </ul>
 <table>
@@ -545,6 +545,21 @@
 <p><strong>character:</strong> “Carol” / “40” / “verdadeiro”</p>
 <p><strong>numeric:</strong> -5 / 1.5 / 3.1416</p>
 <p><strong>logic:</strong> TRUE / FALSE</p>
+<p>DICA: a função <code>class()</code> mostra a classe de um objeto</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>nome <span class="ot">&lt;-</span> <span class="st">'R-ladies SP'</span></span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fu">class</span>(nome)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
+</div>
+</div>
+</section>
+<section id="os-tipos-de-objetos" class="slide level2">
+<h2>Os tipos de objetos</h2>
+<p><strong>Vector:</strong> armazena elementos de mesma classe</p>
+<p><strong>Matrix:</strong> vetores de duas dimensões que armazenam elementos de mesma classe.</p>
+<p><strong>List:</strong> tipo especial de vetor que aceita elementos de classes diferentes.</p>
+<p><strong>Data.frame:</strong> são tabelas de dados com linhas e colunas, como uma tabela do Excel. Como são listas, essas colunas podem ser de classes diferentes.</p>
 </section>
 <section id="operadores-relacionais" class="slide level2">
 <h2>Operadores relacionais</h2>
@@ -642,10 +657,10 @@
 <section id="função-no-r" class="slide level2">
 <h2>Função no R</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>altura_carol <span class="ot">&lt;-</span> <span class="fl">1.54</span></span>
-<span id="cb16-2"><a href="#cb16-2"></a>altura_lucas <span class="ot">&lt;-</span> <span class="fl">1.89</span></span>
-<span id="cb16-3"><a href="#cb16-3"></a>altura_media <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(altura_carol, altura_lucas))</span>
-<span id="cb16-4"><a href="#cb16-4"></a>altura_media</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>altura_carol <span class="ot">&lt;-</span> <span class="fl">1.54</span></span>
+<span id="cb18-2"><a href="#cb18-2"></a>altura_lucas <span class="ot">&lt;-</span> <span class="fl">1.89</span></span>
+<span id="cb18-3"><a href="#cb18-3"></a>altura_media <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(altura_carol, altura_lucas))</span>
+<span id="cb18-4"><a href="#cb18-4"></a>altura_media</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.715</code></pre>
 </div>
@@ -664,14 +679,14 @@
 <li><p>Estrutura para utilizar uma função:</p></li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">nome_da_funcao</span>(<span class="at">nome_do_argumento_1 =</span> valor_para_o_argumento1,</span>
-<span id="cb18-2"><a href="#cb18-2"></a>               <span class="at">nome_do_argumento_2 =</span> valor_para_o_argumento2,</span>
-<span id="cb18-3"><a href="#cb18-3"></a>               <span class="at">nome_do_argumento_3 =</span> valor_para_o_argumento3,</span>
-<span id="cb18-4"><a href="#cb18-4"></a>               ...)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">nome_da_funcao</span>(<span class="at">nome_do_argumento_1 =</span> valor_para_o_argumento1,</span>
+<span id="cb20-2"><a href="#cb20-2"></a>               <span class="at">nome_do_argumento_2 =</span> valor_para_o_argumento2,</span>
+<span id="cb20-3"><a href="#cb20-3"></a>               <span class="at">nome_do_argumento_3 =</span> valor_para_o_argumento3,</span>
+<span id="cb20-4"><a href="#cb20-4"></a>               ...)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Exemplo:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
 </div>
@@ -693,18 +708,18 @@
 <ul>
 <li>Para instalar um pacote que está no CRAN, usamos a função install.packages:</li>
 </ul>
-<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Caso o pacote esteja no GitHub, é possível fazer a instalação via função install_github do pacote devtools:</li>
 </ul>
-<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
-<span id="cb22-2"><a href="#cb22-2"></a></span>
-<span id="cb22-3"><a href="#cb22-3"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'rfsaldanha/microdatasus'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb24-2"><a href="#cb24-2"></a></span>
+<span id="cb24-3"><a href="#cb24-3"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'rfsaldanha/microdatasus'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Para carregar o pacote usamos a função library:</li>
 </ul>
-<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">library</span>(microdatasus)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">library</span>(microdatasus)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="boas-práticas-resumo" class="slide level2">
 <h2>Boas práticas (resumo)</h2>

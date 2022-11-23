@@ -452,14 +452,21 @@
     "href": "slide-intro-r-parte-ii.html#as-classes-dos-objetos",
     "title": "Introdução ao R - Parte II",
     "section": "As classes dos objetos",
-    "text": "As classes dos objetos\n\nOs objetos podem ter vários tipos (um texto, um número etc.). É o que chamamos de classe.\nAs classes principais são:\n\n\n\n\nCLASSE\nSINÔNIMO\n\n\n\n\ncharacter\ntexto, string, caractere\n\n\nnumeric\nnúmero, double, valor real, integer\n\n\nlogic\nlógico, booleano, valor TRUE/FALSE"
+    "text": "As classes dos objetos\n\nOs objetos podem ter vários tipos (um texto, um número, um booleano). É o que chamamos de classe.\nAs classes principais são:\n\n\n\n\nCLASSE\nSINÔNIMO\n\n\n\n\ncharacter\ntexto, string, caractere\n\n\nnumeric\nnúmero, double, valor real, integer\n\n\nlogic\nlógico, booleano, valor TRUE/FALSE"
   },
   {
     "objectID": "slide-intro-r-parte-ii.html#exemplos-de-classes",
     "href": "slide-intro-r-parte-ii.html#exemplos-de-classes",
     "title": "Introdução ao R - Parte II",
     "section": "Exemplos de classes",
-    "text": "Exemplos de classes\ncharacter: “Carol” / “40” / “verdadeiro”\nnumeric: -5 / 1.5 / 3.1416\nlogic: TRUE / FALSE"
+    "text": "Exemplos de classes\ncharacter: “Carol” / “40” / “verdadeiro”\nnumeric: -5 / 1.5 / 3.1416\nlogic: TRUE / FALSE\nDICA: a função class() mostra a classe de um objeto\n\nnome <- 'R-ladies SP'\nclass(nome)\n\n[1] \"character\""
+  },
+  {
+    "objectID": "slide-intro-r-parte-ii.html#os-tipos-de-objetos",
+    "href": "slide-intro-r-parte-ii.html#os-tipos-de-objetos",
+    "title": "Introdução ao R - Parte II",
+    "section": "Os tipos de objetos",
+    "text": "Os tipos de objetos\nVector: armazena elementos de mesma classe\nMatrix: vetores de duas dimensões que armazenam elementos de mesma classe.\nList: tipo especial de vetor que aceita elementos de classes diferentes.\nData.frame: são tabelas de dados com linhas e colunas, como uma tabela do Excel. Como são listas, essas colunas podem ser de classes diferentes."
   },
   {
     "objectID": "slide-intro-r-parte-ii.html#operadores-relacionais",
