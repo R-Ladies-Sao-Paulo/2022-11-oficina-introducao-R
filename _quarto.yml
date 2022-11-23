@@ -26,8 +26,7 @@ website:
     contents:
       - href: index.qmd
         text: "Página inicial" 
-      - href: apoio.qmd
-        text: "Apoio"     
+  
       - section: "Informações sobre o Espaço"
         contents:
            - como-chegar.qmd
@@ -36,6 +35,9 @@ website:
       - section: "Materiais"
         contents:
            - slides.qmd
+      
+      - href: apoio.qmd
+        text: "Apoio"           
 
   
 
