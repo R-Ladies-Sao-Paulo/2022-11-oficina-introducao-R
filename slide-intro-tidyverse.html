@@ -420,7 +420,7 @@
 <section id="pacotes-dentro-do-tidyverse" class="slide level2">
 <h2>Pacotes dentro do Tidyverse</h2>
 <p>São vários os pacotes (<a href="https://www.tidyverse.org/packages/" class="uri">https://www.tidyverse.org/packages/</a>)</p>
-<p>Alguns muito úteis são:</p>
+<p>Conseguem imaginar a utilidade dos pacotes abaixo?</p>
 <ul>
 <li class="fragment"><p><strong>readr:</strong> abrir arquivos (bases de dados) e salvar tabelas</p></li>
 <li class="fragment"><p><strong>dplyr:</strong> manipular a base (filtrar, criar colunas, agrupar, resumir, ordenar etc.)</p></li>
@@ -515,20 +515,26 @@
 </section>
 <section id="exercícios" class="slide level2">
 <h2>Exercícios</h2>
-<p>Observem a tabela para responder às próximas questões.</p>
+<p>Vamos aprender a conjugar na prática com dados da nova Assembleia Legislativa de São Paulo!</p>
+<p>Observem a tabela abaixo. Cada grupo terá uma pergunta para responder!</p>
 <blockquote>
 <p><a href="https://docs.google.com/spreadsheets/d/1MOsbgpSgOCbZpG1BgXEeC5KwikCyLeAUJaaLuXxXyU4/edit#gid=0">tabela alesp.csv no Google Planilhas</a></p>
 </blockquote>
 </section>
-<section id="pergunta-1" class="slide level2">
-<h2>Pergunta 1:</h2>
-<p>Quais mulheres foram eleitas em 2022?</p>
-<p><br> <br></p>
-<p>(Dica: é com <strong>“select”</strong> ou com <strong>“filter”</strong>?)</p>
+<section id="perguntas" class="slide level2">
+<h2>Perguntas:</h2>
+<ol type="1">
+<li class="fragment"><p>Quais mulheres foram eleitas em 2022?</p></li>
+<li class="fragment"><p>Qual foi a média de votos em 2022 por raça?</p></li>
+<li class="fragment"><p>Qual é o ranking de votos totais por partido em 2022?</p></li>
+<li class="fragment"><p>Qual pessoa reeleita ganhou mais votos de 2018 para 2022?</p></li>
+</ol>
 </section>
 <section id="código-1" class="slide level2">
 <h2>Código 1:</h2>
-<p>Quais mulheres foram eleitas em 2022?</p>
+<p>1- Quais mulheres foram eleitas em 2022?</p>
+<p><br></p>
+<p>(Dica: é com <strong>“select”</strong> ou com <strong>“filter”</strong>?)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
@@ -541,7 +547,7 @@
 </section>
 <section id="resposta-1" class="slide level2">
 <h2>Resposta 1:</h2>
-<p>Quais mulheres foram eleitas em 2022?</p>
+<p>1- Quais mulheres foram eleitas em 2022?</p>
 <div class="cell">
 <div class="cell-output-display">
 
@@ -841,13 +847,9 @@
 </div>
 </div>
 </section>
-<section id="pergunta-2" class="slide level2">
-<h2>Pergunta 2:</h2>
-<p>Qual foi a média de votos em 2022 por raça?</p>
-</section>
 <section id="código-2" class="slide level2">
 <h2>Código 2:</h2>
-<p>Qual foi a média de votos em 2022 por raça?</p>
+<p>2- Qual foi a média de votos em 2022 por raça?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>media_raca <span class="ot">&lt;-</span> alesp <span class="sc">%&gt;%</span> </span>
 <span id="cb2-2"><a href="#cb2-2"></a>  <span class="fu">group_by</span>(cor_raca) <span class="sc">%&gt;%</span> </span>
@@ -856,7 +858,7 @@
 </section>
 <section id="resposta-2" class="slide level2">
 <h2>Resposta 2:</h2>
-<p>Qual foi a média de votos em 2022 por raça?</p>
+<p>2- Qual foi a média de votos em 2022 por raça?</p>
 <div class="cell">
 <div class="cell-output-display">
 
@@ -886,13 +888,9 @@
 </div>
 </div>
 </section>
-<section id="pergunta-3" class="slide level2">
-<h2>Pergunta 3:</h2>
-<p>Qual é o ranking de votos totais por partido em 2022?</p>
-</section>
 <section id="código-3" class="slide level2">
 <h2>Código 3:</h2>
-<p>Qual é o ranking de votos totais por partido em 2022?</p>
+<p>3- Qual é o ranking de votos totais por partido em 2022?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>votos_partidos <span class="ot">&lt;-</span> alesp <span class="sc">%&gt;%</span> </span>
 <span id="cb3-2"><a href="#cb3-2"></a>  <span class="fu">group_by</span>(sigla_partido) <span class="sc">%&gt;%</span> </span>
@@ -902,7 +900,7 @@
 </section>
 <section id="resposta-3" class="slide level2">
 <h2>Resposta 3:</h2>
-<p>Qual é o ranking de votos totais por partido em 2022?</p>
+<p>3- Qual é o ranking de votos totais por partido em 2022?</p>
 <div class="cell">
 <div class="cell-output-display">
 
@@ -992,13 +990,9 @@
 </div>
 </div>
 </section>
-<section id="pergunta-4" class="slide level2">
-<h2>Pergunta 4:</h2>
-<p>Qual deputado reeleito ganhou mais votos de 2018 para 2022?</p>
-</section>
 <section id="código-4" class="slide level2">
 <h2>Código 4:</h2>
-<p>Qual deputado reeleito ganhou mais votos de 2018 para 2022?</p>
+<p>4- Qual deputado reeleito ganhou mais votos de 2018 para 2022?</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>deputados <span class="ot">&lt;-</span> alesp <span class="sc">%&gt;%</span> </span>
 <span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(votos_2018)) <span class="sc">%&gt;%</span> </span>
@@ -1012,7 +1006,7 @@
 </section>
 <section id="resposta-4" class="slide level2">
 <h2>Resposta 4:</h2>
-<p>Qual deputado reeleito ganhou mais votos de 2018 para 2022?</p>
+<p>4- Qual deputado reeleito ganhou mais votos de 2018 para 2022?</p>
 <div class="cell">
 <div class="cell-output-display">
 
@@ -1411,8 +1405,10 @@
 </div>
 </div>
 </section>
-<section id="hora-de-abrir-o-r" class="title-slide slide level1 center">
-<h1>Hora de abrir o R!</h1>
+<section id="hora-de-praticar" class="slide level2">
+<h2>Hora de praticar!</h2>
+<p>Vamos abrir o arquivo <strong>tidyverse-pratica.R</strong> para analisar dados sobre a eleição de policiais e militares no Legislativo.</p>
+<p>O objetivo vai ser atualizar <a href="https://g1.globo.com/politica/eleicoes/2018/eleicao-em-numeros/noticia/2018/10/08/numero-de-policiais-e-militares-no-legislativo-e-quatro-vezes-maior-do-que-o-de-2014.ghtml">essa reportagem do G1</a> com os dados das eleições de 2022!</p>
 
 
 <img src="site_libs/quarto-contrib/quarto-project/beatrizmilz/rladies/logo.png" class="slide-logo r-stretch"><div class="footer footer-default">
