@@ -1,5 +1,5 @@
 ---
-title: "Slides"
+title: "Slides e materiais"
 author: "R-Ladies São Paulo"
 format: html
 editor: visual

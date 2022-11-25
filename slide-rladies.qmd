@@ -2,13 +2,12 @@
 title: "Conhecendo a R-Ladies São Paulo"
 subtitle: "Oficina de Introdução ao R"
 author: "[R-Ladies São Paulo](https://www.meetup.com/rladies-sao-paulo/)"
-date: "Novembro de 2022"
+date: "26 de Novembro de 2022"
 format: 
   rladies-revealjs:
     footer: "Slides feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html) e [Quarto R-Ladies Theme](https://github.com/beatrizmilz/quarto-rladies-theme#quarto-r-ladies-theme)."
 incremental: false
 ---
-
 
 ```{r include=FALSE}
 # Base de dados
@@ -27,9 +26,7 @@ meetup_url <- rladies |>
 
 ```
 
-
 ## O que é a R-Ladies?
-
 
 R-Ladies é uma organização mundial cuja missão é promover a diversidade de gênero na comunidade da linguagem R.
 
@@ -39,7 +36,7 @@ R-Ladies São Paulo integra, orgulhosamente, a organização R-Ladies Global, em
 
 Através de meetups e mentorias em um ambiente seguro e amigável.
 
-Nosso principal objetivo é promover a linguagem computacional estatística R compartilhando conhecimento, assim, quem tiver interesse na linguagem será bem-vinda, independente do nível de conhecimento. 
+Nosso principal objetivo é promover a linguagem computacional estatística R compartilhando conhecimento, assim, quem tiver interesse na linguagem será bem-vinda, independente do nível de conhecimento.
 
 ::: footer
 Fonte: [About us - R-Ladies](https://rladies.org/about-us/), [Meetup - São Paulo](https://www.meetup.com/rladies-sao-paulo/)
@@ -53,18 +50,15 @@ Nosso principal público-alvo são as pessoas que se identificam com gêneros su
 
 Como uma iniciativa de diversidade, a missão das R-Ladies é alcançar uma representação proporcional de pessoas de gêneros atualmente sub-representados na comunidade R, incentivando, inspirando e capacitando-as.
 
-
 ## Código de conduta
 
 A R-Ladies dedica-se a proporcionar uma experiência livre de assédio para todas as pessoas partcicipantes, desta forma, não é tolerada nenhuma forma de assédio. [Código de conduta - R-Ladies](https://github.com/rladies/starter-kit/wiki/Code-of-Conduct#portuguese)
-
 
 ::: footer
 Fonte: [About us - R-Ladies](https://rladies.org/about-us/), [Meetup - São Paulo](https://www.meetup.com/rladies-sao-paulo/)
 :::
 
 ## R-Ladies - Capítulos no mundo
-
 
 ```{r echo=FALSE}
 rladies |>  
@@ -76,17 +70,11 @@ rladies |>
   
 ```
 
-  
 ::: footer
-
-Atualizado em: `r  format(Sys.time(), '%m/%Y')`. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
-
+Atualizado em: `r  format(Sys.time(), '%m/%Y')`. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html)
 :::
 
 ## R-Ladies no Brasil
-
-
-
 
 ```{r echo=FALSE}
 rladies_br <- rladies |>
@@ -97,7 +85,6 @@ rladies_br <- rladies |>
 
 ```
 
-
 ```{r}
 rladies_br |>
   dplyr::slice(1:9) |>  
@@ -105,11 +92,8 @@ rladies_br |>
 
 ```
 
-
 ::: footer
-
-Atualizado em: `r  format(Sys.time(), '%m/%Y')`. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
-
+Atualizado em: `r  format(Sys.time(), '%m/%Y')`. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html)
 :::
 
 ## R-Ladies no Brasil
@@ -132,48 +116,38 @@ primeiro_meetup <-  rladies |>
   dplyr::pull(created) 
 ```
 
-
 ::: footer
-
-Atualizado em: `r  format(Sys.time(), '%m/%Y')`. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html) 
-
+Atualizado em: `r  format(Sys.time(), '%m/%Y')`. Fonte: [R Community Explorer](https://benubah.github.io/r-community-explorer/rladies.html)
 :::
 
-## R-Ladies em  São Paulo
+## R-Ladies em São Paulo
 
 ```{r out.width="65%", fig.align='center'}
 knitr::include_graphics("https://beatrizmilz.github.io/slidesR/rladies/img/1meetupsp.jpeg")
 ```
 
+-   **Primeiro encontro da R-Ladies São Paulo** - `r format(primeiro_meetup, format='%Y')`
 
-- **Primeiro encontro da R-Ladies São Paulo** - `r format(primeiro_meetup, format='%Y')`
-
-- **+ `r pessoas_participantes` pessoas participantes** - `r format(Sys.Date(), format='%m/%Y')`
-
-
-
+-   **+ `r pessoas_participantes` pessoas participantes** - `r format(Sys.Date(), format='%m/%Y')`
 
 ## Saiba mais sobre a R-Ladies
 
+-   R-Ladies Global: [Website](https://rladies.org/), [<i class="fab fa-twitter"></i> Twitter](https://twitter.com/rladiesglobal)
 
-- R-Ladies Global: [Website](https://rladies.org/), [<i class="fab fa-twitter"></i> Twitter](https://twitter.com/rladiesglobal)
+-   R-Ladies São Paulo:
 
+    -   [<i class="fab fa-twitter"></i> Twitter](https://twitter.com/RLadiesSaoPaulo)
+    -   [<i class="fab fa-instagram"></i> Instagram](https://instagram.com/RLadiesSaoPaulo)
+    -   [<i class="fab fa-facebook"></i> Facebook](https://facebook.com/RLadiesSaoPaulo)
+    -   [<i class="fab fa-meetup"></i> Meetup](https://www.meetup.com/rladies-sao-paulo/)
+    -   [<i class="fab fa-github"></i> GitHub](https://github.com/R-Ladies-Sao-Paulo)
+    -   [<i class="fab fa-youtube"></i> Youtube](https://www.youtube.com/c/RLadiesSãoPaulo)
 
-- R-Ladies São Paulo: 
-  - [<i class="fab fa-twitter"></i> Twitter](https://twitter.com/RLadiesSaoPaulo)
-  - [<i class="fab fa-instagram"></i> Instagram](https://instagram.com/RLadiesSaoPaulo)
-  - [<i class="fab fa-facebook"></i> Facebook](https://facebook.com/RLadiesSaoPaulo)
-  - [<i class="fab fa-meetup"></i> Meetup](https://www.meetup.com/rladies-sao-paulo/)
-  - [<i class="fab fa-github"></i> GitHub](https://github.com/R-Ladies-Sao-Paulo)
-  - [<i class="fab fa-youtube"></i> Youtube](https://www.youtube.com/c/RLadiesSãoPaulo)
-
-
-- [Capítulos da R-Ladies no Brasil](https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil) - Não tem capítulo na sua cidade e quer iniciar um?  Saiba como em [R-Ladies - How do get involved](https://rladies.org/about-us/help/)! 
-
-
-
-
+-   [Capítulos da R-Ladies no Brasil](https://github.com/R-Ladies-Sao-Paulo/RLadies-Brasil) - Não tem capítulo na sua cidade e quer iniciar um? Saiba como em [R-Ladies - How do get involved](https://rladies.org/about-us/help/)!
 
 <!-- inicio font awesome -->
+
+```{=html}
 <script src="https://kit.fontawesome.com/1f72d6921a.js" crossorigin="anonymous"></script>
+```
 <!-- final font awesome -->

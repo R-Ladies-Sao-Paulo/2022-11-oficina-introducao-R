@@ -2,7 +2,7 @@
 title: "Parte II - Introdução ao tidyverse"
 subtitle: "Oficina de Introdução ao R"
 author: "[R-Ladies São Paulo](https://www.meetup.com/rladies-sao-paulo/)"
-date: "Novembro de 2022"
+date: "26 de Novembro de 2022"
 format: 
   rladies-revealjs:
     footer: "Slides feitos com [Quarto](https://quarto.org/docs/presentations/revealjs/index.html) e [Quarto R-Ladies Theme](https://github.com/beatrizmilz/quarto-rladies-theme#quarto-r-ladies-theme)."
