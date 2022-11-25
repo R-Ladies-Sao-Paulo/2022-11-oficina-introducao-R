@@ -164,6 +164,8 @@ fator <- as.factor(escolaridade) # cria objt do tipo factor
 fator # na linha levels temos os rótulos dos fatores
 ```
 
+## Exemplos de classes
+
 DICA: a função `class()` mostra a classe de um objeto
 
 ```{r}
@@ -267,7 +269,7 @@ for(i in seq_along(personagens)) {
 
 <br><br>
 
-![Versão no Excel](img/img06_excel.png)
+![Versão no Excel](https://github.com/R-Ladies-Sao-Paulo/2022-11-oficina-introducao-R/blob/main/img/img02_excel.PNG?raw=true)
 
 ## Função no R
 
