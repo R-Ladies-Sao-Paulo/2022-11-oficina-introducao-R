@@ -35,7 +35,9 @@ knitr::include_graphics("https://r4ds.hadley.nz/diagrams/rstudio-editor.png")
 ```{r}
 1 / 200 * 30
 (59 + 73 + 2) / 3
-sin(pi / 2)
+sin(pi / 2) # seno da divisao de pi por 2
+10 %/% 3 # parte inteira da divisao por 3
+10 %% 3 # resto da divisao por 3
 ```
 
 ## Executando códigos
@@ -68,7 +70,7 @@ x
 
 -   Atalho `Alt -` (Alt e menos) serve para escrever o sinal de atribuição mais rápido.
 
--   O sinal `=` também funciona neste caso: não use :)
+-   O sinal `=` também funciona neste caso: porém como boa prática de escrita de código nós não usamos
 
 -   Aproveite para usar a tecla Tab no RStudio: ajuda a autocompletar!
 
@@ -100,40 +102,67 @@ algumas.pessoas.usam.pontos
 E_Algumas.Pessoas_RENUNCIAMconvenções
 ```
 
-## O que pode ser um "valor"
+## Entendendo melhor um objeto
 
-(pense neles como **substantivos**!)
+Um objeto é onde nossos dados são armazenados dentro do R.
+
+Um objeto sempre tem uma **classe** e um **tipo**
+
+Geralmente chamamos de "valor" tudo o que está dentro de um objeto. PORÉM:
 
 -   Valores não precisam ser números.
 -   Eles podem ser texto, por exemplo.
--   Porém, precisam ser escritos entre aspas.
--   Nesse caso, o R entende que o objeto é da classe de "character"
+-   Nesse caso, precisam ser escritos entre aspas o R entender que **o valor que esse objeto armazena é um texto.**
 
 ```{r}
 #| echo: true
-quem_esta_apresentando <- "Bruna"
-quem_esta_apresentando 
+pessoa <- "Bruna"
+pessoa 
 ```
 
 ## As classes dos objetos
 
--   Os objetos podem ter vários tipos (um texto, um número, um booleano). É o que chamamos de **classe**.
+-   Os objetos podem conter dados de diferentes naturezas (um texto, um número, um booleano). É o que chamamos de **classe**. **É o quê estamos armazenando.**
 
 -   As classes principais são:
 
-| CLASSE        | SINÔNIMO                            |
-|---------------|-------------------------------------|
-| **character** | texto, string, caractere            |
-| **numeric**   | número, double, valor real, integer |
-| **logic**     | lógico, booleano, valor TRUE/FALSE  |
+| CLASSE        | SINÔNIMO                                                                                    |
+|---------------|---------------------------------------------------------------------------------------------|
+| **character** | texto, string, caractere                                                                    |
+| **integer**   | números inteiros                                                                            |
+| **numeric**   | números racionais (número que pode ser representado por uma fração de dois números inteiros |
+| **complex**   | números complexos (raramente usado)                                                         |
+| **logic**     | lógico, booleano, valor TRUE/FALSE                                                          |
+| **factor**    | variáveis categóricas                                                                       |
 
 ## Exemplos de classes
 
-**character:** "Carol" / "40" / "verdadeiro"
+```{r}
+nome <- 'Rladies' # texto
+```
 
-**numeric:** -5 / 1.5 / 3.1416
+```{r}
+idade <- '40' # texto
+idade2 <- 40L # numero inteiro
+```
 
-**logic:** TRUE / FALSE
+```{r}
+passagem <- 4.40 # numero decimal
+```
+
+```{r}
+corrente <- 3 + 2i # numero complexo
+```
+
+```{r}
+sou_linda <- TRUE # booleano
+```
+
+```{r}
+escolaridade <- c("Médio", "Superior", "Fundamental", "Fundamental", "Médio")
+fator <- as.factor(escolaridade) # cria objt do tipo factor
+fator # na linha levels temos os rótulos dos fatores
+```
 
 DICA: a função `class()` mostra a classe de um objeto
 
@@ -144,6 +173,8 @@ class(nome)
 
 ## Os tipos de objetos
 
+**É como armazenamos os dados dentro do R**
+
 **Vector:** armazena elementos de mesma classe
 
 **Matrix:** vetores de duas dimensões que armazenam elementos de mesma classe.
@@ -151,6 +182,45 @@ class(nome)
 **List:** tipo especial de vetor que aceita elementos de classes diferentes.
 
 **Data.frame:** são tabelas de dados com linhas e colunas, como uma tabela do Excel. Como são listas, essas colunas podem ser de classes diferentes.
+
+## NA
+
+Uma característica importante do R que pode dicultar a comparação são os valores ausentes ou NAs (não disponíveis).
+
+```{r}
+NA > 10
+```
+
+```{r}
+NA == NA
+```
+
+`is.na()` é a função que testa se um objeto é NA
+
+## Estrutura condicional: IF e ELSE
+
+```{r}
+mes <- "Dezembro"
+
+if(mes == "Dezembro") {
+ print("O Natal chegou!") # mostra essa mensagem.
+} else {
+ print("O ano ainda não acabou!") # mostra essa mensagem.
+}
+```
+
+## Estrutura de repetição: FOR
+
+Com o laço for podemos executar a mesma ação em todos os elementos de uma lista. Essa é uma das maneiras mais comuns para um computador automatizar tarefas repetitivas.
+
+```{r}
+personagens <- c('Luke Skywalker', 'C-3PO', 'R2-D2', 'Darth Vader', 'Leia Organa') # vetor de strings
+
+for(i in seq_along(personagens)) {
+ print(personagens[i])
+}
+
+```
 
 ## Operadores relacionais
 
@@ -184,7 +254,7 @@ class(nome)
 
 -   Atalho: *CTRL + SHIFT + M*
 
-## 6- O que é uma função?
+## O que é uma função?
 
 -   Função: uma palavra que, no código, dá um comando ao computador.
 -   Ela é escrita seguida de parênteses.
@@ -193,7 +263,7 @@ class(nome)
 
 (pense nela como um **verbo**!)
 
-## 6.1- Função no Excel
+## Função no Excel
 
 <br><br>
 
