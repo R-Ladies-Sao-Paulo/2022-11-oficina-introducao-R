@@ -35,7 +35,9 @@ knitr::include_graphics("https://r4ds.hadley.nz/diagrams/rstudio-editor.png")
 ```{r}
 1 / 200 * 30
 (59 + 73 + 2) / 3
-sin(pi / 2)
+sin(pi / 2) # seno da divisao de pi por 2
+10 %/% 3 # parte inteira da divisao por 3
+10 %% 3 # resto da divisao por 3
 ```
 
 ## Executando códigos
@@ -68,7 +70,7 @@ x
 
 -   Atalho `Alt -` (Alt e menos) serve para escrever o sinal de atribuição mais rápido.
 
--   O sinal `=` também funciona neste caso: não use :)
+-   O sinal `=` também funciona neste caso: porém como boa prática de escrita de código nós não usamos
 
 -   Aproveite para usar a tecla Tab no RStudio: ajuda a autocompletar!
 
@@ -100,24 +102,27 @@ algumas.pessoas.usam.pontos
 E_Algumas.Pessoas_RENUNCIAMconvenções
 ```
 
-## O que pode ser um "valor"
+## Entendendo melhor um objeto
 
-(pense neles como **substantivos**!)
+Um objeto é onde nossos dados são armazenados dentro do R.
+
+Um objeto sempre tem uma **classe** e um **tipo**
+
+Geralmente chamamos de "valor" tudo o que está dentro de um objeto. PORÉM:
 
 -   Valores não precisam ser números.
 -   Eles podem ser texto, por exemplo.
--   Porém, precisam ser escritos entre aspas.
--   Nesse caso, o R entende que o objeto é da classe de "character"
+-   Nesse caso, precisam ser escritos entre aspas o R entender que **o valor que esse objeto armazena é um texto.**
 
 ```{r}
 #| echo: true
-quem_esta_apresentando <- "Bruna"
-quem_esta_apresentando 
+pessoa <- "Bruna"
+pessoa 
 ```
 
 ## As classes dos objetos
 
--   Os objetos podem ter vários tipos (um texto, um número, um booleano). É o que chamamos de **classe**.
+-   Os objetos podem conter dados de diferentes naturezas (um texto, um número, um booleano). É o que chamamos de **classe**. **É o quê estamos armazenando.**
 
 -   As classes principais são:
 
@@ -167,6 +172,8 @@ class(nome)
 ```
 
 ## Os tipos de objetos
+
+**É como armazenamos os dados dentro do R**
 
 **Vector:** armazena elementos de mesma classe
 
@@ -247,7 +254,7 @@ for(i in seq_along(personagens)) {
 
 -   Atalho: *CTRL + SHIFT + M*
 
-## 6- O que é uma função?
+## O que é uma função?
 
 -   Função: uma palavra que, no código, dá um comando ao computador.
 -   Ela é escrita seguida de parênteses.
@@ -256,7 +263,7 @@ for(i in seq_along(personagens)) {
 
 (pense nela como um **verbo**!)
 
-## 6.1- Função no Excel
+## Função no Excel
 
 <br><br>
 
