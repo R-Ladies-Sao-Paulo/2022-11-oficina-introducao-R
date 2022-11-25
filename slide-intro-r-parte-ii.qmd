@@ -121,19 +121,43 @@ quem_esta_apresentando
 
 -   As classes principais são:
 
-| CLASSE        | SINÔNIMO                            |
-|---------------|-------------------------------------|
-| **character** | texto, string, caractere            |
-| **numeric**   | número, double, valor real, integer |
-| **logic**     | lógico, booleano, valor TRUE/FALSE  |
+| CLASSE        | SINÔNIMO                                                                                    |
+|---------------|---------------------------------------------------------------------------------------------|
+| **character** | texto, string, caractere                                                                    |
+| **integer**   | números inteiros                                                                            |
+| **numeric**   | números racionais (número que pode ser representado por uma fração de dois números inteiros |
+| **complex**   | números complexos (raramente usado)                                                         |
+| **logic**     | lógico, booleano, valor TRUE/FALSE                                                          |
+| **factor**    | variáveis categóricas                                                                       |
 
 ## Exemplos de classes
 
-**character:** "Carol" / "40" / "verdadeiro"
+```{r}
+nome <- 'Rladies' # texto
+```
 
-**numeric:** -5 / 1.5 / 3.1416
+```{r}
+idade <- '40' # texto
+idade2 <- 40L # numero inteiro
+```
 
-**logic:** TRUE / FALSE
+```{r}
+passagem <- 4.40 # numero decimal
+```
+
+```{r}
+corrente <- 3 + 2i # numero complexo
+```
+
+```{r}
+sou_linda <- TRUE # booleano
+```
+
+```{r}
+escolaridade <- c("Médio", "Superior", "Fundamental", "Fundamental", "Médio")
+fator <- as.factor(escolaridade) # cria objt do tipo factor
+fator # na linha levels temos os rótulos dos fatores
+```
 
 DICA: a função `class()` mostra a classe de um objeto
 
@@ -151,6 +175,45 @@ class(nome)
 **List:** tipo especial de vetor que aceita elementos de classes diferentes.
 
 **Data.frame:** são tabelas de dados com linhas e colunas, como uma tabela do Excel. Como são listas, essas colunas podem ser de classes diferentes.
+
+## NA
+
+Uma característica importante do R que pode dicultar a comparação são os valores ausentes ou NAs (não disponíveis).
+
+```{r}
+NA > 10
+```
+
+```{r}
+NA == NA
+```
+
+`is.na()` é a função que testa se um objeto é NA
+
+## Estrutura condicional: IF e ELSE
+
+```{r}
+mes <- "Dezembro"
+
+if(mes == "Dezembro") {
+ print("O Natal chegou!") # mostra essa mensagem.
+} else {
+ print("O ano ainda não acabou!") # mostra essa mensagem.
+}
+```
+
+## Estrutura de repetição: FOR
+
+Com o laço for podemos executar a mesma ação em todos os elementos de uma lista. Essa é uma das maneiras mais comuns para um computador automatizar tarefas repetitivas.
+
+```{r}
+personagens <- c('Luke Skywalker', 'C-3PO', 'R2-D2', 'Darth Vader', 'Leia Organa') # vetor de strings
+
+for(i in seq_along(personagens)) {
+ print(personagens[i])
+}
+
+```
 
 ## Operadores relacionais
 
