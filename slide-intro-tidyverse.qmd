@@ -25,7 +25,7 @@ incremental: true
 
 São vários os pacotes (<https://www.tidyverse.org/packages/>)
 
-Alguns muito úteis são:
+Conseguem imaginar a utilidade dos pacotes abaixo?
 
 -   **readr:** abrir arquivos (bases de dados) e salvar tabelas
 
@@ -60,29 +60,36 @@ Saber poucos comandos já basta pra começar a analisar!
 | **read_csv2**   | arquivo separado por ponto e vírgula       |
 | **write_csv**   | salva a tabela num arquivo no computador   |
 | **rename**      | renomeia uma coluna                        |
-| **replace_**\*   | troca um valor p/ outro quando ele aparece |
-| **pivot_**\*     | transforma linhas em colunas e vice-versa  |
+| **replace\_**\* | troca um valor p/ outro quando ele aparece |
+| **pivot\_**\*   | transforma linhas em colunas e vice-versa  |
 | **bind_rows**\* | junta as linhas de duas tabelas diferentes |
 | **str_sub**\*   | puxa só parte do valor de uma coluna       |
 
 ## Exercícios
 
-Observem a tabela para responder às próximas questões.
+Vamos aprender a conjugar na prática com dados da nova Assembleia Legislativa de São Paulo!
+
+Observem a tabela abaixo. Cada grupo terá uma pergunta para responder!
 
 > [tabela alesp.csv no Google Planilhas](https://docs.google.com/spreadsheets/d/1MOsbgpSgOCbZpG1BgXEeC5KwikCyLeAUJaaLuXxXyU4/edit#gid=0)
 
-## Pergunta 1:
+## Perguntas:
 
-Quais mulheres foram eleitas em 2022?
+1.  Quais mulheres foram eleitas em 2022?
 
+2.  Qual foi a média de votos em 2022 por raça?
 
-<br> <br> 
+3.  Qual é o ranking de votos totais por partido em 2022?
 
-(Dica: é com **"select"** ou com **"filter"**?)
+4.  Qual pessoa reeleita ganhou mais votos de 2018 para 2022?
 
 ## Código 1:
 
-Quais mulheres foram eleitas em 2022?
+1- Quais mulheres foram eleitas em 2022?
+
+<br>
+
+(Dica: é com **"select"** ou com **"filter"**?)
 
 ```{r}
 #| echo: true
@@ -98,20 +105,16 @@ sexo_feminino <- alesp %>%
 
 ## Resposta 1:
 
-Quais mulheres foram eleitas em 2022?
+1- Quais mulheres foram eleitas em 2022?
 
 ```{r}
 knitr::kable(sexo_feminino) %>% 
   kableExtra::kable_styling(font_size = 12)
 ```
 
-## Pergunta 2:
-
-Qual foi a média de votos em 2022 por raça?
-
 ## Código 2:
 
-Qual foi a média de votos em 2022 por raça?
+2- Qual foi a média de votos em 2022 por raça?
 
 ```{r}
 #| echo: true
@@ -124,20 +127,16 @@ media_raca <- alesp %>%
 
 ## Resposta 2:
 
-Qual foi a média de votos em 2022 por raça?
+2- Qual foi a média de votos em 2022 por raça?
 
 ```{r}
 knitr::kable(media_raca) %>% 
   kableExtra::kable_styling(font_size = 28)
 ```
 
-## Pergunta 3:
-
-Qual é o ranking de votos totais por partido em 2022?
-
 ## Código 3:
 
-Qual é o ranking de votos totais por partido em 2022?
+3- Qual é o ranking de votos totais por partido em 2022?
 
 ```{r}
 #| echo: true
@@ -151,20 +150,16 @@ votos_partidos <- alesp %>%
 
 ## Resposta 3:
 
-Qual é o ranking de votos totais por partido em 2022?
+3- Qual é o ranking de votos totais por partido em 2022?
 
 ```{r}
 knitr::kable(votos_partidos) %>% 
   kableExtra::kable_styling(font_size = 16)
 ```
 
-## Pergunta 4:
-
-Qual deputado reeleito ganhou mais votos de 2018 para 2022?
-
 ## Código 4:
 
-Qual deputado reeleito ganhou mais votos de 2018 para 2022?
+4- Qual deputado reeleito ganhou mais votos de 2018 para 2022?
 
 ```{r}
 #| echo: true
@@ -182,12 +177,15 @@ deputados <- alesp %>%
 
 ## Resposta 4:
 
-Qual deputado reeleito ganhou mais votos de 2018 para 2022?
+4- Qual deputado reeleito ganhou mais votos de 2018 para 2022?
 
 ```{r}
 knitr::kable(deputados) %>% 
   kableExtra::kable_styling(font_size = 16)
 ```
 
-# Hora de abrir o R!
+## Hora de praticar!
 
+Vamos abrir o arquivo **tidyverse-pratica.R** para analisar dados sobre a eleição de policiais e militares no Legislativo.
+
+O objetivo vai ser atualizar [essa reportagem do G1](https://g1.globo.com/politica/eleicoes/2018/eleicao-em-numeros/noticia/2018/10/08/numero-de-policiais-e-militares-no-legislativo-e-quatro-vezes-maior-do-que-o-de-2014.ghtml) com os dados das eleições de 2022!
