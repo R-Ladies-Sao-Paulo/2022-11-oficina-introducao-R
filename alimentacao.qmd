@@ -13,13 +13,24 @@ O Insper tem duas unidades na mesma rua:
 
 -   No prédio 1 (Rua Quatá 300), no 5º andar existe um restaurante por kilo, e também um refeitório com microondas.
 
--   No prédio 2 (Quatá 200), no 6º  andar existe uma lanchonete, um refeitório com mesas e microondas, além de um terraço com mesas. 
-
-
+-   No prédio 2 (Quatá 200), no 6º andar existe uma lanchonete, um refeitório com mesas e microondas, além de um terraço com mesas.
 
 Mais informações no [site do Insper](https://www.insper.edu.br/campus/mapa-dos-andares/).
 
-
 ## Lista de restaurantes na proximidade
 
-Em breve!
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+restaurantes <- readr::read_csv("data/restaurantes.csv")
+
+restaurantes |>
+  dplyr::mutate(restaurante = glue::glue("[{nome}]({url})")) |>
+  dplyr::arrange(dist) |>
+  dplyr::select(Restaurante = restaurante, `Distância em metros` = dist) |>
+  knitr::kable()
+```
+
