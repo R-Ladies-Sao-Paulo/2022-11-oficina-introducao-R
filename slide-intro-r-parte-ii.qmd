@@ -252,7 +252,7 @@ for(i in seq_along(personagens)) {
 
 -   o valor do lado esquerdo do pipe vira argumento para a função do lado direito e assim por diante
 
-![](img/img07_pipe.png)
+![](https://github.com/R-Ladies-Sao-Paulo/2022-11-oficina-introducao-R/blob/main/img/img07_pipe.PNG?raw=true)
 
 -   Atalho: *CTRL + SHIFT + M*
 

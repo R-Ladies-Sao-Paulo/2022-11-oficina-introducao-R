@@ -11,7 +11,7 @@ incremental: true
 
 ## Tidyverse
 
-![](img/img08_tidyverse.png)
+![](https://github.com/R-Ladies-Sao-Paulo/2022-11-oficina-introducao-R/blob/main/img/img08_tidyverse.PNG?raw=true)
 
 ## O que é?
 

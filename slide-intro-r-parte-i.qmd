@@ -34,7 +34,7 @@ Você se enquadra em uma das situações abaixo?
 
 ## Então a resposta é SIM!
 
-![Vamos nessa!](img/img01_conrad-poirier.png)
+![Vamos nessa!](https://github.com/R-Ladies-Sao-Paulo/2022-11-oficina-introducao-R/blob/main/img/img01_conrad-poirier.jpg?raw=true)
 
 ## O que é o ...
 
@@ -133,7 +133,8 @@ Slide por [Curso-R](https://curso-r.com/).
 
 Resposta: nem todas as bases abrem no Excel
 
-![](img/img02_excel.png)
+![](https://github.com/R-Ladies-Sao-Paulo/2022-11-oficina-introducao-R/blob/main/img/img02_excel.PNG?raw=true)
+
 
 ## Os limites do Excel
 
@@ -169,7 +170,7 @@ knitr::kable(head(alesp, 10)) %>%
 
 ## Outra forma de ver
 
-![](img/img05_df.png)
+![](https://github.com/R-Ladies-Sao-Paulo/2022-11-oficina-introducao-R/blob/main/img/img05_df.PNG?raw=true)
 
 ## Breve glossário
 
