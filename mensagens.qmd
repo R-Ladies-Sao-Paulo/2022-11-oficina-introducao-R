@@ -5,6 +5,8 @@ format: html
 editor: visual
 ---
 
+- [Materiais da oficina - arquivos e tabelas](https://github.com/R-Ladies-Sao-Paulo/2022-11-oficina-introducao-R/raw/main/materiais-oficina.zip){target="_blank"}
+
 - Preencham a lista de presença! O link está nas lousas. Essa lista será usada para gerar os certificados e para realizar os sorteios :)
 
 - Temos um grupo no telegram! Caso queiram entrar, peça para alguma das pessoas organizadoras.
