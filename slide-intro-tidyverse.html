@@ -995,12 +995,9 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>deputados <span class="ot">&lt;-</span> alesp <span class="sc">%&gt;%</span> </span>
 <span id="cb4-2"><a href="#cb4-2"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(votos_2018)) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">group_by</span>(nome_urna_candidato) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-4"><a href="#cb4-4"></a>  <span class="fu">summarise</span>(<span class="at">total_votos_2018 =</span> <span class="fu">sum</span>(votos_2018),</span>
-<span id="cb4-5"><a href="#cb4-5"></a>            <span class="at">total_votos_2022 =</span> <span class="fu">sum</span>(votos_2022)) <span class="sc">%&gt;%</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>  <span class="fu">mutate</span>(<span class="at">variacao_votos =</span> total_votos_2022 <span class="sc">-</span> total_votos_2018,</span>
-<span id="cb4-7"><a href="#cb4-7"></a>         <span class="at">pct_variacao_votos =</span> ( variacao_votos <span class="sc">*</span> <span class="dv">100</span> ) <span class="sc">/</span> total_votos_2018) <span class="sc">%&gt;%</span> </span>
-<span id="cb4-8"><a href="#cb4-8"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(pct_variacao_votos))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="fu">mutate</span>(<span class="at">variacao_votos =</span> votos_2022 <span class="sc">-</span> votos_2018,</span>
+<span id="cb4-4"><a href="#cb4-4"></a>         <span class="at">pct_variacao_votos =</span> ( variacao_votos <span class="sc">*</span> <span class="dv">100</span> ) <span class="sc">/</span> votos_2018) <span class="sc">%&gt;%</span> </span>
+<span id="cb4-5"><a href="#cb4-5"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(pct_variacao_votos))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="resposta-4" class="slide level2">
@@ -1012,389 +1009,719 @@
 <table class="table" style="font-size: 16px; margin-left: auto; margin-right: auto;">
  <thead>
   <tr>
+   <th style="text-align:right;"> ranking </th>
    <th style="text-align:left;"> nome_urna_candidato </th>
-   <th style="text-align:right;"> total_votos_2018 </th>
-   <th style="text-align:right;"> total_votos_2022 </th>
+   <th style="text-align:left;"> sigla_partido </th>
+   <th style="text-align:right;"> votos_2022 </th>
+   <th style="text-align:right;"> votos_2018 </th>
+   <th style="text-align:left;"> genero </th>
+   <th style="text-align:left;"> grau_instrucao </th>
+   <th style="text-align:left;"> cor_raca </th>
+   <th style="text-align:left;"> ocupacao </th>
    <th style="text-align:right;"> variacao_votos </th>
    <th style="text-align:right;"> pct_variacao_votos </th>
   </tr>
  </thead>
 <tbody>
   <tr>
+   <td style="text-align:right;"> 8 </td>
    <td style="text-align:left;"> TENENTE COIMBRA </td>
-   <td style="text-align:right;"> 24109 </td>
+   <td style="text-align:left;"> PL </td>
    <td style="text-align:right;"> 209705 </td>
+   <td style="text-align:right;"> 24109 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 185596 </td>
    <td style="text-align:right;"> 769.8203990 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 48 </td>
    <td style="text-align:left;"> AGENTE FEDERAL DANILO BALAS </td>
-   <td style="text-align:right;"> 38661 </td>
+   <td style="text-align:left;"> PL </td>
    <td style="text-align:right;"> 94552 </td>
+   <td style="text-align:right;"> 38661 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 55891 </td>
    <td style="text-align:right;"> 144.5668762 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 30 </td>
    <td style="text-align:left;"> VALERIA BOLSONARO </td>
-   <td style="text-align:right;"> 54519 </td>
+   <td style="text-align:left;"> PL </td>
    <td style="text-align:right;"> 131557 </td>
+   <td style="text-align:right;"> 54519 </td>
+   <td style="text-align:left;"> FEMININO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 77038 </td>
    <td style="text-align:right;"> 141.3048662 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 22 </td>
    <td style="text-align:left;"> EMÍDIO DE SOUZA </td>
-   <td style="text-align:right;"> 65898 </td>
+   <td style="text-align:left;"> PT </td>
    <td style="text-align:right;"> 157834 </td>
+   <td style="text-align:right;"> 65898 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 91936 </td>
    <td style="text-align:right;"> 139.5125800 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 16 </td>
    <td style="text-align:left;"> MARCOS DAMASIO </td>
-   <td style="text-align:right;"> 81695 </td>
+   <td style="text-align:left;"> PL </td>
    <td style="text-align:right;"> 183219 </td>
+   <td style="text-align:right;"> 81695 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 101524 </td>
    <td style="text-align:right;"> 124.2719873 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 61 </td>
    <td style="text-align:left;"> MARCIO NAKASHIMA </td>
-   <td style="text-align:right;"> 38081 </td>
+   <td style="text-align:left;"> PDT </td>
    <td style="text-align:right;"> 85195 </td>
+   <td style="text-align:right;"> 38081 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 47114 </td>
    <td style="text-align:right;"> 123.7204905 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 15 </td>
    <td style="text-align:left;"> ITAMAR BORGES </td>
-   <td style="text-align:right;"> 82185 </td>
+   <td style="text-align:left;"> MDB </td>
    <td style="text-align:right;"> 183480 </td>
+   <td style="text-align:right;"> 82185 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 101295 </td>
    <td style="text-align:right;"> 123.2524183 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 60 </td>
    <td style="text-align:left;"> MARINA HELOU </td>
-   <td style="text-align:right;"> 39839 </td>
+   <td style="text-align:left;"> REDE </td>
    <td style="text-align:right;"> 85517 </td>
+   <td style="text-align:right;"> 39839 </td>
+   <td style="text-align:left;"> FEMININO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 45678 </td>
    <td style="text-align:right;"> 114.6564924 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 18 </td>
    <td style="text-align:left;"> CARLA MORANDO </td>
-   <td style="text-align:right;"> 89636 </td>
+   <td style="text-align:left;"> PSDB </td>
    <td style="text-align:right;"> 177773 </td>
+   <td style="text-align:right;"> 89636 </td>
+   <td style="text-align:left;"> FEMININO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> EMPRESÁRIO </td>
    <td style="text-align:right;"> 88137 </td>
    <td style="text-align:right;"> 98.3276808 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 34 </td>
    <td style="text-align:left;"> VINICIUS CAMARINHA </td>
-   <td style="text-align:right;"> 65441 </td>
+   <td style="text-align:left;"> PSDB </td>
    <td style="text-align:right;"> 123316 </td>
+   <td style="text-align:right;"> 65441 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> ADVOGADO </td>
    <td style="text-align:right;"> 57875 </td>
    <td style="text-align:right;"> 88.4384407 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 11 </td>
    <td style="text-align:left;"> MILTON LEITE FILHO </td>
-   <td style="text-align:right;"> 105492 </td>
+   <td style="text-align:left;"> UNIÃO </td>
    <td style="text-align:right;"> 198429 </td>
+   <td style="text-align:right;"> 105492 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> ENSINO MÉDIO COMPLETO </td>
+   <td style="text-align:left;"> PARDA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 92937 </td>
    <td style="text-align:right;"> 88.0986236 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 23 </td>
    <td style="text-align:left;"> PROFESSORA BEBEL </td>
-   <td style="text-align:right;"> 87169 </td>
+   <td style="text-align:left;"> PT </td>
    <td style="text-align:right;"> 155983 </td>
+   <td style="text-align:right;"> 87169 </td>
+   <td style="text-align:left;"> FEMININO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 68814 </td>
    <td style="text-align:right;"> 78.9432023 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 7 </td>
    <td style="text-align:left;"> ANDRÉ DO PRADO </td>
-   <td style="text-align:right;"> 123313 </td>
+   <td style="text-align:left;"> PL </td>
    <td style="text-align:right;"> 216268 </td>
+   <td style="text-align:right;"> 123313 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 92955 </td>
    <td style="text-align:right;"> 75.3813467 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 5 </td>
    <td style="text-align:left;"> MAJOR MECCA </td>
-   <td style="text-align:right;"> 131531 </td>
+   <td style="text-align:left;"> PL </td>
    <td style="text-align:right;"> 224462 </td>
+   <td style="text-align:right;"> 131531 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 92931 </td>
    <td style="text-align:right;"> 70.6533061 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 39 </td>
    <td style="text-align:left;"> MARCIA LIA </td>
-   <td style="text-align:right;"> 63751 </td>
+   <td style="text-align:left;"> PT </td>
    <td style="text-align:right;"> 108587 </td>
+   <td style="text-align:right;"> 63751 </td>
+   <td style="text-align:left;"> FEMININO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 44836 </td>
    <td style="text-align:right;"> 70.3298772 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 33 </td>
    <td style="text-align:left;"> THIAGO AURICCHIO </td>
-   <td style="text-align:right;"> 73435 </td>
+   <td style="text-align:left;"> PL </td>
    <td style="text-align:right;"> 123483 </td>
+   <td style="text-align:right;"> 73435 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 50048 </td>
    <td style="text-align:right;"> 68.1527882 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 27 </td>
    <td style="text-align:left;"> LUIZ FERNANDO </td>
-   <td style="text-align:right;"> 85271 </td>
+   <td style="text-align:left;"> PT </td>
    <td style="text-align:right;"> 141017 </td>
+   <td style="text-align:right;"> 85271 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR INCOMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> EMPRESÁRIO </td>
    <td style="text-align:right;"> 55746 </td>
    <td style="text-align:right;"> 65.3750982 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 14 </td>
    <td style="text-align:left;"> CAPITÃO CONTE LOPES </td>
-   <td style="text-align:right;"> 116806 </td>
+   <td style="text-align:left;"> PL </td>
    <td style="text-align:right;"> 192454 </td>
+   <td style="text-align:right;"> 116806 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 75648 </td>
    <td style="text-align:right;"> 64.7637964 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 26 </td>
    <td style="text-align:left;"> ENIO TATTO </td>
-   <td style="text-align:right;"> 86744 </td>
+   <td style="text-align:left;"> PT </td>
    <td style="text-align:right;"> 142785 </td>
+   <td style="text-align:right;"> 86744 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 56041 </td>
    <td style="text-align:right;"> 64.6050447 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 36 </td>
    <td style="text-align:left;"> RAFAEL SILVA </td>
-   <td style="text-align:right;"> 71992 </td>
+   <td style="text-align:left;"> PSD </td>
    <td style="text-align:right;"> 118182 </td>
+   <td style="text-align:right;"> 71992 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 46190 </td>
    <td style="text-align:right;"> 64.1599067 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 28 </td>
    <td style="text-align:left;"> ROGÉRIO NOGUEIRA </td>
-   <td style="text-align:right;"> 89040 </td>
+   <td style="text-align:left;"> PSDB </td>
    <td style="text-align:right;"> 139756 </td>
+   <td style="text-align:right;"> 89040 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> ENSINO MÉDIO COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> EMPRESÁRIO </td>
    <td style="text-align:right;"> 50716 </td>
    <td style="text-align:right;"> 56.9586703 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 17 </td>
    <td style="text-align:left;"> CARLOS CEZAR </td>
-   <td style="text-align:right;"> 115566 </td>
+   <td style="text-align:left;"> PL </td>
    <td style="text-align:right;"> 180690 </td>
+   <td style="text-align:right;"> 115566 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 65124 </td>
    <td style="text-align:right;"> 56.3522143 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 21 </td>
    <td style="text-align:left;"> MARTA COSTA </td>
-   <td style="text-align:right;"> 117156 </td>
+   <td style="text-align:left;"> PSD </td>
    <td style="text-align:right;"> 170541 </td>
+   <td style="text-align:right;"> 117156 </td>
+   <td style="text-align:left;"> FEMININO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> SERVIDOR PÚBLICO ESTADUAL </td>
    <td style="text-align:right;"> 53385 </td>
    <td style="text-align:right;"> 45.5674485 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 42 </td>
    <td style="text-align:left;"> CARLÃO PIGNATARI </td>
-   <td style="text-align:right;"> 74006 </td>
+   <td style="text-align:left;"> PSDB </td>
    <td style="text-align:right;"> 105245 </td>
+   <td style="text-align:right;"> 74006 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> ENSINO MÉDIO COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> EMPRESÁRIO </td>
    <td style="text-align:right;"> 31239 </td>
    <td style="text-align:right;"> 42.2114423 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 53 </td>
    <td style="text-align:left;"> LECI BRANDÃO </td>
-   <td style="text-align:right;"> 64487 </td>
+   <td style="text-align:left;"> PCdoB </td>
    <td style="text-align:right;"> 90496 </td>
+   <td style="text-align:right;"> 64487 </td>
+   <td style="text-align:left;"> FEMININO </td>
+   <td style="text-align:left;"> ENSINO MÉDIO COMPLETO </td>
+   <td style="text-align:left;"> PRETA </td>
+   <td style="text-align:left;"> CANTOR E COMPOSITOR </td>
    <td style="text-align:right;"> 26009 </td>
    <td style="text-align:right;"> 40.3321600 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 44 </td>
    <td style="text-align:left;"> SEBASTIÃO SANTOS </td>
-   <td style="text-align:right;"> 75280 </td>
+   <td style="text-align:left;"> REP </td>
    <td style="text-align:right;"> 104374 </td>
+   <td style="text-align:right;"> 75280 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> PARDA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 29094 </td>
    <td style="text-align:right;"> 38.6477152 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 37 </td>
    <td style="text-align:left;"> PAULO FIORILO </td>
-   <td style="text-align:right;"> 80430 </td>
+   <td style="text-align:left;"> PT </td>
    <td style="text-align:right;"> 110251 </td>
+   <td style="text-align:right;"> 80430 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 29821 </td>
    <td style="text-align:right;"> 37.0769613 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 85 </td>
    <td style="text-align:left;"> PAULO CORRÊA JR </td>
-   <td style="text-align:right;"> 46438 </td>
+   <td style="text-align:left;"> PSD </td>
    <td style="text-align:right;"> 62239 </td>
+   <td style="text-align:right;"> 46438 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> JORNALISTA E REDATOR </td>
    <td style="text-align:right;"> 15801 </td>
    <td style="text-align:right;"> 34.0260132 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 66 </td>
    <td style="text-align:left;"> DR. JORGE DO CARMO </td>
-   <td style="text-align:right;"> 61751 </td>
+   <td style="text-align:left;"> PT </td>
    <td style="text-align:right;"> 82054 </td>
+   <td style="text-align:right;"> 61751 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 20303 </td>
    <td style="text-align:right;"> 32.8788198 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 2 </td>
    <td style="text-align:left;"> CARLOS GIANNAZI </td>
-   <td style="text-align:right;"> 218705 </td>
+   <td style="text-align:left;"> PSOL </td>
    <td style="text-align:right;"> 276811 </td>
+   <td style="text-align:right;"> 218705 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 58106 </td>
    <td style="text-align:right;"> 26.5682083 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 9 </td>
    <td style="text-align:left;"> DELEGADO OLIM </td>
-   <td style="text-align:right;"> 161569 </td>
+   <td style="text-align:left;"> PP </td>
    <td style="text-align:right;"> 201348 </td>
+   <td style="text-align:right;"> 161569 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 39779 </td>
    <td style="text-align:right;"> 24.6204408 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 71 </td>
    <td style="text-align:left;"> MAURO BRAGATO </td>
-   <td style="text-align:right;"> 65475 </td>
+   <td style="text-align:left;"> PSDB </td>
    <td style="text-align:right;"> 78142 </td>
+   <td style="text-align:right;"> 65475 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 12667 </td>
    <td style="text-align:right;"> 19.3463154 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 83 </td>
    <td style="text-align:left;"> BETH SAHÃO </td>
-   <td style="text-align:right;"> 54900 </td>
+   <td style="text-align:left;"> PT </td>
    <td style="text-align:right;"> 65407 </td>
+   <td style="text-align:right;"> 54900 </td>
+   <td style="text-align:left;"> FEMININO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> OUTROS </td>
    <td style="text-align:right;"> 10507 </td>
    <td style="text-align:right;"> 19.1384335 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 40 </td>
    <td style="text-align:left;"> BARBA </td>
-   <td style="text-align:right;"> 91394 </td>
+   <td style="text-align:left;"> PT </td>
    <td style="text-align:right;"> 108071 </td>
+   <td style="text-align:right;"> 91394 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR INCOMPLETO </td>
+   <td style="text-align:left;"> PRETA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 16677 </td>
    <td style="text-align:right;"> 18.2473685 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 52 </td>
    <td style="text-align:left;"> RICARDO MADALENA </td>
-   <td style="text-align:right;"> 77554 </td>
+   <td style="text-align:left;"> PL </td>
    <td style="text-align:right;"> 90630 </td>
+   <td style="text-align:right;"> 77554 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 13076 </td>
    <td style="text-align:right;"> 16.8605101 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 47 </td>
    <td style="text-align:left;"> GILMACI SANTOS </td>
-   <td style="text-align:right;"> 82678 </td>
+   <td style="text-align:left;"> REP </td>
    <td style="text-align:right;"> 96361 </td>
+   <td style="text-align:right;"> 82678 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR INCOMPLETO </td>
+   <td style="text-align:left;"> PARDA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 13683 </td>
    <td style="text-align:right;"> 16.5497472 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 45 </td>
    <td style="text-align:left;"> ALTAIR MORAES </td>
-   <td style="text-align:right;"> 86230 </td>
+   <td style="text-align:left;"> REP </td>
    <td style="text-align:right;"> 98515 </td>
+   <td style="text-align:right;"> 86230 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> PARDA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 12285 </td>
    <td style="text-align:right;"> 14.2467819 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 80 </td>
    <td style="text-align:left;"> LETÍCIA AGUIAR </td>
-   <td style="text-align:right;"> 60909 </td>
+   <td style="text-align:left;"> PP </td>
    <td style="text-align:right;"> 68556 </td>
+   <td style="text-align:right;"> 60909 </td>
+   <td style="text-align:left;"> FEMININO </td>
+   <td style="text-align:left;"> SUPERIOR INCOMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> OUTROS </td>
    <td style="text-align:right;"> 7647 </td>
    <td style="text-align:right;"> 12.5547949 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 79 </td>
    <td style="text-align:left;"> DELEGADA GRACIELA </td>
-   <td style="text-align:right;"> 63089 </td>
+   <td style="text-align:left;"> PL </td>
    <td style="text-align:right;"> 68955 </td>
+   <td style="text-align:right;"> 63089 </td>
+   <td style="text-align:left;"> FEMININO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> 5866 </td>
    <td style="text-align:right;"> 9.2979759 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 65 </td>
    <td style="text-align:left;"> LEO OLIVEIRA </td>
-   <td style="text-align:right;"> 76703 </td>
+   <td style="text-align:left;"> MDB </td>
    <td style="text-align:right;"> 82145 </td>
+   <td style="text-align:right;"> 76703 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR INCOMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> EMPRESÁRIO </td>
    <td style="text-align:right;"> 5442 </td>
    <td style="text-align:right;"> 7.0948985 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 19 </td>
    <td style="text-align:left;"> JORGE WILSON XERIFE CONSUMIDOR </td>
-   <td style="text-align:right;"> 177414 </td>
+   <td style="text-align:left;"> REP </td>
    <td style="text-align:right;"> 177614 </td>
+   <td style="text-align:right;"> 177414 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> JORNALISTA E REDATOR </td>
    <td style="text-align:right;"> 200 </td>
    <td style="text-align:right;"> 0.1127307 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 75 </td>
    <td style="text-align:left;"> RODRIGO MORAES </td>
-   <td style="text-align:right;"> 75845 </td>
+   <td style="text-align:left;"> PL </td>
    <td style="text-align:right;"> 75094 </td>
+   <td style="text-align:right;"> 75845 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> -751 </td>
    <td style="text-align:right;"> -0.9901773 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 58 </td>
    <td style="text-align:left;"> BARROS MUNHOZ </td>
-   <td style="text-align:right;"> 87494 </td>
+   <td style="text-align:left;"> PSDB </td>
    <td style="text-align:right;"> 86372 </td>
+   <td style="text-align:right;"> 87494 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> -1122 </td>
    <td style="text-align:right;"> -1.2823736 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 63 </td>
    <td style="text-align:left;"> EDNA MACEDO </td>
-   <td style="text-align:right;"> 84144 </td>
+   <td style="text-align:left;"> REP </td>
    <td style="text-align:right;"> 82932 </td>
+   <td style="text-align:right;"> 84144 </td>
+   <td style="text-align:left;"> FEMININO </td>
+   <td style="text-align:left;"> ENSINO MÉDIO COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> -1212 </td>
    <td style="text-align:right;"> -1.4403879 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 64 </td>
    <td style="text-align:left;"> CARUSO </td>
-   <td style="text-align:right;"> 83758 </td>
+   <td style="text-align:left;"> MDB </td>
    <td style="text-align:right;"> 82209 </td>
+   <td style="text-align:right;"> 83758 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> -1549 </td>
    <td style="text-align:right;"> -1.8493756 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 73 </td>
    <td style="text-align:left;"> RAFA ZIMBALDI </td>
-   <td style="text-align:right;"> 80789 </td>
+   <td style="text-align:left;"> CID </td>
    <td style="text-align:right;"> 76910 </td>
+   <td style="text-align:right;"> 80789 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR INCOMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> EMPRESÁRIO </td>
    <td style="text-align:right;"> -3879 </td>
    <td style="text-align:right;"> -4.8013962 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 32 </td>
    <td style="text-align:left;"> EDMIR CHEDID </td>
-   <td style="text-align:right;"> 135991 </td>
+   <td style="text-align:left;"> UNIÃO </td>
    <td style="text-align:right;"> 129097 </td>
+   <td style="text-align:right;"> 135991 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> -6894 </td>
    <td style="text-align:right;"> -5.0694531 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 81 </td>
    <td style="text-align:left;"> MARIA LUCIA AMARY </td>
-   <td style="text-align:right;"> 70743 </td>
+   <td style="text-align:left;"> PSDB </td>
    <td style="text-align:right;"> 66956 </td>
+   <td style="text-align:right;"> 70743 </td>
+   <td style="text-align:left;"> FEMININO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> -3787 </td>
    <td style="text-align:right;"> -5.3531798 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 12 </td>
    <td style="text-align:left;"> GIL DINIZ </td>
-   <td style="text-align:right;"> 214037 </td>
+   <td style="text-align:left;"> PL </td>
    <td style="text-align:right;"> 196215 </td>
+   <td style="text-align:right;"> 214037 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR INCOMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> -17822 </td>
    <td style="text-align:right;"> -8.3265977 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 68 </td>
    <td style="text-align:left;"> DANIEL SOARES </td>
-   <td style="text-align:right;"> 97330 </td>
+   <td style="text-align:left;"> UNIÃO </td>
    <td style="text-align:right;"> 81753 </td>
+   <td style="text-align:right;"> 97330 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> ADVOGADO </td>
    <td style="text-align:right;"> -15577 </td>
    <td style="text-align:right;"> -16.0043152 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 55 </td>
    <td style="text-align:left;"> ANALICE FERNANDES </td>
-   <td style="text-align:right;"> 110089 </td>
+   <td style="text-align:left;"> PSDB </td>
    <td style="text-align:right;"> 90135 </td>
+   <td style="text-align:right;"> 110089 </td>
+   <td style="text-align:left;"> FEMININO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> ENFERMEIRO </td>
    <td style="text-align:right;"> -19954 </td>
    <td style="text-align:right;"> -18.1253350 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 41 </td>
    <td style="text-align:left;"> MONICA DO MOVIMENTO PRETAS </td>
-   <td style="text-align:right;"> 149844 </td>
+   <td style="text-align:left;"> PSOL </td>
    <td style="text-align:right;"> 106781 </td>
+   <td style="text-align:right;"> 149844 </td>
+   <td style="text-align:left;"> FEMININO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> PRETA </td>
+   <td style="text-align:left;"> JORNALISTA E REDATOR </td>
    <td style="text-align:right;"> -43063 </td>
    <td style="text-align:right;"> -28.7385548 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 43 </td>
    <td style="text-align:left;"> CAIO FRANÇA </td>
-   <td style="text-align:right;"> 162166 </td>
+   <td style="text-align:left;"> PSB </td>
    <td style="text-align:right;"> 105173 </td>
+   <td style="text-align:right;"> 162166 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR COMPLETO </td>
+   <td style="text-align:left;"> BRANCA </td>
+   <td style="text-align:left;"> ADVOGADO </td>
    <td style="text-align:right;"> -56993 </td>
    <td style="text-align:right;"> -35.1448516 </td>
   </tr>
   <tr>
+   <td style="text-align:right;"> 77 </td>
    <td style="text-align:left;"> ALEX DE MADUREIRA </td>
-   <td style="text-align:right;"> 118294 </td>
+   <td style="text-align:left;"> PL </td>
    <td style="text-align:right;"> 74340 </td>
+   <td style="text-align:right;"> 118294 </td>
+   <td style="text-align:left;"> MASCULINO </td>
+   <td style="text-align:left;"> SUPERIOR INCOMPLETO </td>
+   <td style="text-align:left;"> PARDA </td>
+   <td style="text-align:left;"> DEPUTADO </td>
    <td style="text-align:right;"> -43954 </td>
    <td style="text-align:right;"> -37.1565760 </td>
   </tr>
