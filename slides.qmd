@@ -11,6 +11,7 @@ editor: visual
 | [Introdução ao R - Parte 1](slide-intro-r-parte-i.qmd){target="_blank"}  | Beatriz Milz                     |     |
 | [Introdução ao R - Parte 2](slide-intro-r-parte-ii.qmd){target="_blank"} | Bruna Garbes                     |     |
 | [Introdução ao Tidyverse](slide-intro-tidyverse.qmd){target="_blank"}    | Ana Carolina Moreno e Jean Prado |     |
+| [Materiais da oficina - arquivos e tabelas](https://github.com/R-Ladies-Sao-Paulo/2022-11-oficina-introducao-R/raw/main/materiais-oficina.zip){target="_blank"}   | Ana Carolina Moreno e Jean Prado |     |
 | [Script de prática do Tidyverse](tidyverse-pratica.R){target="_blank"}   | Ana Carolina Moreno e Jean Prado |     |
 
 ## Agradecimentos
