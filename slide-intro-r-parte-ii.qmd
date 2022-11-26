@@ -108,11 +108,10 @@ Um objeto é onde nossos dados são armazenados dentro do R.
 
 Um objeto sempre tem uma **classe** e um **tipo**
 
-Geralmente chamamos de "valor" tudo o que está dentro de um objeto. PORÉM:
+Geralmente chamamos de "valor" tudo o que está dentro de um objeto, PORÉM:
 
 -   Valores não precisam ser números.
 -   Eles podem ser texto, por exemplo.
--   Nesse caso, precisam ser escritos entre aspas o R entender que **o valor que esse objeto armazena é um texto.**
 
 ```{r}
 #| echo: true
@@ -122,39 +121,25 @@ pessoa
 
 ## As classes dos objetos
 
--   Os objetos podem conter dados de diferentes naturezas (um texto, um número, um booleano). É o que chamamos de **classe**. **É o quê estamos armazenando.**
+-   Os objetos podem conter dados de diferentes naturezas (um texto, um número, um booleano). **É o quê estamos armazenando.**
 
--   As classes principais são:
-
-| CLASSE        | SINÔNIMO                                                                                    |
-|---------------|---------------------------------------------------------|
-| **character** | texto, string, caractere                                                                    |
-| **integer**   | números inteiros                                                                            |
-| **numeric**   | números racionais (número que pode ser representado por uma fração de dois números inteiros |
-| **complex**   | números complexos (raramente usado)                                                         |
-| **logic**     | lógico, booleano, valor TRUE/FALSE                                                          |
-| **factor**    | variáveis categóricas                                                                       |
+| CLASSE        | SINÔNIMO                                              |
+|---------------|-------------------------------------------------------|
+| **character** | texto, string, caractere                              |
+| **integer**   | números inteiros                                      |
+| **numeric**   | números racionais (número representado por uma fração |
+| **complex**   | números complexos (raramente usado)                   |
+| **logic**     | lógico, booleano, valor TRUE/FALSE                    |
+| **factor**    | variáveis categóricas                                 |
 
 ## Exemplos de classes
 
 ```{r}
 nome <- 'Rladies' # texto
-```
-
-```{r}
 idade <- '40' # texto
 idade2 <- 40L # numero inteiro
-```
-
-```{r}
 passagem <- 4.40 # numero decimal
-```
-
-```{r}
 corrente <- 3 + 2i # numero complexo
-```
-
-```{r}
 sou_linda <- TRUE # booleano
 ```
 
@@ -171,11 +156,17 @@ DICA: a função `class()` mostra a classe de um objeto
 ```{r}
 nome <- 'R-ladies SP'
 class(nome)
+
+passagem <- 4.40
+class(passagem)
+
+nivel <- as.factor(c('baixo', 'médio', 'alto'))
+class(nivel)
 ```
 
 ## Os tipos de objetos
 
-**É como armazenamos os dados dentro do R**
+É como armazenamos os dados dentro do R
 
 **Vector:** armazena elementos de mesma classe
 
@@ -252,8 +243,17 @@ for(i in seq_along(personagens)) {
 
 -   o valor do lado esquerdo do pipe vira argumento para a função do lado direito e assim por diante
 
-![](https://github.com/R-Ladies-Sao-Paulo/2022-11-oficina-introducao-R/blob/main/img/img07_pipe.PNG?raw=true)
+    ```{r}
+    df <- iris |> 
+      dplyr::select(Sepal.Length, Sepal.Width) |>
+      dplyr::filter(Sepal.Length > 7.6) |>
+      dplyr::arrange(desc(Sepal.Length))
+      
+    ```
 
+```{=html}
+<!-- -->
+```
 -   Atalho: *CTRL + SHIFT + M*
 
 ## O que é uma função?
@@ -264,12 +264,6 @@ for(i in seq_along(personagens)) {
 -   O output vai ser a informação que o computador retorna após rodar a função.
 
 (pense nela como um **verbo**!)
-
-## Função no Excel
-
-<br><br>
-
-![Versão no Excel](https://github.com/R-Ladies-Sao-Paulo/2022-11-oficina-introducao-R/blob/main/img/img02_excel.PNG?raw=true)
 
 ## Função no R
 
