@@ -136,14 +136,21 @@ pessoa
 
 ```{r}
 nome <- 'Rladies' # texto
+nome
 idade <- '40' # texto
+idade
 idade2 <- 40L # numero inteiro
+idade2
 passagem <- 4.40 # numero decimal
-corrente <- 3 + 2i # numero complexo
-sou_linda <- TRUE # booleano
+passagem
 ```
+## Exemplos de classes
 
 ```{r}
+corrente <- 3 + 2i # numero complexo
+corrente
+sou_linda <- TRUE # booleano
+sou_linda
 escolaridade <- c("Médio", "Superior", "Fundamental", "Fundamental", "Médio")
 fator <- as.factor(escolaridade) # cria objt do tipo factor
 fator # na linha levels temos os rótulos dos fatores
