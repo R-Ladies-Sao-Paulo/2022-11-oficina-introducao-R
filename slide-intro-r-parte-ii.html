@@ -566,38 +566,65 @@
 <h2>Exemplos de classes</h2>
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>nome <span class="ot">&lt;-</span> <span class="st">'Rladies'</span> <span class="co"># texto</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a>idade <span class="ot">&lt;-</span> <span class="st">'40'</span> <span class="co"># texto</span></span>
-<span id="cb20-3"><a href="#cb20-3"></a>idade2 <span class="ot">&lt;-</span> 40L <span class="co"># numero inteiro</span></span>
-<span id="cb20-4"><a href="#cb20-4"></a>passagem <span class="ot">&lt;-</span> <span class="fl">4.40</span> <span class="co"># numero decimal</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a>corrente <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">+</span> 2i <span class="co"># numero complexo</span></span>
-<span id="cb20-6"><a href="#cb20-6"></a>sou_linda <span class="ot">&lt;-</span> <span class="cn">TRUE</span> <span class="co"># booleano</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb20-2"><a href="#cb20-2"></a>nome</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Rladies"</code></pre>
 </div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>idade <span class="ot">&lt;-</span> <span class="st">'40'</span> <span class="co"># texto</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>idade</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "40"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a>idade2 <span class="ot">&lt;-</span> 40L <span class="co"># numero inteiro</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a>idade2</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 40</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>passagem <span class="ot">&lt;-</span> <span class="fl">4.40</span> <span class="co"># numero decimal</span></span>
+<span id="cb26-2"><a href="#cb26-2"></a>passagem</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4.4</code></pre>
+</div>
+</div>
+</section>
+<section id="exemplos-de-classes-1" class="slide level2">
+<h2>Exemplos de classes</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>escolaridade <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Médio"</span>, <span class="st">"Superior"</span>, <span class="st">"Fundamental"</span>, <span class="st">"Fundamental"</span>, <span class="st">"Médio"</span>)</span>
-<span id="cb21-2"><a href="#cb21-2"></a>fator <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(escolaridade) <span class="co"># cria objt do tipo factor</span></span>
-<span id="cb21-3"><a href="#cb21-3"></a>fator <span class="co"># na linha levels temos os rótulos dos fatores</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>corrente <span class="ot">&lt;-</span> <span class="dv">3</span> <span class="sc">+</span> 2i <span class="co"># numero complexo</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a>corrente</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3+2i</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>sou_linda <span class="ot">&lt;-</span> <span class="cn">TRUE</span> <span class="co"># booleano</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>sou_linda</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>escolaridade <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Médio"</span>, <span class="st">"Superior"</span>, <span class="st">"Fundamental"</span>, <span class="st">"Fundamental"</span>, <span class="st">"Médio"</span>)</span>
+<span id="cb32-2"><a href="#cb32-2"></a>fator <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(escolaridade) <span class="co"># cria objt do tipo factor</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>fator <span class="co"># na linha levels temos os rótulos dos fatores</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] Médio       Superior    Fundamental Fundamental Médio      
 Levels: Fundamental Médio Superior</code></pre>
 </div>
 </div>
 </section>
-<section id="exemplos-de-classes-1" class="slide level2">
+<section id="exemplos-de-classes-2" class="slide level2">
 <h2>Exemplos de classes</h2>
 <p>DICA: a função <code>class()</code> mostra a classe de um objeto</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>nome <span class="ot">&lt;-</span> <span class="st">'R-ladies SP'</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">class</span>(nome)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>nome <span class="ot">&lt;-</span> <span class="st">'R-ladies SP'</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="fu">class</span>(nome)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>passagem <span class="ot">&lt;-</span> <span class="fl">4.40</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">class</span>(passagem)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1"></a>passagem <span class="ot">&lt;-</span> <span class="fl">4.40</span></span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="fu">class</span>(passagem)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "numeric"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>nivel <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="st">'baixo'</span>, <span class="st">'médio'</span>, <span class="st">'alto'</span>))</span>
-<span id="cb27-2"><a href="#cb27-2"></a><span class="fu">class</span>(nivel)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>nivel <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(<span class="fu">c</span>(<span class="st">'baixo'</span>, <span class="st">'médio'</span>, <span class="st">'alto'</span>))</span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="fu">class</span>(nivel)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "factor"</code></pre>
 </div>
@@ -615,13 +642,13 @@ Levels: Fundamental Médio Superior</code></pre>
 <h2>NA</h2>
 <p>Uma característica importante do R que pode dicultar a comparação são os valores ausentes ou NAs (não disponíveis).</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="cn">NA</span> <span class="sc">&gt;</span> <span class="dv">10</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="cn">NA</span> <span class="sc">&gt;</span> <span class="dv">10</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a><span class="cn">NA</span> <span class="sc">==</span> <span class="cn">NA</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1"></a><span class="cn">NA</span> <span class="sc">==</span> <span class="cn">NA</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] NA</code></pre>
 </div>
@@ -631,13 +658,13 @@ Levels: Fundamental Médio Superior</code></pre>
 <section id="estrutura-condicional-if-e-else" class="slide level2">
 <h2>Estrutura condicional: IF e ELSE</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>mes <span class="ot">&lt;-</span> <span class="st">"Dezembro"</span></span>
-<span id="cb33-2"><a href="#cb33-2"></a></span>
-<span id="cb33-3"><a href="#cb33-3"></a><span class="cf">if</span>(mes <span class="sc">==</span> <span class="st">"Dezembro"</span>) {</span>
-<span id="cb33-4"><a href="#cb33-4"></a> <span class="fu">print</span>(<span class="st">"O Natal chegou!"</span>) <span class="co"># mostra essa mensagem.</span></span>
-<span id="cb33-5"><a href="#cb33-5"></a>} <span class="cf">else</span> {</span>
-<span id="cb33-6"><a href="#cb33-6"></a> <span class="fu">print</span>(<span class="st">"O ano ainda não acabou!"</span>) <span class="co"># mostra essa mensagem.</span></span>
-<span id="cb33-7"><a href="#cb33-7"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>mes <span class="ot">&lt;-</span> <span class="st">"Dezembro"</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a></span>
+<span id="cb44-3"><a href="#cb44-3"></a><span class="cf">if</span>(mes <span class="sc">==</span> <span class="st">"Dezembro"</span>) {</span>
+<span id="cb44-4"><a href="#cb44-4"></a> <span class="fu">print</span>(<span class="st">"O Natal chegou!"</span>) <span class="co"># mostra essa mensagem.</span></span>
+<span id="cb44-5"><a href="#cb44-5"></a>} <span class="cf">else</span> {</span>
+<span id="cb44-6"><a href="#cb44-6"></a> <span class="fu">print</span>(<span class="st">"O ano ainda não acabou!"</span>) <span class="co"># mostra essa mensagem.</span></span>
+<span id="cb44-7"><a href="#cb44-7"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "O Natal chegou!"</code></pre>
 </div>
@@ -647,11 +674,11 @@ Levels: Fundamental Médio Superior</code></pre>
 <h2>Estrutura de repetição: FOR</h2>
 <p>Com o laço for podemos executar a mesma ação em todos os elementos de uma lista. Essa é uma das maneiras mais comuns para um computador automatizar tarefas repetitivas.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a>personagens <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'Luke Skywalker'</span>, <span class="st">'C-3PO'</span>, <span class="st">'R2-D2'</span>, <span class="st">'Darth Vader'</span>, <span class="st">'Leia Organa'</span>) <span class="co"># vetor de strings</span></span>
-<span id="cb35-2"><a href="#cb35-2"></a></span>
-<span id="cb35-3"><a href="#cb35-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(personagens)) {</span>
-<span id="cb35-4"><a href="#cb35-4"></a> <span class="fu">print</span>(personagens[i])</span>
-<span id="cb35-5"><a href="#cb35-5"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1"></a>personagens <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">'Luke Skywalker'</span>, <span class="st">'C-3PO'</span>, <span class="st">'R2-D2'</span>, <span class="st">'Darth Vader'</span>, <span class="st">'Leia Organa'</span>) <span class="co"># vetor de strings</span></span>
+<span id="cb46-2"><a href="#cb46-2"></a></span>
+<span id="cb46-3"><a href="#cb46-3"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="fu">seq_along</span>(personagens)) {</span>
+<span id="cb46-4"><a href="#cb46-4"></a> <span class="fu">print</span>(personagens[i])</span>
+<span id="cb46-5"><a href="#cb46-5"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Luke Skywalker"
 [1] "C-3PO"
@@ -734,10 +761,10 @@ Levels: Fundamental Médio Superior</code></pre>
 <li><p>pipe = cano, encanamento, fazer a informação fluir</p></li>
 <li><p>o valor do lado esquerdo do pipe vira argumento para a função do lado direito e assim por diante</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>df <span class="ot">&lt;-</span> iris <span class="sc">|&gt;</span> </span>
-<span id="cb37-2"><a href="#cb37-2"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(Sepal.Length, Sepal.Width) <span class="sc">|&gt;</span></span>
-<span id="cb37-3"><a href="#cb37-3"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Sepal.Length <span class="sc">&gt;</span> <span class="fl">7.6</span>) <span class="sc">|&gt;</span></span>
-<span id="cb37-4"><a href="#cb37-4"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(<span class="fu">desc</span>(Sepal.Length))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>df <span class="ot">&lt;-</span> iris <span class="sc">|&gt;</span> </span>
+<span id="cb48-2"><a href="#cb48-2"></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(Sepal.Length, Sepal.Width) <span class="sc">|&gt;</span></span>
+<span id="cb48-3"><a href="#cb48-3"></a>  dplyr<span class="sc">::</span><span class="fu">filter</span>(Sepal.Length <span class="sc">&gt;</span> <span class="fl">7.6</span>) <span class="sc">|&gt;</span></span>
+<span id="cb48-4"><a href="#cb48-4"></a>  dplyr<span class="sc">::</span><span class="fu">arrange</span>(<span class="fu">desc</span>(Sepal.Length))</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></li>
 </ul>
 <!-- -->
@@ -758,10 +785,10 @@ Levels: Fundamental Médio Superior</code></pre>
 <section id="função-no-r" class="slide level2">
 <h2>Função no R</h2>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>altura_carol <span class="ot">&lt;-</span> <span class="fl">1.54</span></span>
-<span id="cb38-2"><a href="#cb38-2"></a>altura_lucas <span class="ot">&lt;-</span> <span class="fl">1.89</span></span>
-<span id="cb38-3"><a href="#cb38-3"></a>altura_media <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(altura_carol, altura_lucas))</span>
-<span id="cb38-4"><a href="#cb38-4"></a>altura_media</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a>altura_carol <span class="ot">&lt;-</span> <span class="fl">1.54</span></span>
+<span id="cb49-2"><a href="#cb49-2"></a>altura_lucas <span class="ot">&lt;-</span> <span class="fl">1.89</span></span>
+<span id="cb49-3"><a href="#cb49-3"></a>altura_media <span class="ot">&lt;-</span> <span class="fu">mean</span>(<span class="fu">c</span>(altura_carol, altura_lucas))</span>
+<span id="cb49-4"><a href="#cb49-4"></a>altura_media</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.715</code></pre>
 </div>
@@ -780,14 +807,14 @@ Levels: Fundamental Médio Superior</code></pre>
 <li><p>Estrutura para utilizar uma função:</p></li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1"></a><span class="fu">nome_da_funcao</span>(<span class="at">nome_do_argumento_1 =</span> valor_para_o_argumento1,</span>
-<span id="cb40-2"><a href="#cb40-2"></a>               <span class="at">nome_do_argumento_2 =</span> valor_para_o_argumento2,</span>
-<span id="cb40-3"><a href="#cb40-3"></a>               <span class="at">nome_do_argumento_3 =</span> valor_para_o_argumento3,</span>
-<span id="cb40-4"><a href="#cb40-4"></a>               ...)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="fu">nome_da_funcao</span>(<span class="at">nome_do_argumento_1 =</span> valor_para_o_argumento1,</span>
+<span id="cb51-2"><a href="#cb51-2"></a>               <span class="at">nome_do_argumento_2 =</span> valor_para_o_argumento2,</span>
+<span id="cb51-3"><a href="#cb51-3"></a>               <span class="at">nome_do_argumento_3 =</span> valor_para_o_argumento3,</span>
+<span id="cb51-4"><a href="#cb51-4"></a>               ...)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Exemplo:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">1</span>, <span class="at">to =</span> <span class="dv">10</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
 </div>
@@ -809,18 +836,18 @@ Levels: Fundamental Médio Superior</code></pre>
 <ul>
 <li>Para instalar um pacote que está no CRAN, usamos a função install.packages:</li>
 </ul>
-<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Caso o pacote esteja no GitHub, é possível fazer a instalação via função install_github do pacote devtools:</li>
 </ul>
-<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
-<span id="cb44-2"><a href="#cb44-2"></a></span>
-<span id="cb44-3"><a href="#cb44-3"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'rfsaldanha/microdatasus'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="fu">install.packages</span>(<span class="st">"devtools"</span>)</span>
+<span id="cb55-2"><a href="#cb55-2"></a></span>
+<span id="cb55-3"><a href="#cb55-3"></a>devtools<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">'rfsaldanha/microdatasus'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li>Para carregar o pacote usamos a função library:</li>
 </ul>
-<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb45-2"><a href="#cb45-2"></a><span class="fu">library</span>(microdatasus)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb56-2"><a href="#cb56-2"></a><span class="fu">library</span>(microdatasus)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="boas-práticas-resumo" class="slide level2">
 <h2>Boas práticas (resumo)</h2>

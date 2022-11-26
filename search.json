@@ -130,11 +130,18 @@
     "href": "slide-intro-r-parte-ii.html#exemplos-de-classes",
     "title": "Introdução ao R - Parte II",
     "section": "Exemplos de classes",
-    "text": "Exemplos de classes\n\nnome <- 'Rladies' # texto\nidade <- '40' # texto\nidade2 <- 40L # numero inteiro\npassagem <- 4.40 # numero decimal\ncorrente <- 3 + 2i # numero complexo\nsou_linda <- TRUE # booleano\n\n\nescolaridade <- c(\"Médio\", \"Superior\", \"Fundamental\", \"Fundamental\", \"Médio\")\nfator <- as.factor(escolaridade) # cria objt do tipo factor\nfator # na linha levels temos os rótulos dos fatores\n\n[1] Médio       Superior    Fundamental Fundamental Médio      \nLevels: Fundamental Médio Superior"
+    "text": "Exemplos de classes\n\nnome <- 'Rladies' # texto\nnome\n\n[1] \"Rladies\"\n\nidade <- '40' # texto\nidade\n\n[1] \"40\"\n\nidade2 <- 40L # numero inteiro\nidade2\n\n[1] 40\n\npassagem <- 4.40 # numero decimal\npassagem\n\n[1] 4.4"
   },
   {
     "objectID": "slide-intro-r-parte-ii.html#exemplos-de-classes-1",
     "href": "slide-intro-r-parte-ii.html#exemplos-de-classes-1",
+    "title": "Introdução ao R - Parte II",
+    "section": "Exemplos de classes",
+    "text": "Exemplos de classes\n\ncorrente <- 3 + 2i # numero complexo\ncorrente\n\n[1] 3+2i\n\nsou_linda <- TRUE # booleano\nsou_linda\n\n[1] TRUE\n\nescolaridade <- c(\"Médio\", \"Superior\", \"Fundamental\", \"Fundamental\", \"Médio\")\nfator <- as.factor(escolaridade) # cria objt do tipo factor\nfator # na linha levels temos os rótulos dos fatores\n\n[1] Médio       Superior    Fundamental Fundamental Médio      \nLevels: Fundamental Médio Superior"
+  },
+  {
+    "objectID": "slide-intro-r-parte-ii.html#exemplos-de-classes-2",
+    "href": "slide-intro-r-parte-ii.html#exemplos-de-classes-2",
     "title": "Introdução ao R - Parte II",
     "section": "Exemplos de classes",
     "text": "Exemplos de classes\nDICA: a função class() mostra a classe de um objeto\n\nnome <- 'R-ladies SP'\nclass(nome)\n\n[1] \"character\"\n\npassagem <- 4.40\nclass(passagem)\n\n[1] \"numeric\"\n\nnivel <- as.factor(c('baixo', 'médio', 'alto'))\nclass(nivel)\n\n[1] \"factor\""
