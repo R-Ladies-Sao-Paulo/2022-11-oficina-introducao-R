@@ -12,3 +12,6 @@ editor: visual
 - [Cursos de verão do IME/USP](https://www.ime.usp.br/verao/index.php/turmas/apresentacao.php){target="_blank"} 
 
 - [Bolsas de diversidade Curso-R para 2023](https://forms.gle/ejoanQgRfQzRqToq9){target="_blank"} 
+
+-   29/11 - 19h00 - Live no canal da Curso-R: [Dicas da psicologia para potencializar seus estudos em Ciência de Dados com Altay Lino de Souza](https://www.youtube.com/watch?v=GfkqhZQj9II){target="_blank"}      
+    
