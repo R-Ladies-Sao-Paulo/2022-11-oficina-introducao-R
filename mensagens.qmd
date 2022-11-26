@@ -1,0 +1,16 @@
+
+
+---
+title: "Mensagens"
+author: "R-Ladies São Paulo"
+format: html
+editor: visual
+---
+
+- Preencham a lista de presença! O link está nas lousas. Essa lista será usada para gerar os certificados e para realizar os sorteios :)
+
+- Temos um grupo no telegram! Caso queiram entrar, peça para alguma das pessoas organizadoras.
+
+- [Cursos de verão do IME/USP](https://www.ime.usp.br/verao/index.php/turmas/apresentacao.php)
+
+- [Bolsas de diversidade Curso-R para 2023](https://forms.gle/ejoanQgRfQzRqToq9)
