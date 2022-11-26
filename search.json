@@ -116,28 +116,28 @@
     "href": "slide-intro-r-parte-ii.html#entendendo-melhor-um-objeto",
     "title": "Introdução ao R - Parte II",
     "section": "Entendendo melhor um objeto",
-    "text": "Entendendo melhor um objeto\nUm objeto é onde nossos dados são armazenados dentro do R.\nUm objeto sempre tem uma classe e um tipo\nGeralmente chamamos de “valor” tudo o que está dentro de um objeto. PORÉM:\n\nValores não precisam ser números.\nEles podem ser texto, por exemplo.\nNesse caso, precisam ser escritos entre aspas o R entender que o valor que esse objeto armazena é um texto.\n\n\npessoa <- \"Bruna\"\npessoa \n\n[1] \"Bruna\""
+    "text": "Entendendo melhor um objeto\nUm objeto é onde nossos dados são armazenados dentro do R.\nUm objeto sempre tem uma classe e um tipo\nGeralmente chamamos de “valor” tudo o que está dentro de um objeto, PORÉM:\n\nValores não precisam ser números.\nEles podem ser texto, por exemplo.\n\n\npessoa <- \"Bruna\"\npessoa \n\n[1] \"Bruna\""
   },
   {
     "objectID": "slide-intro-r-parte-ii.html#as-classes-dos-objetos",
     "href": "slide-intro-r-parte-ii.html#as-classes-dos-objetos",
     "title": "Introdução ao R - Parte II",
     "section": "As classes dos objetos",
-    "text": "As classes dos objetos\n\nOs objetos podem conter dados de diferentes naturezas (um texto, um número, um booleano). É o que chamamos de classe. É o quê estamos armazenando.\nAs classes principais são:\n\n\n\n\n\n\n\n\nCLASSE\nSINÔNIMO\n\n\n\n\ncharacter\ntexto, string, caractere\n\n\ninteger\nnúmeros inteiros\n\n\nnumeric\nnúmeros racionais (número que pode ser representado por uma fração de dois números inteiros\n\n\ncomplex\nnúmeros complexos (raramente usado)\n\n\nlogic\nlógico, booleano, valor TRUE/FALSE\n\n\nfactor\nvariáveis categóricas"
+    "text": "As classes dos objetos\n\nOs objetos podem conter dados de diferentes naturezas (um texto, um número, um booleano). É o quê estamos armazenando.\n\n\n\n\n\n\n\n\nCLASSE\nSINÔNIMO\n\n\n\n\ncharacter\ntexto, string, caractere\n\n\ninteger\nnúmeros inteiros\n\n\nnumeric\nnúmeros racionais (número representado por uma fração\n\n\ncomplex\nnúmeros complexos (raramente usado)\n\n\nlogic\nlógico, booleano, valor TRUE/FALSE\n\n\nfactor\nvariáveis categóricas"
   },
   {
     "objectID": "slide-intro-r-parte-ii.html#exemplos-de-classes",
     "href": "slide-intro-r-parte-ii.html#exemplos-de-classes",
     "title": "Introdução ao R - Parte II",
     "section": "Exemplos de classes",
-    "text": "Exemplos de classes\n\nnome <- 'Rladies' # texto\n\n\nidade <- '40' # texto\nidade2 <- 40L # numero inteiro\n\n\npassagem <- 4.40 # numero decimal\n\n\ncorrente <- 3 + 2i # numero complexo\n\n\nsou_linda <- TRUE # booleano\n\n\nescolaridade <- c(\"Médio\", \"Superior\", \"Fundamental\", \"Fundamental\", \"Médio\")\nfator <- as.factor(escolaridade) # cria objt do tipo factor\nfator # na linha levels temos os rótulos dos fatores\n\n[1] Médio       Superior    Fundamental Fundamental Médio      \nLevels: Fundamental Médio Superior"
+    "text": "Exemplos de classes\n\nnome <- 'Rladies' # texto\nidade <- '40' # texto\nidade2 <- 40L # numero inteiro\npassagem <- 4.40 # numero decimal\ncorrente <- 3 + 2i # numero complexo\nsou_linda <- TRUE # booleano\n\n\nescolaridade <- c(\"Médio\", \"Superior\", \"Fundamental\", \"Fundamental\", \"Médio\")\nfator <- as.factor(escolaridade) # cria objt do tipo factor\nfator # na linha levels temos os rótulos dos fatores\n\n[1] Médio       Superior    Fundamental Fundamental Médio      \nLevels: Fundamental Médio Superior"
   },
   {
     "objectID": "slide-intro-r-parte-ii.html#exemplos-de-classes-1",
     "href": "slide-intro-r-parte-ii.html#exemplos-de-classes-1",
     "title": "Introdução ao R - Parte II",
     "section": "Exemplos de classes",
-    "text": "Exemplos de classes\nDICA: a função class() mostra a classe de um objeto\n\nnome <- 'R-ladies SP'\nclass(nome)\n\n[1] \"character\""
+    "text": "Exemplos de classes\nDICA: a função class() mostra a classe de um objeto\n\nnome <- 'R-ladies SP'\nclass(nome)\n\n[1] \"character\"\n\npassagem <- 4.40\nclass(passagem)\n\n[1] \"numeric\"\n\nnivel <- as.factor(c('baixo', 'médio', 'alto'))\nclass(nivel)\n\n[1] \"factor\""
   },
   {
     "objectID": "slide-intro-r-parte-ii.html#os-tipos-de-objetos",
@@ -186,7 +186,7 @@
     "href": "slide-intro-r-parte-ii.html#o-operador-pipe-ou",
     "title": "Introdução ao R - Parte II",
     "section": "O operador pipe: %>% ou |>",
-    "text": "O operador pipe: %>% ou |>\n(pense nele como uma vírgula!)\n\npipe = cano, encanamento, fazer a informação fluir\no valor do lado esquerdo do pipe vira argumento para a função do lado direito e assim por diante\n\n\n\nAtalho: CTRL + SHIFT + M"
+    "text": "O operador pipe: %>% ou |>\n(pense nele como uma vírgula!)\n\npipe = cano, encanamento, fazer a informação fluir\no valor do lado esquerdo do pipe vira argumento para a função do lado direito e assim por diante\n\ndf <- iris |> \n  dplyr::select(Sepal.Length, Sepal.Width) |>\n  dplyr::filter(Sepal.Length > 7.6) |>\n  dplyr::arrange(desc(Sepal.Length))\n\n\n\n\nAtalho: CTRL + SHIFT + M"
   },
   {
     "objectID": "slide-intro-r-parte-ii.html#o-que-é-uma-função",
@@ -194,13 +194,6 @@
     "title": "Introdução ao R - Parte II",
     "section": "O que é uma função?",
     "text": "O que é uma função?\n\nFunção: uma palavra que, no código, dá um comando ao computador.\nEla é escrita seguida de parênteses.\nNos parênteses incluímos os atributos (inputs).\nO output vai ser a informação que o computador retorna após rodar a função.\n\n(pense nela como um verbo!)"
-  },
-  {
-    "objectID": "slide-intro-r-parte-ii.html#função-no-excel",
-    "href": "slide-intro-r-parte-ii.html#função-no-excel",
-    "title": "Introdução ao R - Parte II",
-    "section": "Função no Excel",
-    "text": "Função no Excel\n\n\nVersão no Excel"
   },
   {
     "objectID": "slide-intro-r-parte-ii.html#função-no-r",
