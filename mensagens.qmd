@@ -1,5 +1,3 @@
-
-
 ---
 title: "Mensagens"
 author: "R-Ladies São Paulo"
