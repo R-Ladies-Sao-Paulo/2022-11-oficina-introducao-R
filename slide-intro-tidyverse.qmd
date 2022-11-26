@@ -166,11 +166,8 @@ knitr::kable(votos_partidos) %>%
 
 deputados <- alesp %>% 
   filter(!is.na(votos_2018)) %>% 
-  group_by(nome_urna_candidato) %>% 
-  summarise(total_votos_2018 = sum(votos_2018),
-            total_votos_2022 = sum(votos_2022)) %>%
-  mutate(variacao_votos = total_votos_2022 - total_votos_2018,
-         pct_variacao_votos = ( variacao_votos * 100 ) / total_votos_2018) %>% 
+  mutate(variacao_votos = votos_2022 - votos_2018,
+         pct_variacao_votos = ( variacao_votos * 100 ) / votos_2018) %>% 
   arrange(desc(pct_variacao_votos))
   
 ```
