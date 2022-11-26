@@ -11,6 +11,8 @@ editor: visual
 
 - Temos um grupo no telegram! Caso queiram entrar, peça para alguma das pessoas organizadoras.
 
+- [Folhas de cola](https://posit.co/resources/cheatsheets/?type=translations/#translation-10)
+
 - [Cursos de verão do IME/USP](https://www.ime.usp.br/verao/index.php/turmas/apresentacao.php){target="_blank"} 
 
 - [Bolsas de diversidade Curso-R para 2023](https://forms.gle/ejoanQgRfQzRqToq9){target="_blank"} 
