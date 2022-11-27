@@ -19,7 +19,7 @@ editor: visual
 
 -   29/11 - 19h00 - Live no canal da Curso-R: [Dicas da psicologia para potencializar seus estudos em Ciência de Dados com Altay Lino de Souza](https://www.youtube.com/watch?v=GfkqhZQj9II){target="_blank"}      
 
-- https://www.data-to-viz.com/
+- [Data to viz - visualização de dados](https://www.data-to-viz.com/)
 
 
 ## Formulário de feedback!
